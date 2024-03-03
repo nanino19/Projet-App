@@ -1,0 +1,47 @@
+body{
+	margin:0px;
+	padding: 0px;
+	background-color: #EDE8DF;
+}
+.header{
+	background-color: #F4E4C6;
+	height: 180px;
+	margin: 1px;
+	display: flex;
+	align-items: center;
+}
+.logo {
+    margin-left: 10px;
+    width: 170px;
+    height: 170px;
+}
+nav ul li{
+	font-family: 'Koulen';font-size: 22px;
+	display: inline-block;
+
+}
+ul li a{
+	color: #C83606;
+
+	letter-spacing: 0.1rem;
+}
+ul li a:hover{
+	color:#FBD314;
+	text-decoration: underline;
+}
+.menu li{
+	float: center;
+	padding:35px;
+}
+.menu li a{
+
+	text-decoration: none;
+}
+form{
+	padding-top: 0px;
+	display: inline-block;
+}
+input[type="search"]{
+	font-family: 'Koulen';font-size: 17px;
+	
+}
