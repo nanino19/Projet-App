@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ</title>
+<link rel="stylesheet" type="text/css" href="faq.css">
+<link rel="stylesheet" href="acceuil.css">
+<link href='https://fonts.googleapis.com/css?family=Koulen' rel='stylesheet'>
+</head>
+<body>
+    
+<div class= "header">
+    <a href="Acceuil.html" target="_blank">
+        <img src="logo.png" alt="Logo" class="logo">
+    </a>
+    <nav>
+        <ul class="menu">
+            <li><a href="Nousdecouvrir.html">Nous decouvrir</a></li>
+            <li><a href="Nosfilms.html">Films</a></li>
+            <li><a href="calendrier.html">Calendrier</a></li>
+            <li><a href="#">Forum</a></li>
+            <form>
+                <input type="search" name="q" placeholder="Rechercher un film">
+            </form>
+            <li><a href="calendrier.html">Mon Compte</a></li>
+        </ul>
+    </nav>
+</div>
+<div class="intro">
+    Besoin d'aide ?
+</div>
+<div class="espace">
+
+</div>
+
+<div class="faq-container">
+
+    <div class="sidebar">
+        <!-- Nouvelles questions -->
+        <div class="question">
+            <h2>Question 1 : Qu'est-ce que PHP ?</h2>
+            <div class="answer">
+                <p>PHP (Hypertext Preprocessor) est un langage de script utilisé pour le développement d'applications Web côté serveur.</p>
+            </div>
+        </div>
+        <div class="question">
+            <h2>Question 3 : Qu'est-ce que MySQL ?</h2>
+            <div class="answer">
+                <p>MySQL est un système de gestion de base de données relationnelles open-source.</p>
+            </div>
+        </div>
+        <div class="question">
+            <h2>Question 5 : Qu'est-ce que jQuery ?</h2>
+            <div class="answer">
+                <p>jQuery est une bibliothèque JavaScript qui simplifie l'interaction avec le document HTML, l'animation, la manipulation des événements et AJAX.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <!-- Questions existantes -->
+        <div class="question">
+            <h2>Question 2 : Qu'est-ce que HTML ?</h2>
+            <div class="answer">
+                <p>HTML (HyperText Markup Language) est le langage de balisage standard utilisé pour créer et concevoir des pages Web.</p>
+            </div>
+        </div>
+        <div class="question">
+            <h2>Question 4 : Qu'est-ce que CSS ?</h2>
+            <div class="answer">
+                <p>CSS (Cascading Style Sheets) est un langage de feuille de style utilisé pour décrire la présentation d'un document HTML.</p>
+            </div>
+        </div>
+        <div class="question">
+            <h2>Question 6 : Qu'est-ce que Java ?</h2>
+            <div class="answer">
+                <p>JavaScript est un langage de programmation de scripts principalement utilisé dans les pages Web interactives.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.querySelectorAll('.question').forEach(item => {
+        item.addEventListener('click', event => {
+            const answer = item.querySelector('.answer');
+            answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+        });
+    });
+</script>
+
+</body>
+</html>
