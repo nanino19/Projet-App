@@ -2,34 +2,31 @@
 <html>
 
 <head>
-	<link rel="stylesheet"type="text/css"href="acceuil.css"/>
- <link href='https://fonts.googleapis.com/css?family=Koulen' rel='stylesheet'>
+ <link href="https://fonts.googleapis.com/css?family=Koulen" rel="stylesheet">
  
- <link rel="stylesheet" href="footer.css">
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />"
+ <link rel="stylesheet" href="style.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
  
-	<title></title>
+	<title>cinemanager</title>
 	<meta charset="utf-8">
 </head>
 
 <body>
-
 <div class= "header">
-	<a href="Acceuil.html" target="_blank">
-	<img src="logo.png" alt="Logo" class="logo" >
+	<a href="index.php">
+	<img src="image/logo.png" alt="Logo" class="logo" >
 </a>
 	<nav>
 		<ul class="menu">
-			<li><a href="Nousdecouvrir.html">Nous decouvrir</a></li>
-			<li><a href="Nosfilms.html">Films</a></li>
-			<li><a href="calendrier.html">Calendrier</a></li>
-			<li><a href="#">Forum</a></li>
+			<li><a href="page/Nousdecouvrir.php">Nous decouvrir</a></li>
+			<li><a href="page/Nosfilms.php">Films</a></li>
+			<li><a href="page/calendrier.php">Calendrier</a></li>
+			<li><a href="page/faq.php">Forum</a></li>
 			<form>
 			<input type="search" name="q" placeholder="Rechercher un film">
 		</form>
-			<li><a href="calendrier.html">Mon Compte</a></li>
+			<li><a href="page/calendrier.php">Mon Compte</a></li>
 		</ul>
-		
 	</nav>
 </div>
 <!-- carousel -->
@@ -151,7 +148,6 @@
 	<div class="time"></div>
 </div>
 
-
 <section>
 	<h1>A l'affiche</h1>
 	<div class="affiches">
@@ -173,13 +169,8 @@
 		<a href="#" class="affiche"></a>
 		<a href="#" class="affiche"></a>
 
-
 	</div>
 </section>
-
-
-
-
 
 <div class ="footer">
 	<div class="icone">
@@ -204,18 +195,19 @@
 				<li><a href="#">Forum</a></li>
 				
 			</ul>
-			
-		
-
 	</div>
-	
-
 </div>
 <div class="image">
 	<!--<p>Copyright copy;2024;Designed by <span class="deigner">Magik Systems</span></p>-->
 	<img src="image/footer.png" alt="footer image" class="footer_ima">
 </div>
-<script src="app.js"></script>
+<script src= "../app.js"></script>
 </body>
 </html>
+
+
+
+
+
+
 

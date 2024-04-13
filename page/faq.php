@@ -1,32 +1,5 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FAQ</title>
-<link rel="stylesheet" type="text/css" href="faq.css">
-<link rel="stylesheet" href="acceuil.css">
-<link href='https://fonts.googleapis.com/css?family=Koulen' rel='stylesheet'>
-</head>
-<body>
-    
-<div class= "header">
-    <a href="Acceuil.html" target="_blank">
-        <img src="logo.png" alt="Logo" class="logo">
-    </a>
-    <nav>
-        <ul class="menu">
-            <li><a href="Nousdecouvrir.html">Nous decouvrir</a></li>
-            <li><a href="Nosfilms.html">Films</a></li>
-            <li><a href="calendrier.html">Calendrier</a></li>
-            <li><a href="#">Forum</a></li>
-            <form>
-                <input type="search" name="q" placeholder="Rechercher un film">
-            </form>
-            <li><a href="calendrier.html">Mon Compte</a></li>
-        </ul>
-    </nav>
-</div>
+<?php include('../composant/header.php'); ?>
+<?php include('../composant/menu.php'); ?>
 <div class="intro">
     Besoin d'aide ?
 </div>
@@ -90,5 +63,4 @@
     });
 </script>
 
-</body>
-</html>
+<?php include('../composant/footer.php'); ?>

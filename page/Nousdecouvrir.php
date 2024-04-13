@@ -1,31 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-
-	<link rel="stylesheet"type="text/css"href="acceuil.css"/>
- <link href='https://fonts.googleapis.com/css?family=Koulen' rel='stylesheet'>
- <link rel="stylesheet" href="nousdecouvrir.css">
-	<title></title>
-</head>
-<body>
-<div class= "header">
-	
-	<a href="Acceuil.html" target="_blank">
-	<img src="C:\Users\PC\Desktop\Projet App/logo.png" alt="Logo" class="logo" >
-</a>
-	<nav>
-		<ul class="menu">
-			<li><a href="Nousdecouvrir.html">Nous decouvrir</a></li>
-			<li><a href="Nosfilms.html">Films</a></li>
-			<li><a href="calendrier.html">Calendrier</a></li>
-			<li><a href="#">Forum</a></li>
-			<form>
-			<input type="search" name="q" placeholder="Rechercher un film">
-		</form>
-			<li><a href="calendrier.html">Mon Compte</a></li>
-		</ul>
-		
-	</nav>
+<?php include('../composant/header.php'); ?>
+<?php include('../composant/menu.php'); ?>
 </div>
 <section id="blog">
 	<div class="blog-heading">
@@ -35,7 +9,6 @@
 </section>
 <div class="wrapper">
 	<div class="image">
-		<img src="travail-de-groupe.webp">
 		<div class="content">
 			<h1> Venez nous découvrir </h1>
 			<p> Hasbulla Magomedov</p>
@@ -45,7 +18,7 @@
 <div class="container">
 	<section class="about">
 		<div class="about-image">
-			<img src="MAGIK_LOGO2.png">
+			<img src="image/MAGIK_LOGO2.png">
 		</div>
 		<div class="about-content">
 			<h3> Notre produit</h3>
@@ -63,5 +36,4 @@
 	</section>
 </div>
 
-</body>
-</html>	
+<?php include('../composant/footer.php'); ?>
