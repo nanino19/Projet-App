@@ -31,7 +31,7 @@
         </div>
     </div>
 
-    <div class="content">
+    <div class="contentFAQ">
         <!-- Questions existantes -->
         <div class="question">
             <h2>Question 2 : Qu'est-ce que HTML ?</h2>

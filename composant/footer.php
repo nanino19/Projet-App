@@ -1,8 +1,7 @@
 
 <?php
-echo '<!DOCTYPE html>
+echo '
 
-<html>
 <div class ="footer">
 	<div class="icone">
 		<p>Retrouvez nous sur:</p>
@@ -30,7 +29,7 @@ echo '<!DOCTYPE html>
 </div>
 <div class="image">
 	<!--<p>Copyright copy;2024;Designed by <span class="deigner">Magik Systems</span></p>-->
-	<img src="image/footer.png" alt="footer image" class="footer_ima">
+	<img src="../image/footer.png" alt="footer image" class="footer_ima">
 </div>
 <script src= "../app.js"></script>
 </body>

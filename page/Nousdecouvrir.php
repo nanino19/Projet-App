@@ -18,7 +18,7 @@
 <div class="container">
 	<section class="about">
 		<div class="about-image">
-			<img src="image/MAGIK_LOGO2.png">
+			<img src="../image/MAGIK_LOGO2.png">
 		</div>
 		<div class="about-content">
 			<h3> Notre produit</h3>
