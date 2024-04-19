@@ -1,7 +1,22 @@
-<?php include ('../composant/header.php'); ?>
-<?php include ('../composant/menu.php'); ?>
+<?php include('../composant/header.php'); ?>
+<?php include('../composant/menu.php'); ?>
 
+<?php
+session_start();
 
+if (isset($_GET['msg']) && $_GET['msg'] == "subscribe_success") {
+    echo '<div class="alert alert-success" role="alert">
+      Inscription validée!
+    </div>';
+}
+// Vérifiez si il y a des messages d'erreur stockés dans la session
+if (isset($_SESSION['errors_subscribe']) && !empty($_SESSION['errors_subscribe'])) {
+    echo '<div class="alert alert-success" role="alert">' .
+        $_SESSION["errors_subscribe"]; // Afficher les erreurs.
+    '</div>';
+    unset($_SESSION['errors_subscribe']); // Nettoyer les erreurs de la session après les avoir affichées
+}
+?>
 
 <form method="POST" action="../back/inscription.php">
     <div class="row">
