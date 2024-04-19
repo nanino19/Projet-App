@@ -59,20 +59,18 @@ input[type="search"]{
     overflow: hidden;
     position: relative;
 }
-
 .carousel .list .item{
     width: 100%;
     height: 100%;
     position: absolute;
     inset: 0 0 0 0;
 }
-
 .carousel .list .item img{
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-.carousel .list .item .content{
+.carousel .list .item .contents{
     position: absolute;
     top: 20%;
     width: 1140px;
@@ -135,17 +133,17 @@ input[type="search"]{
     object-fit: cover;
     border-radius: 20px;
 }
-.thumbnail .item .content{
+.thumbnail .item .contents{
     color: #fff;
     position: absolute;
     bottom: 10px;
     left: 10px;
     right: 10px;
 }
-.thumbnail .item .content .title{
+.thumbnail .item .contents .title{
     font-weight: 500;
 }
-.thumbnail .item .content .description{
+.thumbnail .item .contents .description{
     font-weight: 300;
 }
 /* arrows */
@@ -183,11 +181,11 @@ input[type="search"]{
 
 /* animation text in first item */
 
-.carousel .list .item:nth-child(1) .content .author,
-.carousel .list .item:nth-child(1) .content .title,
-.carousel .list .item:nth-child(1) .content .topic,
-.carousel .list .item:nth-child(1) .content .des,
-.carousel .list .item:nth-child(1) .content .buttons
+.carousel .list .item:nth-child(1) .contents .author,
+.carousel .list .item:nth-child(1) .contents .title,
+.carousel .list .item:nth-child(1) .contents .topic,
+.carousel .list .item:nth-child(1) .contents .des,
+.carousel .list .item:nth-child(1) .contents .buttons
 {
     transform: translateY(50px);
     filter: blur(20px);
@@ -201,16 +199,16 @@ input[type="search"]{
         opacity: 1;
     }
 }
-.carousel .list .item:nth-child(1) .content .title{
+.carousel .list .item:nth-child(1) .contents .title{
     animation-delay: 1.2s!important;
 }
-.carousel .list .item:nth-child(1) .content .topic{
+.carousel .list .item:nth-child(1) .contents .topic{
     animation-delay: 1.4s!important;
 }
-.carousel .list .item:nth-child(1) .content .des{
+.carousel .list .item:nth-child(1) .contents .des{
     animation-delay: 1.6s!important;
 }
-.carousel .list .item:nth-child(1) .content .buttons{
+.carousel .list .item:nth-child(1) .contents .buttons{
     animation-delay: 1.8s!important;
 }
 /* create animation when next click */
@@ -277,6 +275,7 @@ input[type="search"]{
     to{width: 0}
 }
 
+
 /* prev click */
 
 .carousel.prev .list .item:nth-child(2){
@@ -308,11 +307,11 @@ input[type="search"]{
 .carousel.prev .arrows button{
     pointer-events: none;
 }
-.carousel.prev .list .item:nth-child(2) .content .author,
-.carousel.prev .list .item:nth-child(2) .content .title,
-.carousel.prev .list .item:nth-child(2) .content .topic,
-.carousel.prev .list .item:nth-child(2) .content .des,
-.carousel.prev .list .item:nth-child(2) .content .buttons
+.carousel.prev .list .item:nth-child(2) .contents .author,
+.carousel.prev .list .item:nth-child(2) .contents .title,
+.carousel.prev .list .item:nth-child(2) .contents .topic,
+.carousel.prev .list .item:nth-child(2) .contents .des,
+.carousel.prev .list .item:nth-child(2) .contents .buttons
 {
     animation: contentOut 1.5s linear 1 forwards!important;
 }
@@ -324,16 +323,23 @@ input[type="search"]{
         opacity: 0;
     }
 }
-
 @media screen and (max-width: 678px) {
-    .carousel .list .item .content{
+    .carousel .list .item .contents{
         padding-right: 0;
     }
-    .carousel .list .item .content .title{
+    .carousel .list .item .contents .title{
         font-size: 30px;
     }
 }
 
+select {
+    display:flex ;
+}
+
+select option[value="Populaire"]{
+    background-color: #000;
+
+}
  section{
     position: relative;
     width: 100%;
@@ -341,11 +347,12 @@ input[type="search"]{
     padding: 0px 50px;
     bottom: 20px;
     color: #C83606;
+    
 }
  section .affiches{
     position: relative;
     width: 100%;
-    height: 200px;
+    height: 300px;
     border: 1px solid #fff;
     margin-top:10 px ;
     display: flex;
@@ -353,6 +360,9 @@ input[type="search"]{
     overflow-x: auto;
 
 }
+
+    
+
 section .affiches::-webkit-scrollbar{
     display: none;
     
@@ -360,8 +370,8 @@ section .affiches::-webkit-scrollbar{
 }
  section .affiches .affiche{
     position: relative;
-    min-width: 130px;
-    height: 180px;
+    min-width: 200px;
+    height: 290px;
     border: 1px solid #fff;
     border-radius: 8px;
     margin-top:10 px ;
@@ -377,13 +387,29 @@ section .affiches .affiche .poster{
    height: 100%;
    border-radius: 10px;
    position: relative;
+   
 
 }
 section .affiches .affiche{
-    width: 300px;
+    width: 200px;
 
 }
 .seance {
+    background-color: #fbeee0;
+    border: 2px solid #422800;
+    border-radius: 30px;
+    box-shadow: #422800 4px 4px 0 0;
+    color: #422800;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 0 18px;
+    line-height: 50px;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
     display: none; 
     position: absolute; 
     bottom: 10px; 
@@ -392,31 +418,23 @@ section .affiches .affiche{
 }
 
 .affiche:hover .seance {
-    display: block; /* Affiche le bouton de séance lorsque survolé */
+    display: block; 
+    background-color: #fff;
 }
 
-section .affiches .affiche .anim_film{
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-    position: absolute;
-    left: 0;
-    top:0;
-    z-index: 999999;
-    opacity: 1;
-    transition: 1s linear; 
- }
+.seance:active {
+  box-shadow: #422800 2px 2px 0 0;
+  transform: translate(2px, 2px);
+}
 
- section .affiches .affiche .anim_film .seance{
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-    position: relative;
-    z-index: -1;
-    
- }
+@media (min-width: 768px) {
+  .seance {
+    min-width: 120px;
+    padding: 0 25px;
+  }
+}
 
- #nousdeouvrir{
+ #nousdecouvrir{
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
@@ -517,7 +535,7 @@ ul{
 }
 
 .content:hover{
-    opacity: 1;
+    opacity: 2;
 }
 
 .content h1{
@@ -741,7 +759,7 @@ ul{
     
 }
 
-#bodyfaq{
+.faq-container{
     background-image: url('image/popcorn.jpg');
     background-size: cover;
     background-position: center;
@@ -802,5 +820,3 @@ form {
 .form-text {
     color: #6c757d;
 }
-
-

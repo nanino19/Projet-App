@@ -12,7 +12,7 @@ echo '
 			<form>
 			<input type="search" name="q" placeholder="Rechercher un film">
 		</form>
-			<li><a href="../page/nosfilms.php">Mon Compte</a></li>
+			<li><a href="../page/connexion.php">Mon Compte</a></li>
 			<li><a href="../page/inscription.php">Creer un Compte</a></li>
 		</ul>
 	</nav>

@@ -8,11 +8,9 @@
 	</div>	
 </section>
 <div class="wrapper">
-	<div class="image">
-		<div class="content">
-			<h1> Venez nous découvrir </h1>
-			<p> Hasbulla Magomedov</p>
-		</div>
+	<div class="contentation">
+		<h1> Venez nous découvrir </h1>
+		<p> Hasbulla Magomedov</p>
 	</div>
 </div>
 <div class="container">
