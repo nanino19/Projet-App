@@ -1,7 +1,12 @@
+
+
 <?php include('../composant/header.php'); ?>
 <?php include('../composant/menu.php'); ?>
+
+
+<div class="bodyfaq">
 <div class="intro">
-    Besoin d'aide ?
+    Besoin d'aide ?     
 </div>
 <div class="espace">
 
@@ -53,6 +58,8 @@
         </div>
     </div>
 </div>
+ 
+</div>
 
 <script>
     document.querySelectorAll('.question').forEach(item => {
@@ -61,6 +68,9 @@
             answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
         });
     });
+    
 </script>
 
+
 <?php include('../composant/footer.php'); ?>
+

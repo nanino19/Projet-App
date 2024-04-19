@@ -625,14 +625,14 @@ ul{
 }
 
 .intro {
-    margin-top: 20px;
+    margin-top: 1px;
+    margin-bottom : 80px;
 
     font-weight: bold;
     font-size: 32px;
 
-    position: absolute;
 
-    left: 50%;
+    left: 70%;
     transform: translate(-50%);
     text-align: center;
     margin-bottom : 20px;
@@ -644,10 +644,11 @@ ul{
 }
 
 .espace {
-    margin-top: 100px;
+    margin-top: 1px;
 }
 
 .faq-container {
+    margin-top: 40px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -741,8 +742,8 @@ ul{
     
 }
 
-#bodyfaq{
-    background-image: url('image/popcorn.jpg');
+.bodyfaq{
+    background-image: url(image/popcorn.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
