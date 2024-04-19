@@ -1,6 +1,7 @@
 <?php include ('../composant/header.php'); ?>
 <?php include ('../composant/menu.php'); ?>
 
+<body id="Inscription" class="custom-background">
 
 
 <form method="POST" action="../back/inscription.php">
@@ -36,5 +37,5 @@
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
-
+</body>
 <?php include ('../composant/footer.php'); ?>

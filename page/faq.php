@@ -1,5 +1,6 @@
 <?php include('../composant/header.php'); ?>
 <?php include('../composant/menu.php'); ?>
+
 <div class="intro">
     Besoin d'aide ?
 </div>
