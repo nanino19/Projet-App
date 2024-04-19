@@ -52,4 +52,4 @@ if (isset($_SESSION['errors_subscribe']) && !empty($_SESSION['errors_subscribe']
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 
-<?php include('../composant/footer.php'); ?>
+<?php include ('../composant/footer.php'); ?>

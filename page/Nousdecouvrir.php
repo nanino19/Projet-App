@@ -1,16 +1,19 @@
 <?php include('../composant/header.php'); ?>
 <?php include('../composant/menu.php'); ?>
 </div>
-<section id="blog">
+<div class="blog">
 	<div class="blog-heading">
 		<h2>Cinemanager</h2>
 		<h3>La start-up du bon son</h3>
 	</div>	
-</section>
-<div class="wrapper">
-	<div class="contentation">
-		<h1> Venez nous découvrir </h1>
-		<p> Hasbulla Magomedov</p>
+</div>
+<div class="wrapper">	
+	<div class="wrapper2">
+		<img src="../image/travail-de-groupe.webp">
+		<div class="wrapper3">
+			<h1> Venez nous découvrir </h1>
+			<p> Hasbulla Magomedov</p>
+		</div>
 	</div>
 </div>
 <div class="container">

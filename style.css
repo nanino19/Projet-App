@@ -451,7 +451,7 @@ ul{
 }
 
 
-#blog{
+.blog{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -493,34 +493,27 @@ ul{
 
 .wrapper{
     width: 100%;
-    height: 150vh;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url(image/travail-de-groupe.webp);
-    background-size: cover; /* Ajuste la taille de l'image pour couvrir toute la zone */
-    background-position: center; /* Positionne l'image au centre de l'élément */
-    background-repeat: no-repeat; /* Empêche la répétition de l'image */
+    margin-bottom: 25px;   
 }
 
-.image{
-    width: 900px;
-    position: relative;
-    display: flex;
-    justify-content:center;
-    align-items: center;    
+
+.wrapper2{
+    width: 800px;
+    position: relative;   
 }
 
-.image img {
+.wrapper2 img{
     width: 100%;
-    margin-top: 0;
-    display: flex;
-    justify-content:center;
-    align-items: center;    
+    display: block;
+    margin: auto;
 }
 
-.content{
-    width: 900px;
+.wrapper3{
+    width: 100%;
     height: 100%;
     top: 0;
     left: 0;
@@ -538,28 +531,34 @@ ul{
     opacity: 2;
 }
 
-.content h1{
+.wrapper3 h1{
     font-size: 55px;
     color: #fff  ;
     margin-bottom: 15px;
 }
 
-.content p {
+.wrapper3 p{
+    font-size: 19px;
+    color: #fff;
+}
+
+.wrapper3:hover p {
     font-size: 25px;
     color: #fff;
 }
 
-.content > *{
+.wrapper3 > *{
     transform: translateY(25px);
     transition: transform 0.6s;
 }
 
-.content:hover > *{
+.wrapper3:hover > *{
     transform: translateY(0px);
 }
 
 .container{
-    width: 90%;
+    width: 85%;
+    height: 100%;
     margin: 0px auto;
     padding: 10px 20px;
 }
@@ -820,3 +819,5 @@ form {
 .form-text {
     color: #6c757d;
 }
+
+

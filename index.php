@@ -35,7 +35,7 @@ if (isset($_SESSION['login_error']) && !empty($_SESSION['login_error'])) {
 </a>
 	<nav>
 		<ul class="menu">
-			<li><a href="page/Nousdecouvrir.php">Nous decouvrir</a></li>
+			<li><a href="page/Nousdecouvrir.php">Nous decouvrir </a></li>
 			<li><a href="page/nosfilms.php">Films</a></li>
 			<li><a href="page/faq.php">Forum</a></li>
 			<form>
@@ -52,7 +52,7 @@ if (isset($_SESSION['login_error']) && !empty($_SESSION['login_error'])) {
 	<div class="list">
 		<div class="item">
 			<img src="image/image1.webp">
-			<div class="content">
+			<div class="contents">
 				<div class="title">DESIGN SLIDER</div>
 				<div class="topic">ANIMAL</div>
 				<div class="des">
@@ -67,7 +67,7 @@ if (isset($_SESSION['login_error']) && !empty($_SESSION['login_error'])) {
 		</div>
 		<div class="item">
 			<img src="image/image2.webp">
-			<div class="content">
+			<div class="contents">
 				<div class="title">DESIGN SLIDER</div>
 				<div class="topic">ANIMAL</div>
 				<div class="des">
@@ -81,7 +81,7 @@ if (isset($_SESSION['login_error']) && !empty($_SESSION['login_error'])) {
 		</div>
 		<div class="item">
 			<img src="image/image3.webp">
-			<div class="content">
+			<div class="contents">
 				<div class="title">DESIGN SLIDER</div>
 				<div class="topic">ANIMAL</div>
 				<div class="des">
@@ -95,7 +95,7 @@ if (isset($_SESSION['login_error']) && !empty($_SESSION['login_error'])) {
 		</div>
 		<div class="item">
 			<img src="image/image4.webp">
-			<div class="content">
+			<div class="contents">
 				<div class="title">DESIGN SLIDER</div>
 				<div class="topic">ANIMAL</div>
 				<div class="des">
@@ -112,7 +112,7 @@ if (isset($_SESSION['login_error']) && !empty($_SESSION['login_error'])) {
 	<div class="thumbnail">
 		<div class="item">
 			<img src="image/image1.webp">
-			<div class="content">
+			<div class="contents">
 				<div class="title">
 					Name Slider
 				</div>
@@ -123,7 +123,7 @@ if (isset($_SESSION['login_error']) && !empty($_SESSION['login_error'])) {
 		</div>
 		<div class="item">
 			<img src="image/image2.webp">
-			<div class="content">
+			<div class="contents">
 				<div class="title">
 					Name Slider
 				</div>
@@ -134,7 +134,7 @@ if (isset($_SESSION['login_error']) && !empty($_SESSION['login_error'])) {
 		</div>
 		<div class="item">
 			<img src="image/image3.webp">
-			<div class="content">
+			<div class="contents">
 				<div class="title">
 					Name Slider
 				</div>
@@ -145,7 +145,7 @@ if (isset($_SESSION['login_error']) && !empty($_SESSION['login_error'])) {
 		</div>
 		<div class="item">
 			<img src="image/image4.webp">
-			<div class="content">
+			<div class="contents">
 				<div class="title">
 					Name Slider
 				</div>
@@ -165,11 +165,24 @@ if (isset($_SESSION['login_error']) && !empty($_SESSION['login_error'])) {
 	<div class="time"></div>
 </div>
 
+
 <section>
 	<h1>A l'affiche</h1>
+	<div>
+       
+        <select id="categories">
+            <option value="Populaire">Populaire</option>
+            <option value="Tout public">Tout public</option>
+            <option value="Senior">Senior</option>
+        </select>
+    </div>
 	<div class="affiches">
-		<a href="#" class="affiche">
+		<a href="#" class="affiche" data-category="Populaire",>
 			<img src="image/affiche.jpg" alt="" class="poster">
+			<button class="seance" type="button">séances</button>
+		</a>
+		<a href="#" class="affiche" data-category="Senior">
+			<img src="image/comedie.jpg" alt="" class="poster">
 			<button class="seance" type="button">séances</button>
 		</a>
 		<a href="#" class="affiche"></a>
@@ -186,8 +199,13 @@ if (isset($_SESSION['login_error']) && !empty($_SESSION['login_error'])) {
 		<a href="#" class="affiche"></a>
 		<a href="#" class="affiche"></a>
 
+
 	</div>
 </section>
+
+
+
+
 
 <div class ="footer">
 	<div class="icone">
@@ -212,12 +230,19 @@ if (isset($_SESSION['login_error']) && !empty($_SESSION['login_error'])) {
 				<li><a href="#">Forum</a></li>
 				
 			</ul>
+			
+		
+
 	</div>
+	
+	
+
 </div>
 <div class="image">
-	<!--<p>Copyright copy;2024;Designed by <span class="deigner">Magik Systems</span></p>-->
+	
 	<img src="image/footer.png" alt="footer image" class="footer_ima">
 </div>
-<script src= "../app.js"></script>
+<script src="app.js"></script>
+<script src="affiche.js"></script>
 </body>
 </html>
