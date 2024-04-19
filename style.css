@@ -803,4 +803,64 @@ form {
     color: #6c757d;
 }
 
+.container_affiche {
+    display: flex; /* Utilisation de flexbox pour aligner les éléments */
+    align-items: center; /* Centrer verticalement les éléments */
+}
+
+.container_affiche img {
+    width: 300px; /* Largeur de votre image */
+    margin: 20px; /* Marge à droite pour séparer l'image du texte */
+    border-radius: 10px;
+}
+
+.container_affiche .texte {
+    flex: 1; /* Le texte prendra tout l'espace restant */
+    margin-right: 200px;
+}
+
+.container_cinema {
+    display: flex; /* Utilisation de flexbox pour aligner les éléments */
+    align-items: center; /* Centrer verticalement les éléments */
+}
+
+.container_cinema img {
+    width: 300px; /* Largeur de votre image */
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.container_cinema .texte {
+    margin-right: 20px;
+}
+.container_cinema .box_seance {
+    flex: 1; /* Le texte prendra tout l'espace restant */
+    background-color: #C83606;
+    border-radius: 12px;
+    margin: 20px;
+    padding: 20px;
+}
+
+.button_seance {
+    background-color: white;
+    border-radius: 12px;
+    margin: 5px;
+    padding: 20px;
+    position: relative;
+    background-color: #EDE8DF;
+    cursor: pointer;
+    box-shadow: inset 0 0 0 0 #FBD314;
+    -webkit-transition: ease-out 0.4s;
+    -moz-transition: ease-out 0.4s;
+    transition: ease-out 0.4s;
+}
+.slide_right:hover {
+    box-shadow: inset 400px 0 0 0 #FBD314;
+  }
+.button_seance .texte_version{
+    position:absolute;
+    top : 5px;
+    left : 5px;
+    font-size: 10px;
+}
 
