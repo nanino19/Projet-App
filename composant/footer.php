@@ -2,6 +2,7 @@
 <?php
 echo '
 
+
 <div class ="footer">
 	<div class="icone">
 		<p>Retrouvez nous sur:</p>
@@ -18,9 +19,10 @@ echo '
 	<div class="naviguation">
 		
 			<ul>
-				<li><a href="../page/contact.php">Contact</a></li>
-				<li><a href="#">CGU</a></li>
-				<li><a href="#">Mentions légales</a></li>
+				
+				<li><a href="#">Contact</a></li>
+				<li><a href="../page/cgu.php">CGU</a></li>
+				<li><a href="../page/mentionslegales.php">Mentions légales</a></li>
 				<li><a href="#">Forum</a></li>
 				
 			</ul>

@@ -528,7 +528,7 @@ ul{
 }
 
 .content:hover{
-    opacity: 2;
+    opacity: 1;
 }
 
 .wrapper3 h1{
@@ -572,16 +572,18 @@ ul{
 
 .about-image{
     flex: 1;
-    margin-right: 40px;
+    margin-right: 20px;
+    margin-left: 40px;
     overflow: hidden;
+    border-radius: 20px;
 }
 
 .about-image img{
-    max-width: 60%;
-    height: auto;
+    max-width: 80%;
+    height: 50vh;
     display: block;
     transition: 1s ease;
-    border-radius: 40px;
+    border-radius: 20px;
 }
 
 .about-image:hover img{
@@ -614,6 +616,7 @@ ul{
     border-radius: 25px;
     margin-top: 15px;
     transition: 0.3s ease;
+    margin-bottom: 100px;
 }
 
 .about-content .button:hover{
@@ -641,19 +644,64 @@ ul{
     }
 }
 
-.intro {
-    margin-top: 20px;
+.container2{
+    width: 1000px; 
+    margin: 0 auto; 
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 
+.container2 h4{
+    font-size: 2.4rem;
+    color: #C83606;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.container2 h4::after{
+    content: "";
+    position: absolute;
+    width: 630px;
+    height: 4px;
+    display: block;
+    margin: 0 auto;
+    background-color: #C83606;
+}
+
+.container2 h5{
+    color: #080200;
+    font-weight: 600;
+    margin-bottom: 0px;
+}
+
+
+.container2 h6{
+    font-size: 1.2rem;
+    color: #080200;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+
+.container2 h7{
+    font-size: 1rem;
+    color: #080200;
+    font-weight: 600;
+    margin-top: 40px;
+    margin-bottom: 50px;
+}
+
+
+.intro {
+    margin-bottom : 80px;
     font-weight: bold;
     font-size: 32px;
-
-    position: absolute;
-
-    left: 50%;
+    left: 1000px;
     transform: translate(-50%);
     text-align: center;
-    margin-bottom : 20px;
-
     background-color: #ededed; /* Couleur de fond main texte*/
     padding: 10px 20px; /* Remplissage autour du texte */
     border-radius: 10px; /* Coins arrondis */
@@ -661,10 +709,11 @@ ul{
 }
 
 .espace {
-    margin-top: 100px;
+    margin-top: 1px;
 }
 
 .faq-container {
+    margin-top: 40px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -756,8 +805,8 @@ ul{
     
 }
 
-.faq-container{
-    background-image: url('image/popcorn.jpg');
+.bodyfaq{
+    background-image: url(image/popcorn.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
