@@ -224,7 +224,7 @@ if (isset($_SESSION['login_error']) && !empty($_SESSION['login_error'])) {
 		
 			<ul>
 				
-				<li><a href="#">Contact</a></li>
+				<li><a href="../Projet-App/page/contact.php">Contact</a></li>
 				<li><a href="page/cgu.php">CGU</a></li>
 				<li><a href="page/mentionslegales.php">Mentions légales</a></li>
 				<li><a href="#">Forum</a></li>
