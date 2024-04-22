@@ -528,7 +528,7 @@ ul{
 }
 
 .content:hover{
-    opacity: 2;
+    opacity: 1;
 }
 
 .wrapper3 h1{
@@ -572,16 +572,18 @@ ul{
 
 .about-image{
     flex: 1;
-    margin-right: 40px;
+    margin-right: 20px;
+    margin-left: 40px;
     overflow: hidden;
+    border-radius: 20px;
 }
 
 .about-image img{
-    max-width: 60%;
-    height: auto;
+    max-width: 80%;
+    height: 50vh;
     display: block;
     transition: 1s ease;
-    border-radius: 40px;
+    border-radius: 20px;
 }
 
 .about-image:hover img{
