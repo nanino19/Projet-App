@@ -17,6 +17,15 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
+--
+-- Base de données : `cinemanager`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `capteur`
+--
 
 DROP TABLE IF EXISTS `capteur`;
 CREATE TABLE IF NOT EXISTS `capteur` (

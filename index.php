@@ -12,6 +12,23 @@
 </head>
 
 <body>
+<?php
+session_start();
+
+if (isset($_GET['msg']) && $_GET['msg'] == "login_success" && $_SESSION["user"]) {
+	print_r ($_SESSION["user"]);
+    echo '<div class="alert alert-success" role="alert">
+      Login validée!
+    </div>';
+}
+// Vérifiez si il y a des messages d'erreur stockés dans la session
+if (isset($_SESSION['login_error']) && !empty($_SESSION['login_error'])) {
+    echo '<div class="alert alert-success" role="alert">' .
+        $_SESSION["login_error"]; // Afficher les erreurs.
+    '</div>';
+    unset($_SESSION['login_error']); // Nettoyer les erreurs de la session après les avoir affichées
+}
+?>
 <div class= "header">
 	<a href="index.php">
 	<img src="image/logo.png" alt="Logo" class="logo" >
@@ -24,7 +41,7 @@
 			<form>
 			<input type="search" name="q" placeholder="Rechercher un film">
 		</form>
-			<li><a href="page/nosfilms.php">Mon Compte</a></li>
+			<li><a href="page/connexion.php">Mon Compte</a></li>
 			<li><a href="page/inscription.php">Creer un Compte</a></li>
 		</ul>
 	</nav>

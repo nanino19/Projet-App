@@ -2,6 +2,7 @@
 <?php
 echo '
 
+
 <div class ="footer">
 	<div class="icone">
 		<p>Retrouvez nous sur:</p>
