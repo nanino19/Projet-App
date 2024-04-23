@@ -204,9 +204,6 @@ if (isset($_SESSION['login_error']) && !empty($_SESSION['login_error'])) {
 </section>
 
 
-
-
-
 <div class ="footer">
 	<div class="icone">
 		<p>Retrouvez nous sur:</p>
@@ -230,13 +227,13 @@ if (isset($_SESSION['login_error']) && !empty($_SESSION['login_error'])) {
 				<li><a href="#">Forum</a></li>
 				
 			</ul>
+
+
 			
-		
-
 	</div>
-	
-	
 
+
+	
 </div>
 <div class="image">
 	
