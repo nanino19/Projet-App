@@ -7,16 +7,15 @@
 <div class="intro">
     Besoin d'aide ?     
 </div>
-<div class="espace">
 
-</div>
+
 
 <div class="faq-container">
 
     <div class="sidebar">
         <!-- Nouvelles questions -->
         <div class="question">
-            <h2>Question 1 : Qu'est-ce que PHP ?</h2>
+            <h2>Question 1 : Qu'est-ce que le PHP ?</h2>
             <div class="answer">
                 <p>PHP (Hypertext Preprocessor) est un langage de script utilisé pour le développement d'applications Web côté serveur.</p>
             </div>
@@ -57,8 +56,14 @@
         </div>
     </div>
 </div>
- 
+
+
+<div class="espace">
+
 </div>
+</div>
+
+
 
 <script>
     document.querySelectorAll('.question').forEach(item => {

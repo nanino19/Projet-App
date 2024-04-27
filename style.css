@@ -639,7 +639,7 @@ ul{
         padding: 0px;
         font-size: 16px;
     }
-    .about-content .read-more{
+        .about-content .read-more{
         font-size: 16px;
     }
 }
@@ -752,30 +752,50 @@ ul{
 
 
 .intro {
-    margin-bottom : 80px;
+    margin-top: 28px;
+    margin-bottom: 50px;
     font-weight: bold;
-    font-size: 32px;
-    left: 1000px;
-    transform: translate(-50%);
-    text-align: center;
-    background-color: #ededed; /* Couleur de fond main texte*/
-    padding: 10px 20px; /* Remplissage autour du texte */
-    border-radius: 10px; /* Coins arrondis */
-    display: inline-block; /* Pour que la largeur s'ajuste au contenu */
+    font-size: 42px;
+    text-align: center; /* Centrer horizontalement */
+    margin-bottom: 20px;
+    background-color: #fef5f5cf;
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+.bodyfaq{
+    background-image: url(image/popcorn.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position:relative;
 }
 
 .espace {
-    margin-top: 1px;
+        
+        height: 100px;
+        margin-top: 50px;
+        margin-bottom: 50px; /* Ajoutez une marge en bas pour créer de l'espace */
+        position: relative; /* Position absolue pour positionner l'élément .espace */
+   
+    left: 0; /* Alignement à gauche de bodyfaq */
+    width: 100%; /* Largeur pleine de bodyfaq */
+    
+    
+
 }
+
 
 .faq-container {
     margin-top: 40px;
+    margin-bottom: 50px;   
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    max-width: 900px; /* Ajustez la largeur totale des colonnes */
-    margin: 50px auto;
-    padding: 20px;
+    max-width: 1100px; /* Ajustez la largeur totale des colonnes */
+    margin: 70px auto;
+    padding: 30px;
     background-color: #e2e1e1;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -791,23 +811,25 @@ ul{
 
 .question {
     cursor: pointer;
-    margin-bottom: 10px;
-    padding: 10px;
-    border-radius: 4px;
+    margin-bottom: 25px;
+    margin-left : 20px;
+    margin-right: 20px;
+    padding: 15px;
+    border-radius: 20px;
     transition: background-color 0.3s; 
-    background-color: #eaeaea;
+    background-color: #e3b0b0;
 }
 
 
 .question:hover {
-    background-color: #ccc; 
+    background-color: #ebf76c; 
 }
 
 .answer {
     display: none;
     padding: 10px;
     background-color: #ffffff;
-    border-radius: 4px;
+    border-radius: 20px;
 }
 
 .footer{
@@ -861,12 +883,7 @@ ul{
     
 }
 
-.bodyfaq{
-    background-image: url(image/popcorn.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
+
 
 /* Style pour le formulaire */
 form {
