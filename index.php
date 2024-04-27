@@ -165,7 +165,6 @@ if (isset($_SESSION['login_error']) && !empty($_SESSION['login_error'])) {
 	<div class="time"></div>
 </div>
 
-
 <section>
 	<h1>A l'affiche</h1>
 	<div>
@@ -204,6 +203,9 @@ if (isset($_SESSION['login_error']) && !empty($_SESSION['login_error'])) {
 </section>
 
 
+
+
+
 <div class ="footer">
 	<div class="icone">
 		<p>Retrouvez nous sur:</p>
@@ -221,19 +223,19 @@ if (isset($_SESSION['login_error']) && !empty($_SESSION['login_error'])) {
 		
 			<ul>
 				
-				<li><a href="../Projet-App/page/contact.php">Contact</a></li>
+				<li><a href="page/contact.php">Contact</a></li>
 				<li><a href="page/cgu.php">CGU</a></li>
 				<li><a href="page/mentionslegales.php">Mentions légales</a></li>
 				<li><a href="#">Forum</a></li>
 				
 			</ul>
-
-
 			
+		
+
 	</div>
-
-
 	
+	
+
 </div>
 <div class="image">
 	
