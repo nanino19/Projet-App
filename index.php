@@ -15,37 +15,73 @@
 <?php
 session_start();
 
-if (isset($_GET['msg']) && $_GET['msg'] == "login_success" && $_SESSION["user"]) {
-	print_r ($_SESSION["user"]);
-    echo '<div class="alert alert-success" role="alert">
-      Login validée!
-    </div>';
-}
-// Vérifiez si il y a des messages d'erreur stockés dans la session
-if (isset($_SESSION['login_error']) && !empty($_SESSION['login_error'])) {
-    echo '<div class="alert alert-success" role="alert">' .
-        $_SESSION["login_error"]; // Afficher les erreurs.
-    '</div>';
-    unset($_SESSION['login_error']); // Nettoyer les erreurs de la session après les avoir affichées
+include("back/pdo.php"); // Inclure le fichier pdo.php pour obtenir la connexion PDO
+
+// Rediriger les messages d'erreur vers le journal des erreurs du serveur
+ini_set('log_errors', 1);
+ini_set('error_log', 'php_errors.log');
+
+//code correspondant à la requête bdd pour la barre de recherche
+@$keywords = $_GET["keywords"];
+@$valider = $_GET["valider"];
+if (isset($valider) && !empty(trim($keywords))) {
+    $words = explode(" ", trim($keywords));
+    for ($i = 0; $i < count($words); $i++)
+        $kw[$i] = "titre like '%" . $words[$i] . "%' ";
+    $pdo = connectBdd(); // Appeler la fonction connectBdd() pour obtenir la connexion PDO
+    if ($pdo) { // Vérification de la connexion à la base de données
+        $res = $pdo->prepare("select titre from film where " . implode(" OR ", $kw)); //lorsqu'on met plusieurs mots dans la barre de recherche, c'est pris en compte
+        $res->setFetchMode(PDO::FETCH_ASSOC);
+        $res->execute();
+        $tab = $res->fetchAll();
+        $afficher = "oui";
+    } else {
+        error_log("Erreur de connexion à la base de données."); // Envoyer le message d'erreur au journal des erreurs du serveur
+    }
+    // Afficher la réponse sous forme d'alerte
+    if (@$afficher == "oui" && count($tab) > 0) {
+        $resultMessage = count($tab) . " " . (count($tab) > 1 ? "résultats trouvés" : "résultat trouvé");
+        foreach ($tab as $film) {
+            $resultMessage .= "\n" . $film["titre"];
+        }
+        $resultMessage = rawurlencode($resultMessage);
+        echo "<script>alert(decodeURIComponent('" .  $resultMessage . "'));</script>";
+		$keywords = "";
+    } elseif (@$afficher == "oui" && count($tab) == 0) {
+        echo "<script>alert('Aucun résultat trouvé.');</script>";	
+    }
 }
 ?>
-<div class= "header">
-	<a href="index.php">
-	<img src="image/logo.png" alt="Logo" class="logo" >
-</a>
-	<nav>
-		<ul class="menu">
-			<li><a href="page/Nousdecouvrir.php">Nous decouvrir </a></li>
-			<li><a href="page/nosfilms.php">Films</a></li>
-			<li><a href="page/faq.php">Forum</a></li>
-			<form>
-			<input type="search" name="q" placeholder="Rechercher un film">
-		</form>
-			<li><a href="page/connexion.php">Mon Compte</a></li>
-			<li><a href="page/inscription.php">Creer un Compte</a></li>
-		</ul>
-	</nav>
-</div>
+<script>
+    
+    function clearSearch() {
+        document.getElementById('searchInput').value = '';
+    }
+</script>
+<div class="header">
+    <a href="index.php">
+        <img src="image/logo.png" alt="Logo" class="logo">
+    </a>
+    <nav>
+        <ul class="menu">
+            <li><a href="page/Nousdecouvrir.php">Nous decouvrir </a></li>
+            <li><a href="page/nosfilms.php">Films</a></li>
+            <li><a href="page/faq.php">Forum</a></li>
+            <form name="fo" method="get" action="">
+    			<input type="search" id="searchInput" name="keywords" value="<?php echo $keywords ?>" placeholder="Rechercher un film">
+    			<input type="submit" name="valider" value="Rechercher">
+    			<button type="button" onclick="clearSearch()">X</button> <!-- Bouton pour effacer la recherche -->
+			</form>
+            <li><a href="page/connexion.php">Mon Compte</a></li>
+            <li><a href="page/inscription.php">Creer un Compte</a></li>
+        </ul>
+    </nav>
+</div> 
+
+
+
+
+
 <!-- carousel -->
 <div class="carousel">
 	<!-- list item -->
@@ -185,7 +221,11 @@ if (isset($_SESSION['login_error']) && !empty($_SESSION['login_error'])) {
 			<img src="image/comedie.jpg" alt="" class="poster">
 			<button class="seance" type="button">séances</button>
 		</a>
-		<a href="#" class="affiche"></a>
+		<a href="page/Nosfilms.php" class="affiche" data-category="Populaire">
+			<img src="image/dune.jpg" alt="" class="poster">
+			<button class="seance" type="button">séances</button>
+		</a>
+		
 		<a href="#" class="affiche"></a>
 		<a href="#" class="affiche"></a>
 		<a href="#" class="affiche"></a>

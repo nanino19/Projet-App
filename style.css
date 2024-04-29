@@ -1,6 +1,7 @@
 body{
 	margin:0px;
 	padding: 0px;
+    
 	background-color: #EDE8DF;
 	text-align: center;
     font-family: Arial, sans-serif;
@@ -10,6 +11,7 @@ body{
 	background-color: #F4E4C6;
 	height: 190px;
 	margin: 0px;
+    max-width: auto;
 	display: flex;
 	align-items: center; 
     background-position: center;
@@ -336,10 +338,7 @@ select {
     display:flex ;
 }
 
-select option[value="Populaire"]{
-    background-color: #000;
 
-}
  section{
     position: relative;
     width: 100%;
