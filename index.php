@@ -13,7 +13,6 @@
 
 <body>
 <?php
-session_start();
 
 if (isset($_GET['msg']) && $_GET['msg'] == "login_success" && $_SESSION["user"]) {
 	print_r ($_SESSION["user"]);
@@ -21,6 +20,7 @@ if (isset($_GET['msg']) && $_GET['msg'] == "login_success" && $_SESSION["user"])
       Login validée!
     </div>';
 }
+
 // Vérifiez si il y a des messages d'erreur stockés dans la session
 if (isset($_SESSION['login_error']) && !empty($_SESSION['login_error'])) {
     echo '<div class="alert alert-success" role="alert">' .

@@ -769,7 +769,8 @@ ul{
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    position:relative;
+    z-index: 1;
+    position: initial;
 }
 
 .espace {
@@ -1075,6 +1076,7 @@ form {
     color: white;
     padding: 10px;
     box-sizing: border-box;
+    z-index: 1000;
   }
   
   .admin-profile {
