@@ -20,6 +20,25 @@ include("back/pdo.php"); // Inclure le fichier pdo.php pour obtenir la connexion
 // Rediriger les messages d'erreur vers le journal des erreurs du serveur
 ini_set('log_errors', 1);
 ini_set('error_log', 'php_errors.log');
+<?php
+
+if (isset($_GET['msg']) && $_GET['msg'] == "login_success" && $_SESSION["user"]) {
+    print_r ($_SESSION["user"]);
+    echo '<div class="alert alert-success" role="alert">
+      Login validée!
+    </div>';
+}
+
+// Vérifiez si il y a des messages d'erreur stockés dans la session
+if (isset($_SESSION['login_error']) && !empty($_SESSION['login_error'])) {
+    echo '<div class="alert alert-success" role="alert">' .
+        $_SESSION["login_error"]; // Afficher les erreurs.
+    '</div>';
+    unset($_SESSION['login_error']); // Nettoyer les erreurs de la session après les avoir affichées
+
+}
+
+?>
 
 //code correspondant à la requête bdd pour la barre de recherche
 @$keywords = $_GET["keywords"];
@@ -87,13 +106,13 @@ if (isset($valider) && !empty(trim($keywords))) {
 	<!-- list item -->
 	<div class="list">
 		<div class="item">
-			<img src="image/image1.webp">
+			<img src="image/banniere1.jpg">
 			<div class="contents">
-				<div class="title">DESIGN SLIDER</div>
-				<div class="topic">ANIMAL</div>
+				<div class="title">Ils sont de retour</div>
+				<div class="topic">DC COMICS</div>
 				<div class="des">
 					<!-- description -->
-					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi, rem magnam nesciunt minima placeat, itaque eum neque officiis unde, eaque optio ratione aliquid assumenda facere ab et quasi ducimus aut doloribus non numquam. Explicabo, laboriosam nisi reprehenderit tempora at laborum natus unde. Ut, exercitationem eum aperiam illo illum laudantium?
+					Les films DC Comics captivent les spectateurs avec leurs récits épiques et leurs personnages emblématiques. Des débuts de Batman dans "Batman Begins" aux aventures cosmiques de "Justice League", en passant par l'exploration des origines de Superman dans "Man of Steel" et le voyage de découverte de soi de Wonder Woman dans son film éponyme, chaque film offre une immersion dans l'univers complexe et fascinant des super-héros et des supervilains. Avec des thèmes universels tels que le sacrifice, la justice et le pouvoir, ces films apportent une dose d'action, de suspense et d'émotion qui séduit un large public, faisant ainsi honneur au riche héritage des bandes dessinées DC Comics.
 				</div>
 				<div class="buttons">
 					<button>VOIR</button>
@@ -102,44 +121,45 @@ if (isset($valider) && !empty(trim($keywords))) {
 			</div>
 		</div>
 		<div class="item">
-			<img src="image/image2.webp">
+			<img src="image/baniere2.jpg">
 			<div class="contents">
-				<div class="title">DESIGN SLIDER</div>
-				<div class="topic">ANIMAL</div>
+				<div class="title">REDECOUVREZ</div>
+				<div class="topic">LE SEIGNEUR DES ANNEAUX</div>
 				<div class="des">
-					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi, rem magnam nesciunt minima placeat, itaque eum neque officiis unde, eaque optio ratione aliquid assumenda facere ab et quasi ducimus aut doloribus non numquam. Explicabo, laboriosam nisi reprehenderit tempora at laborum natus unde. Ut, exercitationem eum aperiam illo illum laudantium?
+					
+Dans "Le Seigneur des Anneaux", une épopée cinématographique dirigée par Peter Jackson, les spectateurs sont transportés dans un monde fantastique où la magie, l'héroïsme et l'amitié se mêlent dans une lutte épique entre le bien et le mal. Suivant les aventures de Frodo Baggins et de la Communauté de l'Anneau, le voyage pour détruire l'Anneau Unique et vaincre Sauron est rempli de dangers, de batailles grandioses et de moments de bravoure. Les paysages majestueux de la Terre du Milieu, les personnages inoubliables et la profondeur de l'histoire font de cette trilogie un classique du cinéma d'aventure et de fantasy
 				</div>
 				<div class="buttons">
-					<button>SEE MORE</button>
-					<button>SUBSCRIBE</button>
+					<button>VOIR</button>
+					<button>RESERVER</button>
 				</div>
 			</div>
 		</div>
 		<div class="item">
-			<img src="image/image3.webp">
+			<img src="image/banniere3.jpg">
 			<div class="contents">
-				<div class="title">DESIGN SLIDER</div>
-				<div class="topic">ANIMAL</div>
+				<div class="title">NOUVEAUTE</div>
+				<div class="topic">CHALLENGE</div>
 				<div class="des">
-					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi, rem magnam nesciunt minima placeat, itaque eum neque officiis unde, eaque optio ratione aliquid assumenda facere ab et quasi ducimus aut doloribus non numquam. Explicabo, laboriosam nisi reprehenderit tempora at laborum natus unde. Ut, exercitationem eum aperiam illo illum laudantium?
+				"Le Voyage de Chihiro" de Hayao Miyazaki, les spectateurs sont entraînés dans un monde onirique rempli de mystères et de merveilles. L'histoire de Chihiro, une jeune fille qui se retrouve piégée dans un monde de créatures fantastiques, explore des thèmes tels que la courage, l'acceptation du changement et la compassion. Avec son animation magnifique et sa narration envoûtante, ce film d'animation japonais est devenu un chef-d'œuvre acclamé par la critique et aimé par les spectateurs du monde entier.
 				</div>
 				<div class="buttons">
-					<button>SEE MORE</button>
-					<button>SUBSCRIBE</button>
+					<button>VOIR</button>
+					<button>RESERVER</button>
 				</div>
 			</div>
 		</div>
 		<div class="item">
-			<img src="image/image4.webp">
+			<img src="image/banniere4.jpg">
 			<div class="contents">
-				<div class="title">DESIGN SLIDER</div>
-				<div class="topic">ANIMAL</div>
+				<div class="title">BOUUM</div>
+				<div class="topic">OPPENHEIMER</div>
 				<div class="des">
-					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi, rem magnam nesciunt minima placeat, itaque eum neque officiis unde, eaque optio ratione aliquid assumenda facere ab et quasi ducimus aut doloribus non numquam. Explicabo, laboriosam nisi reprehenderit tempora at laborum natus unde. Ut, exercitationem eum aperiam illo illum laudantium?
+				Dans "Interstellar", dirigé par Christopher Nolan, l'humanité est confrontée à son destin dans un futur où la Terre est sur le point de devenir inhabitable. Avec des théories scientifiques complexes et des enjeux émotionnels poignants, le film explore les frontières de l'espace et du temps, offrant une expérience cinématographique captivante qui pousse les spectateurs à réfléchir sur notre place dans l'univers et les sacrifices nécessaires pour assurer la survie de l'espèce humaine
 				</div>
 				<div class="buttons">
-					<button>SEE MORE</button>
-					<button>SUBSCRIBE</button>
+					<button>VOIR</button>
+					<button>RESERVER</button>
 				</div>
 			</div>
 		</div>
@@ -147,46 +167,46 @@ if (isset($valider) && !empty(trim($keywords))) {
 	<!-- Vignette -->
 	<div class="thumbnail">
 		<div class="item">
-			<img src="image/image1.webp">
+			<img src="image/banniere1.jpg">
 			<div class="contents">
 				<div class="title">
-					Name Slider
+					Dc Comics
 				</div>
 				<div class="description">
-					Description
+					
 				</div>
 			</div>
 		</div>
 		<div class="item">
-			<img src="image/image2.webp">
+			<img src="image/baniere2.jpg">
 			<div class="contents">
 				<div class="title">
-					Name Slider
+					Le seigneur des anneaux
 				</div>
 				<div class="description">
-					Description
+					
 				</div>
 			</div>
 		</div>
 		<div class="item">
-			<img src="image/image3.webp">
+			<img src="image/banniere3.jpg">
 			<div class="contents">
 				<div class="title">
-					Name Slider
+					Challenge
 				</div>
 				<div class="description">
-					Description
+					
 				</div>
 			</div>
 		</div>
 		<div class="item">
-			<img src="image/image4.webp">
+			<img src="image/banniere4.jpg">
 			<div class="contents">
 				<div class="title">
-					Name Slider
+					Oppenheimer
 				</div>
 				<div class="description">
-					Description
+					
 				</div>
 			</div>
 		</div>
@@ -224,12 +244,28 @@ if (isset($valider) && !empty(trim($keywords))) {
 			<img src="image/dune.jpg" alt="" class="poster">
 			<button class="seance" type="button">séances</button>
 		</a>
+		<a href="#" class="affiche" data-category="Populaire">
+			<img src="image/banniere4.jpg" alt="" class="poster">
+			<button class="seance" type="button">séances</button>
+		</a>
+		<a href="#" class="affiche" data-category="Populaire">
+			<img src="image/banniere3.jpg" alt="" class="poster">
+			<button class="seance" type="button">séances</button>
+		</a>
+		<a href="#" class="affiche" data-category="Populaire">
+			<img src="image/pana.jpg" alt="" class="poster">
+			<button class="seance" type="button">séances</button>
+		</a>
+		<a href="#" class="affiche" data-category="Populaire">
+			<img src="image/tenet.jpg" alt="" class="poster">
+			<button class="seance" type="button">séances</button>
+		</a>
+		<a href="#" class="affiche" data-category="Populaire">
+			<img src="image/hasbi.jpg" alt="" class="poster">
+			<button class="seance" type="button">séances</button>
+		</a>
 		
-		<a href="#" class="affiche"></a>
-		<a href="#" class="affiche"></a>
-		<a href="#" class="affiche"></a>
-		<a href="#" class="affiche"></a>
-		<a href="#" class="affiche"></a>
+		
 		<a href="#" class="affiche"></a>
 		<a href="#" class="affiche"></a>
 		<a href="#" class="affiche"></a>
@@ -243,7 +279,36 @@ if (isset($valider) && !empty(trim($keywords))) {
 </section>
 
 
+<section>
+<h1>Evenements</h1>
 
+<div class="evenement">
+    <a href="#" class="evenement">
+        <img src="image/affiche.jpg" alt="" class="evenement-image">
+    </a>
+    <a href="#" class="evenement">
+        <img src="image/comedie.jpg" alt="" class="evenement-image">
+    </a>
+</div>
+
+
+<div class="popup-overlay">
+    <div class="popup">
+        <span class="popup-text">Description de l'événement</span>
+        <span id="places-disponibles" class="places-disponibles">20 places disponibles</span>
+        <button class="reserve-btn" type="button"id="reserve-button">Réserver</button>
+        <button class="reserve-btn" type="button" id="popup-close"> Retour</button>
+
+    </div>
+</div>
+
+
+<script src="evenement.js"></script>
+
+
+
+	
+</section>
 
 
 <div class ="footer">
@@ -277,6 +342,7 @@ if (isset($valider) && !empty(trim($keywords))) {
 	
 
 </div>
+
 <div class="image">
 	
 	<img src="image/footer.png" alt="footer image" class="footer_ima">
