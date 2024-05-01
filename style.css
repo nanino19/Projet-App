@@ -9,7 +9,7 @@ body{
 
 .header{
 	background-color: #F4E4C6;
-	height: 100px;
+	height: 120px;
 	margin: 0px;
     max-width: auto;
 	display: flex;
@@ -1209,3 +1209,99 @@ form {
     background-color: #0056b3; 
 }
   
+.header-car {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #F4E4C6;
+    color: white;
+    height: 120px;
+}
+
+.logo-container {
+    position: relative;
+}
+
+.search-form {
+    margin-left: 20px; /* Espacement entre le logo et le formulaire de recherche */
+}
+
+.menu-car {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    display: none;
+}
+
+.logo-container:hover .menu-car {
+    display: block;
+}
+
+.menu-car ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-car ul li {
+    margin: 0;
+}
+
+.menu-car ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+}
+
+.menu-car ul li a:hover {
+    background-color: #F4E4C6;
+}
+.container-profil{
+    font-family: 'Koulen';font-size: 22px;
+    height: 300px;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    max-width: 600px;
+    margin: 100px auto;
+    background-color:#F4E4C6 ;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Effet d'ombre */
+    padding: 20px;
+}
+.container-profil p {
+    margin-bottom: 10px;
+    color: #C83606;
+    letter-spacing: 0.1rem;
+}   
+.btn-modifier {
+    text-decoration: none;
+    padding: 10px;
+    font-family: arial;
+    font-size: 1em;
+    color: #FFFFFF;
+    background-color: #ff0000;
+    border-radius: 24px;
+    -webkit-border-radius: 24px;
+    -moz-border-radius: 24px;
+    border: 4px solid #FFFFFF;
+    box-shadow: 3px 3px 12px #444444;
+    -webkit-box-shadow: 3px 3px 12px #444444;
+    -moz-box-shadow: 3px 3px 12px #444444;
+    }
+    
+    
+    .btn-modifier:hover {
+    padding: 10px;
+    background-color: #d99694;
+    box-shadow: 1px 1px 4px #777777;
+    -webkit-box-shadow: 1px 1px 4px #777777;
+    -moz-box-shadow: 1px 1px 4px #777777;
+    }
+    .oeoe{
+        margin-bottom: 10px;
+    color: #C83606;
+    letter-spacing: 0.1rem;
+    }

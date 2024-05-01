@@ -20,13 +20,10 @@ include("back/pdo.php"); // Inclure le fichier pdo.php pour obtenir la connexion
 // Rediriger les messages d'erreur vers le journal des erreurs du serveur
 ini_set('log_errors', 1);
 ini_set('error_log', 'php_errors.log');
-<?php
 
-if (isset($_GET['msg']) && $_GET['msg'] == "login_success" && $_SESSION["user"]) {
-    print_r ($_SESSION["user"]);
-    echo '<div class="alert alert-success" role="alert">
-      Login validée!
-    </div>';
+
+if (isset($_GET['msg']) && $_GET['msg'] == "login_success" && isset($_SESSION["user"])) {
+    
 }
 
 // Vérifiez si il y a des messages d'erreur stockés dans la session
@@ -38,7 +35,7 @@ if (isset($_SESSION['login_error']) && !empty($_SESSION['login_error'])) {
 
 }
 
-?>
+
 
 //code correspondant à la requête bdd pour la barre de recherche
 @$keywords = $_GET["keywords"];
@@ -77,25 +74,27 @@ if (isset($valider) && !empty(trim($keywords))) {
         document.getElementById('searchInput').value = '';
     }
 </script>
-<div class="header">
-    <a href="index.php">
+<div class="header-car">
+    <a href="index.php" class="logo-container">
         <img src="image/logo.png" alt="Logo" class="logo">
     </a>
-    <nav>
-        <ul class="menu">
-            <li><a href="page/Nousdecouvrir.php">Nous decouvrir </a></li>
+    <form name="fo" method="get" action="" class="search-form">
+        <input type="search" id="searchInput" name="keywords" value="<?php echo $keywords ?>" placeholder="Rechercher un film">
+        <input type="submit" name="valider" value="Rechercher">
+        <button type="button" onclick="clearSearch()">X</button>
+    </form>
+    <nav class="menu-car">
+        <ul>
+            <li><a href="page/Nousdecouvrir.php">Nous decouvrir</a></li>
             <li><a href="page/nosfilms.php">Films</a></li>
             <li><a href="page/faq.php">Forum</a></li>
-            <form name="fo" method="get" action="">
-    			<input type="search" id="searchInput" name="keywords" value="<?php echo $keywords ?>" placeholder="Rechercher un film">
-    			<input type="submit" name="valider" value="Rechercher">
-    			<button type="button" onclick="clearSearch()">X</button> <!-- Bouton pour effacer la recherche -->
-			</form>
-            <li><a href="page/connexion.php">Mon Compte</a></li>
+            <li><a href="page/profil.php">Bienvenue, <?php echo isset($_SESSION['user']) ? htmlspecialchars($_SESSION['user']['prenom']) . ' ' . htmlspecialchars($_SESSION['user']['nom']) : 'Visiteur'; ?></a></li>
+            <li><a href="back/logout.php">Deconnexion</a></li>
+            <li><a href="page/connexion.php">Se connecter</a></li>
             <li><a href="page/inscription.php">Creer un Compte</a></li>
         </ul>
     </nav>
-</div> 
+</div>
 
 
 
@@ -103,6 +102,7 @@ if (isset($valider) && !empty(trim($keywords))) {
 
 <!-- carousel -->
 <div class="carousel">
+
 	<!-- list item -->
 	<div class="list">
 		<div class="item">
@@ -320,9 +320,9 @@ Dans "Le Seigneur des Anneaux", une épopée cinématographique dirigée par Pet
 		<a href=""><i class="fa-brands fa-telegram"></i></a>
 	</div>
 	<div class="Info">
-    <div class="Info1">Nom du cinéma</div>
+    <div class="Info1">Nom du cinema</div>
 	<div class="Info2">Adresse</div>
-	<div class="Info3">Numéro de téléphone</div>
+	<div class="Info3">Numero de telephone</div>
 	</div>
 	<div class="naviguation">
 		
@@ -330,7 +330,7 @@ Dans "Le Seigneur des Anneaux", une épopée cinématographique dirigée par Pet
 				
 				<li><a href="page/contact.php">Contact</a></li>
 				<li><a href="page/cgu.php">CGU</a></li>
-				<li><a href="page/mentionslegales.php">Mentions légales</a></li>
+				<li><a href="page/mentionslegales.php">Mentions legales</a></li>
 				<li><a href="#">Forum</a></li>
 				
 			</ul>
