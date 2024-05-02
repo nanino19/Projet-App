@@ -2,7 +2,6 @@
 session_start();
 include("fonction.php");
 
-
 // Vérification de l'existence de données POST
 $msgErrors = "";
 
@@ -10,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Vérification de l'email
     if (!isset($_POST["email"]) || empty($_POST["email"])) {
-        $msgErrors += "L'email est requis.<br>";
+        $msgErrors .= "L'email est requis.<br>";
     } elseif (!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
         $msgErrors += "L'email n'est pas valide.<br>";
     }
@@ -24,16 +23,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $user = checkIfUserExist($_POST["email"]);
         if ($user && password_verify($_POST["password"], $user['password'])) {
             $_SESSION['user'] = $user; // Créer une session pour l'utilisateur
-            header('Location: ../index.php?msg=login_success'); // REDIRECTION
+            // Redirection vers la page de succès
+            header('Location: ../index.php?msg=login_success');
+            exit();
+        } else {
+            // Redirection vers la page de connexion avec un message d'erreur
+            $_SESSION['login_error'] = "Email ou mot de passe incorrect.";
+            header('Location: ../page/connexion.php?msg=login_error');
             exit();
         }
-        $_SESSION['login_error'] = "email ou mot de passe incorrect";
-        header('Location: ../page/connexion.php?msg=login_error');
-        exit();
     } else {
         // Stocker les erreurs dans la session
-        $_SESSION['login_error'] = "email ou mot de passe incorrect";
+        $_SESSION['login_error'] = $msgErrors;
         header('Location: ../page/connexion.php?msg=login_error');
         exit();
     }
 }
+?>
