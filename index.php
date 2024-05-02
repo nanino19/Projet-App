@@ -74,7 +74,7 @@ if (isset($valider) && !empty(trim($keywords))) {
         document.getElementById('searchInput').value = '';
     }
 </script>
-<div class="header-car">
+<div class="header">
     <a href="index.php" class="logo-container">
         <img src="image/logo.png" alt="Logo" class="logo">
     </a>
@@ -88,10 +88,16 @@ if (isset($valider) && !empty(trim($keywords))) {
             <li><a href="page/Nousdecouvrir.php">Nous decouvrir</a></li>
             <li><a href="page/nosfilms.php">Films</a></li>
             <li><a href="page/faq.php">Forum</a></li>
-            <li><a href="page/profil.php">Bienvenue, <?php echo isset($_SESSION['user']) ? htmlspecialchars($_SESSION['user']['prenom']) . ' ' . htmlspecialchars($_SESSION['user']['nom']) : 'Visiteur'; ?></a></li>
-            <li><a href="back/logout.php">Deconnexion</a></li>
-            <li><a href="page/connexion.php">Se connecter</a></li>
-            <li><a href="page/inscription.php">Creer un Compte</a></li>
+            <?php if (isset($_SESSION['user'])): ?>
+    <li><a href="page/profil.php">Bienvenue, <?php echo htmlspecialchars($_SESSION['user']['prenom']) . ' ' . htmlspecialchars($_SESSION['user']['nom']); ?></a></li>
+	<li><a href="back/logout.php">Deconnexion</a></li>
+<?php else: ?>
+    <li><a href="page/connexion.php">Se connecter</a></li>
+	<li><a href="page/inscription.php">Creer un Compte</a></li>
+<?php endif; ?>
+            
+            
+            
         </ul>
     </nav>
 </div>
@@ -121,7 +127,7 @@ if (isset($valider) && !empty(trim($keywords))) {
 			</div>
 		</div>
 		<div class="item">
-			<img src="image/baniere2.jpg">
+			<img src="image/anneau.jpg">
 			<div class="contents">
 				<div class="title">REDECOUVREZ</div>
 				<div class="topic">LE SEIGNEUR DES ANNEAUX</div>
@@ -178,7 +184,7 @@ Dans "Le Seigneur des Anneaux", une épopée cinématographique dirigée par Pet
 			</div>
 		</div>
 		<div class="item">
-			<img src="image/baniere2.jpg">
+			<img src="image/anneau.jpg">
 			<div class="contents">
 				<div class="title">
 					Le seigneur des anneaux

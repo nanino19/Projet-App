@@ -40,18 +40,18 @@ if (isset($_GET['msg']) && $_GET['msg'] == "email_used") {
 ?>
 
 <div class="cozi">
-    <form method="POST" action="../back/inscription.php" onsubmit="return validateForm()">
+    <form method="POST" action="../back/inscription.php">
         <div class="row">
             <div class="col">
                 <label for="nom" class="form-label">Nom</label>
                 <input type="text" name="nom" class="form-control">
             </div>
             <div class="col">
-                <label for="prenom" class="form-label">Prenom</label>
+                <label for="nom" class="form-label">Prenom</label>
                 <input type="text" name="prenom" class="form-control">
             </div>
             <div class="col">
-                <label for="tel" class="form-label">Telephone</label>
+                <label for="telephone" class="form-label">Telephone</label>
                 <input type="tel" name="tel" class="form-control" id="tel">
             </div>
             <div class="col">
@@ -64,18 +64,20 @@ if (isset($_GET['msg']) && $_GET['msg'] == "email_used") {
                 <input type="password" name="pwd1" class="form-control" id="exampleInputPassword1">
             </div>
             <div class="col">
-                <label for="exampleInputPassword2" class="form-label">Confirmer votre Password</label>
-                <input type="password" name="pwd2" class="form-control" id="exampleInputPassword2">
+                <label for="exampleInputPassword1" class="form-label">Confirmer votre Password</label>
+                <input type="password" name="pwd2" class="form-control" id="exampleInputPassword1">
             </div>
             <div class="col">
-                <label for="conditionsGenerales" class="form-label">J'ai lu et j'accepte les Conditions générales d'utilisation</label>
+                <label for="conditionsGenerales" class="form-label">J'ai lu et j'accepte les Conditions générales
+                    d'utilisation</label>
                 <input type="checkbox" name="conditionsG" id="conditionsGenerales" required>
             </div>
 
-            <button type="submit" class="btn btn-primary">Inscription</button>
+            <button type="submit" class="btn-primary">Inscription</button>
         </div>
     </form>
 </div>
+
 
 <script>
     function validateForm() {

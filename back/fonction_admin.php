@@ -33,4 +33,20 @@ function insererUnFilm($imageTmpName, $uploadFile, $titre, $description, $dateDe
         $response['message'] = $e->getMessage();
     }
     return $response;
+
+
+    function getAllUsers() {
+        try {
+            $pdo = connectBdd(); /
+            $query = "SELECT * FROM utilisateur";
+            $stmt = $pdo->query($query);
+            
+            $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            return $users;
+        } catch (Exception $e) {
+            
+            return [];
+        }
+    }
+    
 }

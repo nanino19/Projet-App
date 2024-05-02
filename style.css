@@ -45,14 +45,20 @@ ul li a:hover{
 
 	text-decoration: none;
 }
-form{
-	padding-top: 0px;
-	display: inline-block;
+form {
+    background: transparent;
+    max-width: 600px;
+    margin: 0 auto;
+    font-family: koulen;
 }
+
 input[type="search"]{
-	font-family: 'Koulen';font-size: 17px;
-	
+	font-family: 'Koulen';
+    	font-size: 17px;
+	border-radius: 20px;
+    	border-color: transparent;
 }
+
 
 .carousel{
     height: 100vh;
@@ -893,18 +899,16 @@ form {
 
 /* Style pour les colonnes */
 .row {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     background: transparent;
-    border: 2px solid rgba(255, 255, 255, .2);
+    border: 2px solid black;
     backdrop-filter: blur(20px);
     box-shadow: 0 0 10px rgba(0,0,0,.2);
     border-radius: 10px;
-    padding: 30px 40px;
-    backdrop-filter: blur(20px);
+    padding: 20px 40px;
 }
 
 .col {
-    margin-bottom: 10px;
     padding-right: 15px;
     padding-left: 15px;
     width: 450px;
@@ -912,23 +916,22 @@ form {
 
 .cozi {
     height: 650px;
-    background: url(/image/bgcozi.jpeg);
+    display: flex;
+    background-image: url(./image/cozi.jpeg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    display: flex;
     align-items: center;
     justify-content: center;
 }
+
 
 /* Style pour les labels */
 .form-label {
     font-weight: bold;
 }
 
-.form-labe {
-    margin-bottom: 10px;
-}
+
 /* Style pour les inputs */
 .form-control {
     background: transparent;
@@ -936,25 +939,29 @@ form {
     padding: 8px;
     margin-top: 5px;
     margin-bottom: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid black;
     border-radius: 4px;
     box-sizing: border-box;
 }
 
-
 /* Style pour le bouton */
 .btn-primary {
-    background-color: #007bff;
+    height: 35px;
+    width: 140px;
+    background-color: #FBD314;
     color: #fff;
     border: none;
-    padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
+    font-family: Koulen;
+    font-size: 15px;
+    text-align: center;
 }
 
 .btn-primary:hover {
-    background-color: #0056b3;
+    background-color: #C83606;
 }
+
 
 /* Style pour le texte d'aide */
 .form-text {
@@ -1023,22 +1030,20 @@ form {
 }
 
 .contact-form {
-    max-width: 500px;
-    margin: 0 auto;
-    padding: 20px;
-    border-radius: 5px;
-    background-color: transparent;
-    font-family: 'Koulen';
+    height: 650px;
+    background-image: url(./image/fondform.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    align-items: center;
+    justify-content: center;
+    font-family: Koulen;
 }
-.contact-form2 {
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 20px;
-    border-radius: 5px;
-    background-color: transparent;
-    border: 2px solid ;
-    box-shadow: 0px 0 10px 0 rgba(0, 0, 0, 5);
+
+.contact-form h2 {
+    margin-top: 0px;
 }
+
 
 .contact-form .row {
     margin-bottom: 15px;
@@ -1209,55 +1214,7 @@ form {
     background-color: #0056b3; 
 }
   
-.header-car {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 20px;
-    background-color: #F4E4C6;
-    color: white;
-    height: 120px;
-}
 
-.logo-container {
-    position: relative;
-}
-
-.search-form {
-    margin-left: 20px; /* Espacement entre le logo et le formulaire de recherche */
-}
-
-.menu-car {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    display: none;
-}
-
-.logo-container:hover .menu-car {
-    display: block;
-}
-
-.menu-car ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-.menu-car ul li {
-    margin: 0;
-}
-
-.menu-car ul li a {
-    color: white;
-    text-decoration: none;
-    display: block;
-    padding: 10px;
-}
-
-.menu-car ul li a:hover {
-    background-color: #F4E4C6;
-}
 .container-profil{
     font-family: 'Koulen';font-size: 22px;
     height: 300px;
@@ -1305,3 +1262,5 @@ form {
     color: #C83606;
     letter-spacing: 0.1rem;
     }
+
+    
