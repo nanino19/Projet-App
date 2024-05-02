@@ -74,7 +74,7 @@ if (isset($valider) && !empty(trim($keywords))) {
         document.getElementById('searchInput').value = '';
     }
 </script>
-<div class="header-car">
+<div class="header">
     <a href="index.php" class="logo-container">
         <img src="image/logo.png" alt="Logo" class="logo">
     </a>
@@ -83,7 +83,7 @@ if (isset($valider) && !empty(trim($keywords))) {
         <input type="submit" name="valider" value="Rechercher">
         <button type="button" onclick="clearSearch()">X</button>
     </form>
-    <nav class="menu-car">
+    <nav class="menu">
         <ul>
             <li><a href="page/Nousdecouvrir.php">Nous decouvrir</a></li>
             <li><a href="page/nosfilms.php">Films</a></li>

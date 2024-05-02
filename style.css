@@ -1209,55 +1209,7 @@ form {
     background-color: #0056b3; 
 }
   
-.header-car {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 20px;
-    background-color: #F4E4C6;
-    color: white;
-    height: 120px;
-}
 
-.logo-container {
-    position: relative;
-}
-
-.search-form {
-    margin-left: 20px; /* Espacement entre le logo et le formulaire de recherche */
-}
-
-.menu-car {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    display: none;
-}
-
-.logo-container:hover .menu-car {
-    display: block;
-}
-
-.menu-car ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-.menu-car ul li {
-    margin: 0;
-}
-
-.menu-car ul li a {
-    color: white;
-    text-decoration: none;
-    display: block;
-    padding: 10px;
-}
-
-.menu-car ul li a:hover {
-    background-color: #F4E4C6;
-}
 .container-profil{
     font-family: 'Koulen';font-size: 22px;
     height: 300px;
