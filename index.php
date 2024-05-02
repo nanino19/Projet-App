@@ -27,25 +27,40 @@ if (isset($_SESSION['login_error']) && !empty($_SESSION['login_error'])) {
         $_SESSION["login_error"]; // Afficher les erreurs.
     '</div>';
     unset($_SESSION['login_error']); // Nettoyer les erreurs de la session après les avoir affichées
+
 }
+
 ?>
-<div class= "header">
-	<a href="index.php">
-	<img src="image/logo.png" alt="Logo" class="logo" >
-</a>
-	<nav>
-		<ul class="menu">
-			<li><a href="page/Nousdecouvrir.php">Nous decouvrir </a></li>
-			<li><a href="page/nosfilms.php">Films</a></li>
-			<li><a href="page/faq.php">Forum</a></li>
-			<form>
-			<input type="search" name="q" placeholder="Rechercher un film">
-		</form>
-			<li><a href="page/connexion.php">Mon Compte</a></li>
-			<li><a href="page/inscription.php">Creer un Compte</a></li>
-		</ul>
-	</nav>
-</div>
+<script>
+    
+    function clearSearch() {
+        document.getElementById('searchInput').value = '';
+    }
+</script>
+<div class="header">
+    <a href="index.php">
+        <img src="image/logo.png" alt="Logo" class="logo">
+    </a>
+    <nav>
+        <ul class="menu">
+            <li><a href="page/Nousdecouvrir.php">Nous decouvrir </a></li>
+            <li><a href="page/nosfilms.php">Films</a></li>
+            <li><a href="page/faq.php">Forum</a></li>
+            <form name="fo" method="get" action="">
+    			<input type="search" id="searchInput" name="keywords" value="<?php echo $keywords ?>" placeholder="Rechercher un film">
+    			<input type="submit" name="valider" value="Rechercher">
+    			<button type="button" onclick="clearSearch()">X</button> <!-- Bouton pour effacer la recherche -->
+			</form>
+            <li><a href="page/connexion.php">Mon Compte</a></li>
+            <li><a href="page/inscription.php">Creer un Compte</a></li>
+        </ul>
+    </nav>
+</div> 
+
+
+
+
+
 <!-- carousel -->
 <div class="carousel">
 	<!-- list item -->
@@ -184,7 +199,11 @@ if (isset($_SESSION['login_error']) && !empty($_SESSION['login_error'])) {
 			<img src="image/comedie.jpg" alt="" class="poster">
 			<button class="seance" type="button">séances</button>
 		</a>
-		<a href="#" class="affiche"></a>
+		<a href="page/Nosfilms.php" class="affiche" data-category="Populaire">
+			<img src="image/dune.jpg" alt="" class="poster">
+			<button class="seance" type="button">séances</button>
+		</a>
+		
 		<a href="#" class="affiche"></a>
 		<a href="#" class="affiche"></a>
 		<a href="#" class="affiche"></a>

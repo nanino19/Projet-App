@@ -25,4 +25,8 @@ if (isset($_SESSION['login_error']) && !empty($_SESSION['login_error'])) {
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 
+
+
+
+
 <?php include('../composant/footer.php'); ?>
