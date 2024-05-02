@@ -1,6 +1,7 @@
 body{
 	margin:0px;
 	padding: 0px;
+    
 	background-color: #EDE8DF;
 	text-align: center;
     font-family: Arial, sans-serif;
@@ -8,8 +9,9 @@ body{
 
 .header{
 	background-color: #F4E4C6;
-	height: 190px;
+	height: 120px;
 	margin: 0px;
+    max-width: auto;
 	display: flex;
 	align-items: center; 
     background-position: center;
@@ -336,10 +338,7 @@ select {
     display:flex ;
 }
 
-select option[value="Populaire"]{
-    background-color: #000;
 
-}
  section{
     position: relative;
     width: 100%;
@@ -639,19 +638,26 @@ ul{
         padding: 0px;
         font-size: 16px;
     }
-    .about-content .read-more{
+        .about-content .read-more{
         font-size: 16px;
     }
 }
 
 .container2{
-    width: 1000px; 
-    margin: 0 auto; 
-    text-align: center;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    text-align: justify;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    height: 1000px;
+    max-width: 800px;
+    background: linear-gradient(to bottom, #ffffff, #dddddd);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .container2 h4{
@@ -694,32 +700,101 @@ ul{
     margin-bottom: 50px;
 }
 
+.container3{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    height: 600px;
+    max-width: 800px;
+    background: linear-gradient(to bottom, #ffffff, #dddddd);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.container3 h8{
+    font-size: 2.4rem;
+    color: #C83606;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.container3 h8::after{
+    content: "";
+    position: absolute;
+    width: 310px;
+    height: 4px;
+    display: block;
+    margin: 0 auto;
+    background-color: #C83606;
+}
+
+.container3 h9{
+    color: #080200;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+
+.container3 h10{
+    font-size: 1.2rem;
+    color: #080200;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+
 
 .intro {
-    margin-bottom : 80px;
+    margin-top: 28px;
+    margin-bottom: 50px;
     font-weight: bold;
-    font-size: 32px;
-    left: 1000px;
-    transform: translate(-50%);
-    text-align: center;
-    background-color: #ededed; /* Couleur de fond main texte*/
-    padding: 10px 20px; /* Remplissage autour du texte */
-    border-radius: 10px; /* Coins arrondis */
-    display: inline-block; /* Pour que la largeur s'ajuste au contenu */
+    font-size: 42px;
+    text-align: center; /* Centrer horizontalement */
+    margin-bottom: 20px;
+    background-color: #fef5f5cf;
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+.bodyfaq{
+    background-image: url(image/popcorn.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position:relative;
 }
 
 .espace {
-    margin-top: 1px;
+        
+        height: 100px;
+        margin-top: 50px;
+        margin-bottom: 50px; /* Ajoutez une marge en bas pour créer de l'espace */
+        position: relative; /* Position absolue pour positionner l'élément .espace */
+   
+    left: 0; /* Alignement à gauche de bodyfaq */
+    width: 100%; /* Largeur pleine de bodyfaq */
+    
+    
+
 }
+
 
 .faq-container {
     margin-top: 40px;
+    margin-bottom: 50px;   
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    max-width: 900px; /* Ajustez la largeur totale des colonnes */
-    margin: 50px auto;
-    padding: 20px;
+    max-width: 1100px; /* Ajustez la largeur totale des colonnes */
+    margin: 70px auto;
+    padding: 30px;
     background-color: #e2e1e1;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -735,23 +810,25 @@ ul{
 
 .question {
     cursor: pointer;
-    margin-bottom: 10px;
-    padding: 10px;
-    border-radius: 4px;
+    margin-bottom: 25px;
+    margin-left : 20px;
+    margin-right: 20px;
+    padding: 15px;
+    border-radius: 20px;
     transition: background-color 0.3s; 
-    background-color: #eaeaea;
+    background-color: #e3b0b0;
 }
 
 
 .question:hover {
-    background-color: #ccc; 
+    background-color: #ebf76c; 
 }
 
 .answer {
     display: none;
     padding: 10px;
     background-color: #ffffff;
-    border-radius: 4px;
+    border-radius: 20px;
 }
 
 .footer{
@@ -805,31 +882,43 @@ ul{
     
 }
 
-.bodyfaq{
-    background-image: url(image/popcorn.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
 
-/* Style pour le formulaire */
+
 form {
+    background: transparent;
     max-width: 600px;
     margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f9f9;
+    
 }
 
 /* Style pour les colonnes */
 .row {
-    margin-bottom: 15px;
+    margin-bottom: 30px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0,0,0,.2);
+    border-radius: 10px;
+    padding: 30px 40px;
+    backdrop-filter: blur(20px);
 }
 
 .col {
+    margin-bottom: 10px;
     padding-right: 15px;
     padding-left: 15px;
+    width: 450px;
+}
+
+.cozi {
+    height: 650px;
+    background: url(/image/bgcozi.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Style pour les labels */
@@ -837,8 +926,12 @@ form {
     font-weight: bold;
 }
 
+.form-labe {
+    margin-bottom: 10px;
+}
 /* Style pour les inputs */
 .form-control {
+    background: transparent;
     width: 100%;
     padding: 8px;
     margin-top: 5px;
@@ -847,6 +940,7 @@ form {
     border-radius: 4px;
     box-sizing: border-box;
 }
+
 
 /* Style pour le bouton */
 .btn-primary {
@@ -988,3 +1082,226 @@ form {
 .contact-form .form-text {
     color: #6c757d;
 }
+/*
+    ASIDE MENU ADMIN
+*/
+/* Ajouter ce code dans votre feuille de style CSS */
+#admin-sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 240px;
+    height: 100%;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  
+  .admin-profile {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .admin-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+  
+  .admin-navigation ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .admin-navigation a {
+    display: block;
+    padding: 10px 15px;
+    color: white;
+    text-decoration: none;
+    border-left: 3px solid transparent;
+    transition: all 0.3s ease;
+  }
+  
+  .admin-navigation a:hover,
+  .admin-navigation a.active {
+    background-color: #444;
+    border-left-color: #0073aa;
+  }
+  
+  h3 {
+    font-size: 18px;
+    margin-top: 0;
+  }
+  
+  .rating {
+    direction: rtl; /* Range les étoiles de droite à gauche */
+    font-size: 24px; /* Taille des étoiles */
+  }
+  
+  .rating-star {
+    cursor: pointer;
+    color: #ccc; /* Couleur des étoiles non sélectionnées */
+    transition: color 0.2s ease-in-out;
+  }
+  
+  .rating-input {
+    display: none; /* Cache les boutons radio d'origine */
+  }
+  
+  .rating-input:checked ~ .rating-star,
+  .rating-star:hover,
+  .rating-star:hover ~ .rating-star {
+    color: #f5eb3b; /* Couleur des étoiles survolées ou sélectionnées */
+  }
+  
+  .popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    display: none; 
+    justify-content: center;
+    align-items: center;
+
+}
+
+.popup {
+
+    position: fixed;
+    width: 400px; 
+    height: auto; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 999; 
+}
+
+.popup-text {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+
+
+
+.show {
+    display: flex; 
+}
+.reserve-btn {
+    background-color: #007bff; 
+    color: #fff; 
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    font-size: 16px; }
+
+.reserve-btn:hover {
+    background-color: #0056b3; 
+}
+  
+.header-car {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #F4E4C6;
+    color: white;
+    height: 120px;
+}
+
+.logo-container {
+    position: relative;
+}
+
+.search-form {
+    margin-left: 20px; /* Espacement entre le logo et le formulaire de recherche */
+}
+
+.menu-car {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    display: none;
+}
+
+.logo-container:hover .menu-car {
+    display: block;
+}
+
+.menu-car ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-car ul li {
+    margin: 0;
+}
+
+.menu-car ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+}
+
+.menu-car ul li a:hover {
+    background-color: #F4E4C6;
+}
+.container-profil{
+    font-family: 'Koulen';font-size: 22px;
+    height: 300px;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    max-width: 600px;
+    margin: 100px auto;
+    background-color:#F4E4C6 ;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Effet d'ombre */
+    padding: 20px;
+}
+.container-profil p {
+    margin-bottom: 10px;
+    color: #C83606;
+    letter-spacing: 0.1rem;
+}   
+.btn-modifier {
+    text-decoration: none;
+    padding: 10px;
+    font-family: arial;
+    font-size: 1em;
+    color: #FFFFFF;
+    background-color: #ff0000;
+    border-radius: 24px;
+    -webkit-border-radius: 24px;
+    -moz-border-radius: 24px;
+    border: 4px solid #FFFFFF;
+    box-shadow: 3px 3px 12px #444444;
+    -webkit-box-shadow: 3px 3px 12px #444444;
+    -moz-box-shadow: 3px 3px 12px #444444;
+    }
+    
+    
+    .btn-modifier:hover {
+    padding: 10px;
+    background-color: #d99694;
+    box-shadow: 1px 1px 4px #777777;
+    -webkit-box-shadow: 1px 1px 4px #777777;
+    -moz-box-shadow: 1px 1px 4px #777777;
+    }
+    .oeoe{
+        margin-bottom: 10px;
+    color: #C83606;
+    letter-spacing: 0.1rem;
+    }

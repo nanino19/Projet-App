@@ -1,0 +1,4 @@
+[01-May-2024 22:24:09 Europe/Berlin] PHP Warning:  Undefined array key "user" in C:\xampp\htdocs\APP\Projet-App\index.php on line 25
+[01-May-2024 22:25:47 Europe/Berlin] PHP Warning:  Undefined global variable $_SESSION in C:\xampp\htdocs\APP\Projet-App\index.php on line 25
+[01-May-2024 22:25:47 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\APP\Projet-App\index.php on line 25
+[01-May-2024 22:25:58 Europe/Berlin] PHP Warning:  Undefined array key "user" in C:\xampp\htdocs\APP\Projet-App\index.php on line 25
