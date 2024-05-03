@@ -2,7 +2,7 @@
 <?php include ('../composant/menu.php'); ?>
 <div class="contact-form">
     <h2>Contactez-nous</h2>
-    <form action="submit.php" method="POST">
+    <form action="../back/traitement_mail.php" method="POST">
         <div class="row">
             <div class="col">
                 <label for="name" class="form-label">Nom</label>
@@ -21,7 +21,7 @@
                 <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
             </div>
             <div class="col">
-                <button type="submit" class="btn-primary">Envoyer</button>
+                <button type="traitement_mail.php" class="btn-primary">Envoyer</button>
             </div>
         </div>
     </form>

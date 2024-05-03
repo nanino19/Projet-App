@@ -12,7 +12,7 @@ echo '
 	<nav>
 		<ul class="menu">
 			<li><a href="../page/Nousdecouvrir.php">Nous decouvrir</a></li>
-			<li><a href="../page/films_affiche.php">Films</a></li>
+			<li><a href="../page/Nosfilms.php">Films</a></li>
 			<li><a href="../page/faq.php">Forum</a></li>
 			<li><a href="../page/connexion.php">Mon Compte</a></li>
 			<li><a href="../page/inscription.php">Creer un Compte</a></li>

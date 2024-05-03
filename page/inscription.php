@@ -68,7 +68,7 @@ if (isset($_GET['msg']) && $_GET['msg'] == "email_used") {
                 <input type="password" name="pwd2" class="form-control" id="exampleInputPassword1">
             </div>
             <div class="col">
-                <label for="conditionsGenerales" class="form-label">J'ai lu et j'accepte les Conditions générales
+                <label for="conditionsGenerales" class="form-label">J'ai lu et j'accepte les Conditions generales
                     d'utilisation</label>
                 <input type="checkbox" name="conditionsG" id="conditionsGenerales" required>
             </div>

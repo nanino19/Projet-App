@@ -3,6 +3,9 @@
 <?php include('../composant/menu.php'); ?>
 
 
+
+
+
 <div class="bodyfaq">
 <div class="intro">
     Besoin d'aide ?     
@@ -15,21 +18,21 @@
     <div class="sidebar">
         <!-- Nouvelles questions -->
         <div class="question">
-            <h2>Question 1 : Qu'est-ce que le PHP ?</h2>
+            <h2>À quelle heure ouvrent les portes du cinéma ?</h2>
             <div class="answer">
-                <p>PHP (Hypertext Preprocessor) est un langage de script utilisé pour le développement d'applications Web côté serveur.</p>
+                <p>Les portes du cinéma ouvrent généralement 30 minutes avant la première séance du jour. Veuillez consulter notre programme pour connaître les horaires spécifiques.</p>
             </div>
         </div>
         <div class="question">
-            <h2>Question 3 : Qu'est-ce que MySQL ?</h2>
+            <h2>Y a-t-il des réductions pour les étudiants ou les personnes âgées ?</h2>
             <div class="answer">
-                <p>MySQL est un système de gestion de base de données relationnelles open-source.</p>
+                <p>Oui, nous proposons des réductions pour les étudiants munis d'une carte étudiante valide et pour les personnes âgées de plus de 60 ans. </p>
             </div>
         </div>
         <div class="question">
-            <h2>Question 5 : Qu'est-ce que jQuery ?</h2>
+            <h2>Est-ce que je peux acheter mes billets en ligne ?</h2>
             <div class="answer">
-                <p>jQuery est une bibliothèque JavaScript qui simplifie l'interaction avec le document HTML, l'animation, la manipulation des événements et AJAX.</p>
+                <p> Oui, vous pouvez acheter vos billets en ligne sur notre site web ou via notre application mobile. </p>
             </div>
         </div>
     </div>
@@ -37,26 +40,25 @@
     <div class="contentFAQ">
         <!-- Questions existantes -->
         <div class="question">
-            <h2>Question 2 : Qu'est-ce que HTML ?</h2>
+            <h2>Puis-je annuler ou modifier ma réservation de billets ?</h2>
             <div class="answer">
-                <p>HTML (HyperText Markup Language) est le langage de balisage standard utilisé pour créer et concevoir des pages Web.</p>
+                <p>Oui, vous pouvez annuler ou modifier votre réservation de billets en ligne jusqu'à 2 heures avant le début de la séance. </p>
             </div>
         </div>
         <div class="question">
-            <h2>Question 4 : Qu'est-ce que CSS ?</h2>
+            <h2>Y a-t-il un parking disponible près du cinéma ?</h2>
             <div class="answer">
-                <p>CSS (Cascading Style Sheets) est un langage de feuille de style utilisé pour décrire la présentation d'un document HTML.</p>
+                <p>Oui, nous disposons d'un parking gratuit pour les visiteurs du cinéma. Il est situé à proximité de l'entrée principale et offre un accès pratique aux cinéphiles.</p>
             </div>
         </div>
         <div class="question">
-            <h2>Question 6 : Qu'est-ce que Java ?</h2>
+            <h2>Est-ce que le cinéma propose des séances en version originale (VO) ?</h2>
             <div class="answer">
-                <p>JavaScript est un langage de programmation de scripts principalement utilisé dans les pages Web interactives.</p>
+                <p> Oui, nous proposons régulièrement des séances en version originale (VO) pour les amateurs de cinéma international.</p>
             </div>
         </div>
     </div>
 </div>
-
 
 <div class="espace">
 

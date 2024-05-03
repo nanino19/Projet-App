@@ -33,20 +33,40 @@ function insererUnFilm($imageTmpName, $uploadFile, $titre, $description, $dateDe
         $response['message'] = $e->getMessage();
     }
     return $response;
-
-
-    function getAllUsers() {
-        try {
-            $pdo = connectBdd(); /
-            $query = "SELECT * FROM utilisateur";
-            $stmt = $pdo->query($query);
-            
-            $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            return $users;
-        } catch (Exception $e) {
-            
-            return [];
-        }
-    }
-    
 }
+
+function insererUneSalle($nom, $description, $nbplaces)
+{
+    try {
+        $pdo = connectBdd();
+        // Préparez une requête SQL en utilisant des placeholders
+        $query = "INSERT INTO salle (nom, nbplaces, description) VALUES (:nom, :nbplaces, :description)";
+        $stmt = $pdo->prepare($query);
+
+        // Liez les paramètres à la requête préparée
+        $stmt->bindParam(':nom', $nom);
+        $stmt->bindParam(':nbplaces', $nbplaces, PDO::PARAM_INT);  // Assurez-vous de spécifier le type de données si ce n'est pas une chaîne
+        $stmt->bindParam(':description', $description);
+
+        // Exécuter la requête
+        if ($stmt->execute()) {
+            $response = [
+                'status' => 'success',
+                'message' => 'La salle a été ajoutée avec succès'
+            ];
+        } else {
+            // Gestion des erreurs en cas d'échec de l'exécution
+            $response = [
+                'status' => 'error',
+                'message' => 'Une erreur est survenue lors de lajout de la salle'
+            ];
+        }
+    } catch (Exception $e) {
+        // Gérer les erreurs d'exécution
+        $response['message'] = $e->getMessage();
+    }
+    return $response;
+}
+
+
+    
