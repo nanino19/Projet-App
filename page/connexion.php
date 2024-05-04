@@ -4,7 +4,7 @@
 <?php include ('../composant/menu.php'); ?>
 
 <?php
-session_start();
+
 // Vérifiez si il y a des messages d'erreur stockés dans la session
 if (isset($_SESSION['login_error']) && !empty($_SESSION['login_error'])) {
     echo '<div class="alert alert-success" role="alert">' .

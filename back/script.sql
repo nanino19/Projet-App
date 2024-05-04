@@ -17,6 +17,15 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
+--
+-- Base de données : `cinemanager`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `capteur`
+--
 
 DROP TABLE IF EXISTS `capteur`;
 CREATE TABLE IF NOT EXISTS `capteur` (
@@ -115,7 +124,6 @@ CREATE TABLE IF NOT EXISTS `reservation` (
 DROP TABLE IF EXISTS `salle`;
 CREATE TABLE IF NOT EXISTS `salle` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `idseance` int NOT NULL,
   `nbplaces` int NOT NULL,
   `nbplacesreserve` int NOT NULL,
   `description` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
@@ -132,6 +140,7 @@ DROP TABLE IF EXISTS `seance`;
 CREATE TABLE IF NOT EXISTS `seance` (
   `id` int NOT NULL,
   `idfilm` int NOT NULL,
+  `idsalle` int NOT NULL,
   `horraire` time NOT NULL,
   `date` date NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;

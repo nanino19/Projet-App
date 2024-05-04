@@ -70,3 +70,30 @@ function checkIfUserExist($email)
         return null; // Retourne false en cas d'erreur
     }
 }
+
+/*
+    PAGE NOS FILMS
+*/
+
+function getAllFilms()
+{
+    try {
+        $pdo = connectBdd();
+        // La requête SQL
+        $sql = "SELECT * FROM film f join seance s on f.id = s.idfilm join salle sa on sa.id = s.idsalle";
+
+        // Exécution de la requête
+        $stmt = $pdo->query($sql);
+        $results = [];
+        if ($stmt) {
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                $results[] = $row;
+            }
+        }
+        return $results;
+    } catch (PDOException $e) {
+        // En cas d'erreur, afficher l'erreur
+        echo "Erreur dans la base de données : " . $e->getMessage();
+        return null; // Retourne false en cas d'erreur
+    }
+}
