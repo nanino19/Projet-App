@@ -68,3 +68,6 @@ function insererUneSalle($nom, $description, $nbplaces)
     }
     return $response;
 }
+
+
+    

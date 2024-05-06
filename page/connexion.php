@@ -24,7 +24,7 @@ if (isset($_SESSION['login_error']) && !empty($_SESSION['login_error'])) {
                 <label for="password" class="form-label">Mot de passe</label>
                 <input type="password" name="password" class="form-control">
             </div>
-            <button type="submit" class="btn btn-primary">Connexion</button>
+            <button type="submit" class="btn-primary">Connexion</button>
         </div>
     </form>
 </div>

@@ -28,3 +28,4 @@ if ($response['status'] == 'success') {
     echo($response['message']);
     exit();
 }
+?>
