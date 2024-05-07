@@ -81,7 +81,7 @@ if (isset($valider) && !empty(trim($keywords))) {
     <form name="fo" method="get" action="" class="search-form">
         <input type="search" id="searchInput" name="keywords" value="<?php echo $keywords ?>" placeholder="Rechercher un film">
         <input type="submit" name="valider" value="Rechercher">
-        <button type="button" onclick="clearSearch()">X</button>
+        
     </form>
     <nav class="menu">
         <ul>
@@ -89,12 +89,17 @@ if (isset($valider) && !empty(trim($keywords))) {
             <li><a href="page/nosfilms.php">Films</a></li>
             <li><a href="page/faq.php">Forum</a></li>
             <?php if (isset($_SESSION['user'])): ?>
-    <li><a href="page/profil.php">Bienvenue, <?php echo htmlspecialchars($_SESSION['user']['prenom']) . ' ' . htmlspecialchars($_SESSION['user']['nom']); ?></a></li>
-	<li><a href="back/logout.php">Deconnexion</a></li>
-<?php else: ?>
-    <li><a href="page/connexion.php">Se connecter</a></li>
-	<li><a href="page/inscription.php">Creer un Compte</a></li>
-<?php endif; ?>
+                <li><a href="page/profil.php">Bienvenue, <?php echo htmlspecialchars($_SESSION['user']['prenom']) . ' ' . htmlspecialchars($_SESSION['user']['nom']); ?></a></li>
+                <li><a href="back/logout.php">Déconnexion</a></li>
+                <li><img src="<?php echo htmlspecialchars($_SESSION['user']['avatar']); ?>" alt="Avatar" class="avatar"></li>
+            <?php else: ?>
+                <li><a href="page/moncompte.php">Mon compte</a></li>
+                <li><img src="https://img.freepik.com/psd-gratuit/rendu-3d-du-personnage-avatar_23-2150611746.jpg?w=740&t=st=1714915486~exp=1714916086~hmac=d31e263488e13d3b206cf160c1c80dc48ad5bf8409b6a2680e87f5beeec36385" alt="Avatar" class="avatar"></li>
+            <?php endif; ?>
+        </ul>
+    </nav>
+</div>
+
             
             
             
@@ -127,7 +132,7 @@ if (isset($valider) && !empty(trim($keywords))) {
 			</div>
 		</div>
 		<div class="item">
-			<img src="image/anneau.jpg">
+			<img src="https://ekladata.com/nIf4AwLXlSBJK8mgmFPN8Thqp9c.jpg">
 			<div class="contents">
 				<div class="title">REDECOUVREZ</div>
 				<div class="topic">LE SEIGNEUR DES ANNEAUX</div>
@@ -184,7 +189,7 @@ Dans "Le Seigneur des Anneaux", une épopée cinématographique dirigée par Pet
 			</div>
 		</div>
 		<div class="item">
-			<img src="image/anneau.jpg">
+			<img src="https://ekladata.com/nIf4AwLXlSBJK8mgmFPN8Thqp9c.jpg">
 			<div class="contents">
 				<div class="title">
 					Le seigneur des anneaux

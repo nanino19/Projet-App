@@ -47,6 +47,15 @@ ul li a:hover{
 
 	text-decoration: none;
 }
+
+/* Styles pour l'avatar dans le header */
+.avatar {
+    width: 50px; /* Définir la largeur souhaitée */
+    height: 50px; /* Définir la hauteur souhaitée */
+    border-radius: 50%; /* Rendre l'image circulaire */
+}
+
+
 form {
     background: transparent;
     max-width: 600px;
@@ -54,11 +63,25 @@ form {
     font-family: koulen;
 }
 
-input[type="search"]{
-	font-family: 'Koulen';
-    	font-size: 17px;
-	border-radius: 20px;
-    	border-color: transparent;
+/* Styles pour la barre de recherche */
+input[type="search"] {
+    font-family: 'Koulen';
+    font-size: 17px;
+    border-radius: 20px;
+    border: 2px solid #C83606;
+    padding: 5px 25px;
+    width: 300px;
+    box-sizing: border-box;
+    background-color: #FFFFFF;
+    color: #333333;
+    transition: border-color 0.3s ease, width 0.3s ease; /* Ajouter une transition pour la couleur de la bordure et la largeur */
+}
+
+/* Styles lorsque la barre de recherche est en focus */
+input[type="search"]:focus {
+    outline: none;
+    border-color: #FBD314; /* Couleur de la bordure au focus */
+    width: 400px; /* Largeur augmentée au focus */
 }
 
 
@@ -1288,3 +1311,69 @@ td {
     border: 1px solid #ddd;
     padding: 8px;
 }
+
+/* Styles pour les informations de contact */
+.contact-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+
+/*style des boxs d'infos*/
+.info-box {
+    border: 2px solid red;
+    border-radius: 8px;
+    padding: 20px; 
+    margin-bottom: 30px; 
+    width: calc(33.3% - 30px); 
+    display: inline-block;
+    text-align: center; 
+    box-sizing: border-box;
+    background-color: #F4E4C6; 
+    font-family: "Koulen", sans-serif; 
+}
+
+.info-box p {
+    margin: 10px 0; 
+}
+.opening-hours {
+    color: #C83606;
+    font-size: 18px;
+    font-weight:;
+    margin-top: 30px; 
+}
+
+
+
+
+.red-text {
+    color:#C83606;
+    font-size: 24px;
+    font-weight:;
+    font-family: "Koulen", sans-serif;
+}
+
+/* Style pour le logo dans info-box */
+.info-box .logo {
+    width: 80px; 
+    height: auto; 
+    background-color: #F4E4C6;
+}
+
+/* Effet d'animation au survol de .info-box */
+.info-box {
+    transition: transform 0.3s ease;
+}
+
+.info-box:hover {
+    transform: scale(1.05); /* Légère augmentation de la taille au survol */
+}
+
+.search-form input[type="submit"] {
+    position: absolute;
+    left: -9999px;  /* Déplace le bouton hors de l'écran */
+}
+
+
+
