@@ -1,5 +1,7 @@
 <?php
-session_start();
+
+
+
 include("fonction.php");
 
 // Vérification de l'existence de données POST

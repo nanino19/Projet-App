@@ -87,7 +87,7 @@ if (isset($valider) && !empty(trim($keywords))) {
         <ul>
             <li><a href="page/Nousdecouvrir.php">Nous decouvrir</a></li>
             <li><a href="page/nosfilms.php">Films</a></li>
-            <li><a href="page/faq.php">Forum</a></li>
+            <li><a href="page/forum.php">Forum</a></li>
             <?php if (isset($_SESSION['user'])): ?>
     <li><a href="page/profil.php">Bienvenue, <?php echo htmlspecialchars($_SESSION['user']['prenom']) . ' ' . htmlspecialchars($_SESSION['user']['nom']); ?></a></li>
 	<li><a href="back/logout.php">Deconnexion</a></li>
