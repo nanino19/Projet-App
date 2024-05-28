@@ -15,17 +15,12 @@
 <?php
 session_start();
 
-include("back/pdo.php"); // Inclure le fichier pdo.php pour obtenir la connexion PDO
-
-// Rediriger les messages d'erreur vers le journal des erreurs du serveur
-ini_set('log_errors', 1);
-ini_set('error_log', 'php_errors.log');
-
-
-if (isset($_GET['msg']) && $_GET['msg'] == "login_success" && isset($_SESSION["user"])) {
-    
+if (isset($_GET['msg']) && $_GET['msg'] == "login_success" && $_SESSION["user"]) {
+	print_r ($_SESSION["user"]);
+    echo '<div class="alert alert-success" role="alert">
+      Login validée!
+    </div>';
 }
-
 // Vérifiez si il y a des messages d'erreur stockés dans la session
 if (isset($_SESSION['login_error']) && !empty($_SESSION['login_error'])) {
     echo '<div class="alert alert-success" role="alert">' .
@@ -101,11 +96,6 @@ if (isset($valider) && !empty(trim($keywords))) {
         </ul>
     </nav>
 </div>
-
-
-
-
-
 <!-- carousel -->
 <div class="carousel">
 
