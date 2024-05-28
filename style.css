@@ -1,7 +1,6 @@
 body{
 	margin:0px;
 	padding: 0px;
-    
 	background-color: #EDE8DF;
 	text-align: center;
     font-family: Arial, sans-serif;
@@ -9,16 +8,13 @@ body{
 
 .header{
 	background-color: #F4E4C6;
-	height: 120px;
+	height: 190px;
 	margin: 0px;
-    max-width: auto;
 	display: flex;
 	align-items: center; 
-    justify-content: space-between;
     background-position: center;
     box-shadow: 0px 0 35px 0 rgba(0, 0, 0, 10);
 }
-
 
 .logo {
     margin-left: 10px;
@@ -47,20 +43,14 @@ ul li a:hover{
 
 	text-decoration: none;
 }
-form {
-    background: transparent;
-    max-width: 600px;
-    margin: 0 auto;
-    font-family: koulen;
+form{
+	padding-top: 0px;
+	display: inline-block;
 }
-
 input[type="search"]{
-	font-family: 'Koulen';
-    	font-size: 17px;
-	border-radius: 20px;
-    	border-color: transparent;
+	font-family: 'Koulen';font-size: 17px;
+	
 }
-
 
 .carousel{
     height: 100vh;
@@ -346,7 +336,10 @@ select {
     display:flex ;
 }
 
+select option[value="Populaire"]{
+    background-color: #000;
 
+}
  section{
     position: relative;
     width: 100%;
@@ -776,8 +769,7 @@ ul{
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    z-index: 1;
-    position: initial;
+    position:relative;
 }
 
 .espace {
@@ -893,78 +885,55 @@ ul{
 
 
 
+/* Style pour le formulaire */
 form {
-    background: transparent;
     max-width: 600px;
     margin: 0 auto;
-    
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
 }
 
 /* Style pour les colonnes */
 .row {
-    margin-bottom: 20px;
-    background: transparent;
-    border: 2px solid black;
-    backdrop-filter: blur(20px);
-    box-shadow: 0 0 10px rgba(0,0,0,.2);
-    border-radius: 10px;
-    padding: 20px 40px;
+    margin-bottom: 15px;
 }
 
 .col {
     padding-right: 15px;
     padding-left: 15px;
-    width: 450px;
 }
-
-.cozi {
-    height: 650px;
-    display: flex;
-    background-image: url(./image/cozi.jpeg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    align-items: center;
-    justify-content: center;
-}
-
 
 /* Style pour les labels */
 .form-label {
     font-weight: bold;
 }
 
-
 /* Style pour les inputs */
 .form-control {
-    background: transparent;
     width: 100%;
     padding: 8px;
     margin-top: 5px;
     margin-bottom: 10px;
-    border: 1px solid black;
+    border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
 }
 
 /* Style pour le bouton */
 .btn-primary {
-    height: 35px;
-    width: 140px;
-    background-color: #FBD314;
+    background-color: #007bff;
     color: #fff;
     border: none;
+    padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
-    font-family: Koulen;
-    font-size: 15px;
-    text-align: center;
 }
 
 .btn-primary:hover {
-    background-color: #C83606;
+    background-color: #0056b3;
 }
-
 
 /* Style pour le texte d'aide */
 .form-text {
@@ -1033,20 +1002,22 @@ form {
 }
 
 .contact-form {
-    height: 650px;
-    background-image: url(./image/fondform.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    align-items: center;
-    justify-content: center;
-    font-family: Koulen;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: transparent;
+    font-family: 'Koulen';
 }
-
-.contact-form h2 {
-    margin-top: 0px;
+.contact-form2 {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: transparent;
+    border: 2px solid ;
+    box-shadow: 0px 0 10px 0 rgba(0, 0, 0, 5);
 }
-
 
 .contact-form .row {
     margin-bottom: 15px;
@@ -1104,7 +1075,6 @@ form {
     color: white;
     padding: 10px;
     box-sizing: border-box;
-    z-index: 1000;
   }
   
   .admin-profile {
@@ -1165,24 +1135,80 @@ form {
     color: #f5eb3b; /* Couleur des étoiles survolées ou sélectionnées */
   }
   
-  .popup-overlay {
+  section{
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 0px 50px;
+    bottom: 20px;
+    color: #C83606;
+    
+}
+ section .affiches{
+    position: relative;
+    width: 100%;
+    height: 300px;
+    border: 1px solid #fff;
+    margin-top:10 px ;
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+
+}
+
+    
+
+section .evenement::-webkit-scrollbar{
+    display: none;
+    
+
+}
+ section .evenement .affiche{
+    position: relative;
+    min-width: 200px;
+    height: 290px;
+    border: 1px solid #fff;
+    border-radius: 8px;
+    margin-top:10 px ;
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    background: #000;
+    transition: .3s linear;
+
+}
+section .evenement .affiche .poster{
+   width: 100%;
+   height: 100%;
+   border-radius: 10px;
+   position: relative;
+   
+
+}
+section .evenement .affiche{
+    width: 200px;
+
+
+}
+
+
+.popup-overlay {
+    display: none; /* Initialement caché */
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); 
-    display: none; 
+    background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
     justify-content: center;
     align-items: center;
-
 }
 
 .popup {
-
+    display: none; /* Initialement caché */
     position: fixed;
-    width: 400px; 
-    height: auto; 
+    width: 400px; /* Ajustez la largeur selon vos besoins */
+    height: auto; /* Ajustez la hauteur selon vos besoins */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -1190,7 +1216,7 @@ form {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    z-index: 999; 
+    z-index: 999; /* Assurez-vous que la popup est au-dessus des autres éléments */
 }
 
 .popup-text {
@@ -1199,92 +1225,59 @@ form {
     margin-bottom: 10px;
 }
 
-
-
-
 .show {
-    display: flex; 
+    display: flex; /* Afficher la popup */
 }
-.reserve-btn {
-    background-color: #007bff; 
-    color: #fff; 
-    padding: 10px 20px; 
-    border: none; 
-    border-radius: 5px; 
-    cursor: pointer; 
-    font-size: 16px; }
 
-.reserve-btn:hover {
-    background-color: #0056b3; 
-}
+   
   
 
-.container-profil{
-    font-family: 'Koulen';font-size: 22px;
-    height: 300px;
-    display: block;
+.reserve-btn {
+    background-color: #007bff; /* Bleu */
+    color: #fff; /* Texte blanc */
+    padding: 10px 20px; /* Rembourrage */
+    border: none; /* Pas de bordure */
+    border-radius: 5px; /* Coins arrondis */
+    cursor: pointer; /* Curseur de souris en forme de main */
+    font-size: 16px; /* Taille de la police */
+}
+
+.reserve-btn:hover {
+    background-color: #0056b3; /* Bleu foncé au survol */
+}
+
+.custom-popup-overlay {
+    display: none; /* Initialement caché */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
     justify-content: center;
     align-items: center;
-    max-width: 600px;
-    margin: 100px auto;
-    background-color:#F4E4C6 ;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Effet d'ombre */
+}
+
+.custom-popup {
+    background-color: #fff;
     padding: 20px;
-}
-.container-profil p {
-    margin-bottom: 10px;
-    color: #C83606;
-    letter-spacing: 0.1rem;
-}   
-.btn-modifier {
-    text-decoration: none;
-    padding: 10px;
-    font-family: arial;
-    font-size: 1em;
-    color: #FFFFFF;
-    background-color: #ff0000;
-    border-radius: 24px;
-    -webkit-border-radius: 24px;
-    -moz-border-radius: 24px;
-    border: 4px solid #FFFFFF;
-    box-shadow: 3px 3px 12px #444444;
-    -webkit-box-shadow: 3px 3px 12px #444444;
-    -moz-box-shadow: 3px 3px 12px #444444;
-    }
-    
-    
-    .btn-modifier:hover {
-    padding: 10px;
-    background-color: #d99694;
-    box-shadow: 1px 1px 4px #777777;
-    -webkit-box-shadow: 1px 1px 4px #777777;
-    -moz-box-shadow: 1px 1px 4px #777777;
-    }
-    .oeoe{
-        margin-bottom: 10px;
-    color: #C83606;
-    letter-spacing: 0.1rem;
-    }
-
-    /* Style du tableau */
-table {
-    border-collapse: collapse;
-    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 999; /* Assurez-vous que la popup est au-dessus des autres éléments */
 }
 
-/* Style de l'en-tête du tableau */
-th {
-    background-color: #f2f2f2;
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-    text-align: center;
-           
+.close-popup-btn {
+    background-color: #007bff; /* Bleu */
+    color: #fff; /* Texte blanc */
+    padding: 10px 20px; /* Rembourrage */
+    border: none; /* Pas de bordure */
+    border-radius: 5px; /* Coins arrondis */
+    cursor: pointer; /* Curseur de souris en forme de main */
+    font-size: 16px; /* Taille de la police */
 }
 
-/* Style des cellules du tableau */
-td {
-    border: 1px solid #ddd;
-    padding: 8px;
+.close-popup-btn:hover {
+    background-color: #0056b3; /* Bleu foncé au survol */
 }
+
+
