@@ -8,8 +8,15 @@ include_once '../back/pdo.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     require_once 'traitement.php'; 
 }
+
+// Pagination
+$messages_per_page = 10;
+$current_page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+$offset = ($current_page - 1) * $messages_per_page;
 ?>
 
+<!DOCTYPE html>
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -42,19 +49,38 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 // Connexion à la base de données
                 $pdo = connectBdd();
 
-                // Récupérer les messages du forum depuis la base de données
-                $stmt = $pdo->query("SELECT pseudo, message FROM messages");
+                // Récupérer les messages du forum depuis la base de données avec pagination
+                $stmt = $pdo->prepare("SELECT pseudo, message, created_at FROM messages ORDER BY created_at DESC LIMIT :offset, :messages_per_page");
+                $stmt->bindParam(':offset', $offset, PDO::PARAM_INT);
+                $stmt->bindParam(':messages_per_page', $messages_per_page, PDO::PARAM_INT);
+                $stmt->execute();
                 $messages = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
                 foreach ($messages as $message) : ?>
-                    <li>
-                        <strong><?php echo htmlspecialchars($message['pseudo']); ?>:</strong>
-                        <?php echo htmlspecialchars($message['message']); ?>
+                    <li class="message-container">
+                        <div class="message-date"><?php echo $message['created_at']; ?></div>
+                        <div class="message-content">
+                            <strong><?php echo htmlspecialchars($message['pseudo']); ?>:</strong>
+                            <?php echo htmlspecialchars($message['message']); ?>
+                        </div>
                     </li>
                 <?php endforeach; ?>
             </ul>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <?php
+                $stmt = $pdo->query("SELECT COUNT(*) FROM messages");
+                $total_messages = $stmt->fetchColumn();
+                $total_pages = ceil($total_messages / $messages_per_page);
+
+                for ($i = 1; $i <= $total_pages; $i++) : ?>
+                    <a href="?page=<?php echo $i; ?>" <?php if ($i == $current_page) echo 'class="active"'; ?>><?php echo $i; ?></a>
+                <?php endfor; ?>
+            </div>
         </div>
     </div>
 </body>
+</html>
 
 <?php include ('../composant/footer.php'); ?>

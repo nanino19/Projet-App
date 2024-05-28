@@ -23,7 +23,7 @@ echo '
 				<li><a href="../page/contact.php">Contact</a></li>
 				<li><a href="../page/cgu.php">CGU</a></li>
 				<li><a href="../page/mentionslegales.php">Mentions legales</a></li>
-				<li><a href="#">FAQ</a></li>
+				<li><a href="../page/faq.php">FAQ</a></li>
 				
 			</ul>
 	</div>
