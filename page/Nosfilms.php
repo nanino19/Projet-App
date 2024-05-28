@@ -1,70 +1,115 @@
-<?php include('../composant/header.php'); ?>
-<?php include('../composant/menu.php'); ?>
-	<div class="slider-container banniere">
-	</div>
+<?php include ('../composant/header.php'); ?>
+<?php include ('../composant/menu.php'); ?>
 
-	<div class="container_affiche">
-		<img src="../image/affiche_film.jpg" alt="Description de l'image">
-		<div style="text-align: justify;" class="texte">
-			<h1>Dune</h1>
-			<h2>De <strong>Denis Villeneuve</strong></a></h2>
-			<h3>Durée : 2H36</h3>
-			<h3>Date : 7 février 2024</h3>
-			<h4>Synopsis</h4>
-			<p>L'histoire de Paul Atreides, jeune homme aussi doué que brillant, voué à connaître un destin hors du commun qui le dépasse totalement. Car s'il veut préserver l'avenir de sa famille et de son peuple, il devra se rendre sur la planète la plus dangereuse de l'univers – la seule à même de fournir la ressource la plus précieuse au monde, capable de décupler la puissance de l'humanité. Tandis que des forces maléfiques se disputent le contrôle de cette planète, seuls ceux qui parviennent à dominer leur peur pourront survivre…</p>
-		</div>
+<?php
+include ("../back/pdo.php");
+$pdo = connectBdd();
+
+// Récupération de l'ID du film depuis l'URL
+$filmId = isset($_GET['id']) ? intval($_GET['id']) : 0;
+
+// Requête SQL pour récupérer les informations du film
+$sql = "SELECT titre, realisateur, duree, datedesortie, affiche, description FROM film WHERE id = ?"; // Utilisation de l'ID pour obtenir les détails du film
+$stmt = $pdo->prepare($sql);
+$stmt->execute([$filmId]);
+
+if ($stmt->rowCount() > 0) {
+	// Récupération des données
+	$row = $stmt->fetch(PDO::FETCH_ASSOC);
+	$imageData = base64_encode($row["affiche"]);
+	$titre = $row["titre"];
+	$realisateur = $row["realisateur"];
+	$duree = $row["duree"];
+	$date = $row["datedesortie"];
+	$description = $row["description"];
+} else {
+	echo "Aucun résultat trouvé";
+}
+?>
+
+<div class="container_affiche">
+	<?php if (isset($imageData)): ?>
+		<img src="data:image/jpeg;base64,<?php echo $imageData; ?>" alt="Affiche du film">
+	<?php endif; ?>
+	<div style="text-align: justify;" class="texte">
+		<h1><?php echo isset($titre) ? $titre : ''; ?></h1> <!--titre-->
+		<h2>Réalisateur : <strong><?php echo isset($realisateur) ? $realisateur : ''; ?></strong></h2><!--réalisateur-->
+		<h3>Durée : <?php echo isset($duree) ? $duree : ''; ?></h3><!--duree-->
+		<h3>Date : <?php echo isset($date) ? $date : ''; ?></h3>
+		<h4>Synopsis</h4>
+		<!--description-->
+		<p><?php echo isset($description) ? $description : ''; ?></p>
 	</div>
-	<div class="slider-container banniere">
+</div>
+<div id="seancee" class="container_banniere">
+	<a href="#seancee" class="jour">
+		<h2>Aujourd'hui</h2>
+	</a>
+	<a href="#seancee" class="jour">
+		<h2>Demain</h2>
+	</a>
+	<a href="#seancee" class="jour">
+		<h2>Mercredi</h2>
+	</a>
+	<a href="#seancee" class="jour">
+		<h2>Jeudi</h2>
+	</a>
+	<a href="#seancee" class="jour">
+		<h2>Vendredi</h2>
+	</a>
+</div>
+<div class="container_cinema">
+	<img src="../image/isep_vanves.jpeg" alt="Cinéma Isep Vanves">
+	<div class="text">
+		<h2>Cinéma Isep Vanves</h1>
+			<h3>10 Rue de Vanves, 92130 Issy-les-Moulineaux
+		</h2>
+		<h4>Tel : 01 49 54 52 00</h3>
 	</div>
-	<div class="container_cinema">
-		<img src="../image/isep_vanves.jpeg" alt="Cinéma Isep Vanves">
-		<div class="text">
-			<h2>Cinéma Isep Vanves</h1>
-			<h3>10 Rue de Vanves, 92130 Issy-les-Moulineaux</h2>
-			<h4>Tel : 01 49 54 52 00</h3>
-		</div>
-		<div class="box_seance">
-			<button class="button_seance slide_right">
-				<div class="texte_version" >VF</div>
-				<div><strong>19H30</strong></div>
-				<div>Salle 03</div>
-			</button>
-			<button class="button_seance slide_right">
-				<div class="texte_version" >VO</div>
-				<div><strong>22H30</strong></div>
-				<div>Salle 03</div>
-			</button>
-		</div>
+	<div class="box_seance">
+		<button class="button_seance slide_right">
+			<div class="texte_version">VF</div>
+			<div><strong>19H30</strong></div>
+			<div>Salle 03</div>
+		</button>
+		<button class="button_seance slide_right">
+			<div class="texte_version">VO</div>
+			<div><strong>22H30</strong></div>
+			<div>Salle 03</div>
+		</button>
 	</div>
-	<div class="container_cinema">
-		<img src="../image/isep_raspail.jpg" alt="Cinéma Isep Raspail">
-		<div class="text">
-			<h2>Cinéma Isep Raspail</h1>
-			<h3>28 Rue Notre Dame des Champs, 75006 Paris</h2>
-			<h4>Tel : 01 49 54 52 00</h3>
-		</div>
-		<div class="box_seance">
-			<button class="button_seance slide_right">
-				<div class="texte_version" >VO</div>
-				<div><strong>14H00</strong></div>
-				<div>Salle 10</div>
-			</button>
-			<button class="button_seance slide_right">
-				<div class="texte_version" >VO</div>
-				<div><strong>16H00</strong></div>
-				<div>Salle 10</div>
-			</button>
-			<button class="button_seance slide_right">
-				<div class="texte_version" >VO</div>
-				<div><strong>18H00</strong></div>
-				<div>Salle 05</div>
-			</button>
-			<button class="button_seance slide_right">
-				<div class="texte_version" >VO</div>
-				<div><strong>20H30</strong></div>
-				<div>Salle 05</div>
-			</button>
-		</div>
+</div>
+<div class="container_cinema">
+	<img src="../image/isep_raspail.jpg" alt="Cinéma Isep Raspail">
+	<div class="text">
+		<h2>Cinéma Isep Raspail</h1>
+			<h3>28 Rue Notre Dame des Champs, 75006 Paris
+		</h2>
+		<h4>Tel : 01 49 54 52 00</h3>
 	</div>
-	<div class="slider-container banniere"></div>
-<?php include('../composant/footer.php'); ?>
+	<div class="box_seance">
+		<button class="button_seance slide_right">
+			<div class="texte_version">VO</div>
+			<div><strong>14H00</strong></div>
+			<div>Salle 10</div>
+		</button>
+		<button class="button_seance slide_right">
+			<div class="texte_version">VO</div>
+			<div><strong>16H00</strong></div>
+			<div>Salle 10</div>
+		</button>
+		<button class="button_seance slide_right">
+			<div class="texte_version">VO</div>
+			<div><strong>18H00</strong></div>
+			<div>Salle 05</div>
+		</button>
+		<button class="button_seance slide_right">
+			<div class="texte_version">VO</div>
+			<div><strong>20H30</strong></div>
+			<div>Salle 05</div>
+		</button>
+	</div>
+</div>
+
+<div class="slider-container banniere"></div>
+<?php include ('../composant/footer.php'); ?>

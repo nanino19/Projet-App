@@ -971,9 +971,33 @@ form {
     color: #6c757d;
 }
 
+.container_banniere {
+    font-size: 15px;
+    background-color: #FBD314;  /* Couleur de fond pour visibilité */
+    margin: 0;  /* Enlève les marges par défaut */
+    padding-left: 50px;
+    padding-right: 500px;
+    display: flex; /* Utilise Flexbox pour la mise en page */
+    justify-content: space-around; /* Répartit l'espace uniformément autour des éléments */
+
+}
+
+.jour {
+    color: black;
+    font-family: koulen;
+    letter-spacing: 0.1rem;
+}
+
+.jour :hover {
+    transition: clip-path 0.5s ease-out;
+    color: #C83606;
+	text-decoration: underline;
+}
+
 .container_affiche {
     display: flex; /* Utilisation de flexbox pour aligner les éléments */
     align-items: center; /* Centrer verticalement les éléments */
+    text-align: justify;
 }
 
 .container_affiche img {
