@@ -265,7 +265,35 @@
 				<option value="Senior">Senior</option>
 			</select>
 		</div>
-		<div class="affiches">
+
+<?php
+    
+    $pdo = connectBdd(); 
+    
+    $requete = "SELECT * FROM film WHERE affiche IS NOT NULL"; 
+	$donnee="SELECT * FROM film WHERE affiche = 1"
+    $resultat = $pdo->query($requete);
+	
+
+   
+    if ($resultat->rowCount() > 0) {
+        
+        while ($row = $resultat->fetch(PDO::FETCH_ASSOC)) {
+            echo '<a href="#" class="affiche">';
+            
+            $imageData = base64_encode($row["affiche"]);
+           
+            echo '<img src="data:image/jpeg;base64,' . $imageData . '" alt="" class="poster">';
+            echo '<button class="seance" type="button">séances</button>';
+            echo '</a>';
+        }
+    } else {
+        echo "Aucune affiche trouvée.";
+    }
+
+    
+    $pdo = null;
+?>
 			<a href="page/Nosfilms.php?id=1" class="affiche" data-category="Populaire">
 				<img src="image/affiche.jpg" alt="" class="poster">
 				<button class="seance" type="button">séances</button>
