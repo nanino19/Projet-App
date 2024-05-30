@@ -3,6 +3,7 @@ session_start(); // Assurez-vous que cette ligne est au début du fichier, avant
 
 include("fonction_admin.php");
 
+
 // Initialiser une réponse
 $response = [
     'status' => 'error',
