@@ -30,10 +30,56 @@ $users = getAllUsers();
     
 </head>
 <body>
+<style>
+
+h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin: auto;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        tbody tr:nth-child(odd) {
+            background-color: #ffffff;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tbody tr:hover {
+            background-color: #ddd;
+        }
+
+        /* Responsive styling */
+        @media (max-width: 600px) {
+            table {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
 
 <h1>Liste des Utilisateurs</h1>
 
-<table >
+<table>
     <thead>
         <tr>
             <th>Nom</th>
@@ -45,14 +91,16 @@ $users = getAllUsers();
     <tbody>
         <?php foreach ($users as $user): ?>
             <tr>
-                <td><?= $user['nom'] ?></td>
-                <td><?= $user['prenom'] ?></td>
-                <td><?= $user['email'] ?></td>
-                <td><?= $user['telephone'] ?></td>
+                <td><?= htmlspecialchars($user['nom']) ?></td>
+                <td><?= htmlspecialchars($user['prenom']) ?></td>
+                <td><?= htmlspecialchars($user['email']) ?></td>
+                <td><?= htmlspecialchars($user['telephone']) ?></td>
             </tr>
         <?php endforeach; ?>
     </tbody>
 </table>
-
+<div class="button">
+    <a href="../index.php" class="button">Retour à l'accueil</a>
+</div>
 </body>
 </html>
