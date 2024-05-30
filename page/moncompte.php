@@ -4,17 +4,13 @@
 <div class="cozi">
   <h1>Mon compte</h1>
   <!-- Boutons pour basculer entre les formulaires -->
-  <div class="row">
-    <div class="col">
-      <button type="button" class="btn btn-primary" id="btn-inscription">
-        S'inscrire
-      </button>
-    </div>
-    <div class="col">
-      <button type="button" class="btn btn-primary" id="btn-connexion">
-        Se connecter
-      </button>
-    </div>
+  <div class="row" style="display: flex; justify-content: center; gap: 10px; margin-bottom: 20px;">
+    <button type="button" class="btn btn-primary" id="btn-inscription">
+      S'inscrire
+    </button>
+    <button type="button" class="btn btn-primary" id="btn-connexion">
+      Se connecter
+    </button>
   </div>
   <!-- Formulaire d'inscription par défaut -->
   <form method="POST" action="../back/inscription.php" id="form-inscription">
@@ -44,8 +40,8 @@
         <input type="password" name="pwd2" class="form-control" id="exampleInputPassword1">
       </div>
       <div class="col">
-        <label for="conditionsGenerales" class="form-label">J'ai lu et j'accepte les Conditions generales d'utilisation</label>
-        <input type="checkbox" name="conditionsG" id="conditionsGenerales" required>
+        <input type="checkbox" name="conditionsG" id="conditionsGenerales" required class="custom-checkbox">
+        <label for="conditionsGenerales" class="form-label custom-checkbox-label">J'ai lu et j'accepte les Conditions générales d'utilisation</label>
       </div>
     </div>
     <button type="submit" class="btn-primary">Inscription</button>
@@ -65,6 +61,8 @@
     </div>
   </form>
 </div>
+
+
 
 <script>
   document.getElementById('btn-inscription').addEventListener('click', function() {

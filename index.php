@@ -16,37 +16,34 @@
 session_start();
 
 include("back/pdo.php"); // Inclure le fichier pdo.php pour obtenir la connexion PDO
+include("composant/menu.php");
+
 
 // Rediriger les messages d'erreur vers le journal des erreurs du serveur
 ini_set('log_errors', 1);
 ini_set('error_log', 'php_errors.log');
 
-
 if (isset($_GET['msg']) && $_GET['msg'] == "login_success" && isset($_SESSION["user"])) {
-    
+    // Code à exécuter en cas de succès de la connexion
 }
 
-// Vérifiez si il y a des messages d'erreur stockés dans la session
+// Vérifiez s'il y a des messages d'erreur stockés dans la session
 if (isset($_SESSION['login_error']) && !empty($_SESSION['login_error'])) {
-    echo '<div class="alert alert-success" role="alert">' .
-        $_SESSION["login_error"]; // Afficher les erreurs.
-    '</div>';
+    echo '<div class="alert alert-success" role="alert">' . $_SESSION['login_error'] . '</div>';
     unset($_SESSION['login_error']); // Nettoyer les erreurs de la session après les avoir affichées
-
 }
 
-
-
-//code correspondant à la requête bdd pour la barre de recherche
-@$keywords = $_GET["keywords"];
-@$valider = $_GET["valider"];
+// Code correspondant à la requête bdd pour la barre de recherche
+@$keywords = $_GET['keywords'];
+@$valider = $_GET['valider'];
 if (isset($valider) && !empty(trim($keywords))) {
     $words = explode(" ", trim($keywords));
-    for ($i = 0; $i < count($words); $i++)
-        $kw[$i] = "titre like '%" . $words[$i] . "%' ";
+    for ($i = 0; $i < count($words); $i++) {
+        $kw[$i] = "titre like '%" . $words[$i] . "%'";
+    }
     $pdo = connectBdd(); // Appeler la fonction connectBdd() pour obtenir la connexion PDO
     if ($pdo) { // Vérification de la connexion à la base de données
-        $res = $pdo->prepare("select titre from film where " . implode(" OR ", $kw)); //lorsqu'on met plusieurs mots dans la barre de recherche, c'est pris en compte
+        $res = $pdo->prepare("SELECT titre FROM film WHERE " . implode(" OR ", $kw)); // Lorsqu'on met plusieurs mots dans la barre de recherche, c'est pris en compte
         $res->setFetchMode(PDO::FETCH_ASSOC);
         $res->execute();
         $tab = $res->fetchAll();
@@ -55,57 +52,28 @@ if (isset($valider) && !empty(trim($keywords))) {
         error_log("Erreur de connexion à la base de données."); // Envoyer le message d'erreur au journal des erreurs du serveur
     }
     // Afficher la réponse sous forme d'alerte
-    if (@$afficher == "oui" && count($tab) > 0) {
+    if (isset($afficher) && $afficher == "oui" && count($tab) > 0) {
         $resultMessage = count($tab) . " " . (count($tab) > 1 ? "résultats trouvés" : "résultat trouvé");
         foreach ($tab as $film) {
-            $resultMessage .= "\n" . $film["titre"];
+            $resultMessage .= "\n" . $film['titre'];
         }
         $resultMessage = rawurlencode($resultMessage);
-        echo "<script>alert(decodeURIComponent('" .  $resultMessage . "'));</script>";
-		$keywords = "";
-    } elseif (@$afficher == "oui" && count($tab) == 0) {
-        echo "<script>alert('Aucun résultat trouvé.');</script>";	
+        echo "<script>alert(decodeURIComponent('" . $resultMessage . "'));</script>";
+        $keywords = "";
+    } elseif (isset($afficher) && $afficher == "oui" && count($tab) == 0) {
+        echo "<script>alert('Aucun résultat trouvé.');</script>";
     }
 }
 ?>
+
 <script>
     
     function clearSearch() {
         document.getElementById('searchInput').value = '';
     }
 </script>
-<div class="header">
-    <a href="index.php" class="logo-container">
-        <img src="image/logo.png" alt="Logo" class="logo">
-    </a>
-    <form name="fo" method="get" action="" class="search-form">
-        <input type="search" id="searchInput" name="keywords" value="<?php echo $keywords ?>" placeholder="Rechercher un film">
-        <input type="submit" name="valider" value="Rechercher">
-        
-    </form>
-    <nav class="menu">
-        <ul>
-            <li><a href="page/Nousdecouvrir.php">Nous decouvrir</a></li>
-            <li><a href="page/nosfilms.php">Films</a></li>
-            <li><a href="page/faq.php">Forum</a></li>
-            <?php if (isset($_SESSION['user'])): ?>
-                <li><a href="page/profil.php">Bienvenue, <?php echo htmlspecialchars($_SESSION['user']['prenom']) . ' ' . htmlspecialchars($_SESSION['user']['nom']); ?></a></li>
-                <li><a href="back/logout.php">Déconnexion</a></li>
-                <li><img src="<?php echo htmlspecialchars($_SESSION['user']['avatar']); ?>" alt="Avatar" class="avatar"></li>
-            <?php else: ?>
-                <li><a href="page/moncompte.php">Mon compte</a></li>
-                <li><img src="https://img.freepik.com/psd-gratuit/rendu-3d-du-personnage-avatar_23-2150611746.jpg?w=740&t=st=1714915486~exp=1714916086~hmac=d31e263488e13d3b206cf160c1c80dc48ad5bf8409b6a2680e87f5beeec36385" alt="Avatar" class="avatar"></li>
-            <?php endif; ?>
-        </ul>
-    </nav>
-</div>
 
-            
-            
-            
-        </ul>
-    </nav>
-</div>
+
 
 
 
@@ -325,6 +293,45 @@ Dans "Le Seigneur des Anneaux", une épopée cinématographique dirigée par Pet
 <script src="evenement.js"></script>
 
 
+<section class="activities-section">
+    <h1>Activités</h1>
+    <div class="activities-container">
+        <div class="activity-card">
+            <img src="image/activity1.jpg" alt="Activity 1" class="activity-image">
+            <div class="activity-info">
+                <h2>Activity 1</h2>
+                <p>Description de l'activité 1</p>
+                <button class="activity-button">En profiter</button>
+            </div>
+        </div>
+        <div class="activity-card">
+            <img src="image/activity2.jpg" alt="Activity 2" class="activity-image">
+            <div class="activity-info">
+                <h2>Activity 2</h2>
+                <p>Description de l'activité 2</p>
+                <button class="activity-button">Découvrir</button>
+            </div>
+        </div>
+        <div class="activity-card">
+            <img src="image/activity3.jpg" alt="Activity 3" class="activity-image">
+            <div class="activity-info">
+                <h2>Activity 3</h2>
+                <p>Description de l'activité 3</p>
+                <button class="activity-button">En profiter</button>
+            </div>
+        </div>
+        <div class="activity-card">
+            <img src="image/activity4.jpg" alt="Activity 4" class="activity-image">
+            <div class="activity-info">
+                <h2>Activity 4</h2>
+                <p>Description de l'activité 4</p>
+                <button class="activity-button">Découvrir</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+
 
 	
 </section>
@@ -361,6 +368,7 @@ Dans "Le Seigneur des Anneaux", une épopée cinématographique dirigée par Pet
 	
 
 </div>
+
 
 <div class="image">
 	

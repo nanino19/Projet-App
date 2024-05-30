@@ -7,81 +7,112 @@ body{
     font-family: Arial, sans-serif;
 }
 
-.header{
-	background-color: #F4E4C6;
-	height: 120px;
-	margin: 0px;
-    max-width: auto;
-	display: flex;
-	align-items: center; 
+/* Styles généraux pour le header */
+.header {
+    background-color: #F4E4C6;
+    display: flex;
+    align-items: center;
     justify-content: space-between;
-    background-position: center;
-    box-shadow: 0px 0 35px 0 rgba(0, 0, 0, 10);
+    padding: 10px 20px;
+    box-shadow: 0px 0 35px 0 rgba(0, 0, 0, 0.1);
 }
-
 
 .logo {
-    margin-left: 10px;
     width: 170px;
-    height: 170px;
-}
-nav ul li{
-	font-family: 'Koulen';font-size: 22px;
-	display: inline-block;
-
-}
-ul li a{
-	color: #C83606;
-
-	letter-spacing: 0.1rem;
-}
-ul li a:hover{
-	color:#FBD314;
-	text-decoration: underline;
-}
-.menu li{
-	float: center;
-	padding:35px;
-}
-.menu li a{
-
-	text-decoration: none;
+    height: auto;
 }
 
-/* Styles pour l'avatar dans le header */
-.avatar {
-    width: 50px; /* Définir la largeur souhaitée */
-    height: 50px; /* Définir la hauteur souhaitée */
-    border-radius: 50%; /* Rendre l'image circulaire */
+/* Centre du header avec barre de recherche et navigation */
+.header-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    margin: 0 20px;
 }
 
-
-form {
-    background: transparent;
+/* Formulaire de recherche */
+.header-center form {
+    width: 100%;
     max-width: 600px;
-    margin: 0 auto;
-    font-family: koulen;
+    margin-bottom: 10px;
 }
 
-/* Styles pour la barre de recherche */
 input[type="search"] {
     font-family: 'Koulen';
     font-size: 17px;
     border-radius: 20px;
     border: 2px solid #C83606;
     padding: 5px 25px;
-    width: 300px;
+    width: 100%;
     box-sizing: border-box;
     background-color: #FFFFFF;
     color: #333333;
-    transition: border-color 0.3s ease, width 0.3s ease; /* Ajouter une transition pour la couleur de la bordure et la largeur */
+    transition: border-color 0.3s ease, width 0.3s ease;
 }
 
-/* Styles lorsque la barre de recherche est en focus */
 input[type="search"]:focus {
     outline: none;
-    border-color: #FBD314; /* Couleur de la bordure au focus */
-    width: 400px; /* Largeur augmentée au focus */
+    border-color: #FBD314;
+}
+
+/* Menu de navigation */
+nav ul.menu {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul.menu li {
+    margin-right: 60px; /* Ajustez la marge selon vos préférences */
+}
+
+
+nav ul.menu li {
+    font-family: 'Koulen';
+    font-size: 22px;
+}
+
+nav ul.menu li a {
+    color: #C83606;
+    text-decoration: none;
+    letter-spacing: 0.1rem;
+}
+
+nav ul.menu li a:hover {
+    color: #FBD314;
+    text-decoration: underline;
+}
+
+/* Section droite du header avec avatar et compte */
+.header-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    height: 100%;
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.account-link {
+    font-family: 'Koulen';
+    font-size: 22px;
+    color: #C83606;
+    text-decoration: none;
+    margin-top: 5px;
+}
+
+.account-link:hover {
+    color: #FBD314;
 }
 
 
@@ -941,15 +972,77 @@ form {
 }
 
 .cozi {
-    height: 650px;
+    position: relative;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 50px;
+    overflow: hidden; /* Assure que le pseudo-élément ne déborde pas */
+}
+
+.cozi::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-image: url(./image/cozi.jpeg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    filter: blur(8px); /* Applique un flou à l'image de fond */
+    z-index: -1; /* Place le pseudo-élément derrière le contenu */
+}
+
+/* Style pour la case à cocher personnalisée */
+.custom-checkbox {
+    display: none; /* Cache la case à cocher par défaut */
+}
+
+/* Style pour le label de la case à cocher */
+.custom-checkbox-label {
+    position: relative;
+    padding-left: 30px; /* Espace pour le pseudo-élément de la case à cocher */
+    cursor: pointer;
+    font-weight: bold;
+    user-select: none; /* Empêche la sélection de texte */
+}
+
+/* Pseudo-élément pour la case à cocher personnalisée */
+.custom-checkbox-label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    border: 2px solid black;
+    border-radius: 4px;
+    background-color: white;
+    box-sizing: border-box;
+}
+
+/* Pseudo-élément pour l'état "checked" de la case à cocher */
+.custom-checkbox:checked + .custom-checkbox-label::before {
+    content: "✓";
+    display: flex;
     align-items: center;
     justify-content: center;
+    color: white;
+    background-color: #4CAF50; /* Couleur de fond pour l'état "checked" */
+    border: 2px solid #4CAF50; /* Même couleur que le fond */
 }
+
+/* Style pour le label de la case à cocher au survol */
+.custom-checkbox-label:hover::before {
+    border-color: #4CAF50;
+}
+
 
 
 /* Style pour les labels */
@@ -1375,5 +1468,135 @@ td {
     left: -9999px;  /* Déplace le bouton hors de l'écran */
 }
 
+/* Appliquer la police Koulen */
+body {
+    font-family: 'Koulen', sans-serif;
+}
 
+.activities-section {
+    background-color: #F4E4C6; /* Fond du bloc activité */
+    padding: 20px;
+    border-radius: 15px; /* Bords arrondis */
+    margin: 20px 0;
+    border: 3px solid #C83606; /* Bordure autour des activités */
+}
+
+.activities-section h1 {
+    text-align: center;
+    color: #7C2D13;
+    margin-bottom: 20px;
+}
+
+.activities-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.activity-card {
+    background-color: #fff;
+    border: 2px solid #7C2D13; /* Contour des cases des activités */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    width: 45%;
+    transition: transform 0.3s;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.activity-card:hover {
+    transform: scale(1.05);
+}
+
+.activity-image {
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 13px;
+    border-top-right-radius: 13px;
+}
+
+.activity-info {
+    padding: 10px;
+    text-align: center;
+}
+
+.activity-info h2 {
+    margin: 10px 0;
+    color: #333;
+}
+
+.activity-info p {
+    color: #666;
+}
+
+.activity-button {
+    background-color: #FBD314; /* Fond du bouton */
+    color: #7C2D13; /* Texte en rouge */
+    border: none;
+    border-radius: 25px; /* Boutons arrondis */
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-family: 'Koulen', sans-serif;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.activity-button:hover {
+    background-color: #EAC013; /* Couleur légèrement plus foncée au survol */
+}
+
+
+/* Styles spécifiques à la page capteur.php */
+.container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.box {
+    width: 300px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    font-family: 'Koulen', sans-serif;
+}
+
+/* Styles généraux pour le header */
+.header {
+    background-color: #F4E4C6;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    box-shadow: 0px 0 35px 0 rgba(0, 0, 0, 0.1);
+    font-family: 'Koulen', sans-serif;
+}
+
+.logo {
+    width: 170px;
+    height: auto;
+}
+
+/* Styles généraux pour le footer */
+.footer {
+    background-color: #F4E4C6;
+    padding: 20px;
+    text-align: center;
+    font-family: 'Koulen', sans-serif;
+}
+
+.footer .icon-container {
+    margin-top: 10px;
+}
+
+.footer .icon-container a {
+    margin-right: 10px;
+    color: #C83606;
+    text-decoration: none;
+}
 
