@@ -265,79 +265,36 @@
 				<option value="Senior">Senior</option>
 			</select>
 		</div>
-
+		<div class="affiches">
 <?php
     
     $pdo = connectBdd(); 
     
     $requete = "SELECT * FROM film WHERE affiche IS NOT NULL"; 
-	$donnee="SELECT * FROM film WHERE affiche = 1"
+	$donnee="SELECT * FROM film WHERE affiche = ?";// 1
     $resultat = $pdo->query($requete);
 	
 
    
     if ($resultat->rowCount() > 0) {
-        
-        while ($row = $resultat->fetch(PDO::FETCH_ASSOC)) {
-            echo '<a href="#" class="affiche">';
-            
-            $imageData = base64_encode($row["affiche"]);
-           
-            echo '<img src="data:image/jpeg;base64,' . $imageData . '" alt="" class="poster">';
-            echo '<button class="seance" type="button">séances</button>';
-            echo '</a>';
-        }
-    } else {
-        echo "Aucune affiche trouvée.";
-    }
+		while ($row = $resultat->fetch(PDO::FETCH_ASSOC)) {
+			echo '<a href="page/Nosfilms.php?id=' . $row['id'] . '" class="affiche">';
+			
+			$imageData = base64_encode($row["affiche"]);
+			
+			echo '<img src="data:image/jpeg;base64,' . $imageData . '" alt="" class="poster">';
+			echo '<button class="seance" type="button">séances</button>';
+			echo '</a>';
+		}
+	} else {
+		echo "Aucune affiche trouvée.";
+	}
+	
 
     
     $pdo = null;
 ?>
-			<a href="page/Nosfilms.php?id=1" class="affiche" data-category="Populaire">
-				<img src="image/affiche.jpg" alt="" class="poster">
-				<button class="seance" type="button">séances</button>
-			</a>
-			<a href="page/Nosfilms.php?id=2" class="affiche" data-category="Senior">
-				<img src="image/Ch'tis.jpg" alt="Nom du Film" class="poster">
-				<button class="seance" type="button" name="id">séances</button>
-			</a>
-			<a href="page/Nosfilms.php?id=3" class="affiche" data-category="Populaire">
-				<img src="image/dune.jpg" alt="" class="poster">
-				<button class="seance" type="button">séances</button>
-			</a>
-			<a href="page/Nosfilms.php?id=4" class="affiche" data-category="Populaire">
-				<img src="image/photoopp.jpg" alt="" class="poster">
-				<button class="seance" type="button">séances</button>
-			</a>
-			<a href="page/Nosfilms.php?id=5" class="affiche" data-category="Populaire">
-				<img src="image/banniere3.jpg" alt="" class="poster">
-				<button class="seance" type="button">séances</button>
-			</a>
-			<a href="page/Nosfilms.php?id=6" class="affiche" data-category="Populaire">
-				<img src="image/pana.jpg" alt="" class="poster">
-				<button class="seance" type="button">séances</button>
-			</a>
-			<a href="page/Nosfilms.php?id=7" class="affiche" data-category="Populaire">
-				<img src="image/tenet.jpg" alt="" class="poster">
-				<button class="seance" type="button">séances</button>
-			</a>
-			<a href="page/Nosfilms.php?id=8" class="affiche" data-category="Populaire">
-				<img src="image/hasbi.jpg" alt="" class="poster">
-				<button class="seance" type="button">séances</button>
-			</a>
-			<a href="page/Nosfilms.php?id=9" class="affiche" data-category="Populaire">
-				<img src="image/avat.jpg" alt="" class="poster">
-				<button class="seance" type="button">séances</button>
-			</a>
-			<a href="page/Nosfilms.php?id=10" class="affiche" data-category="Populaire">
-				<img src="image/int.jpg" alt="" class="poster">
-				<button class="seance" type="button">séances</button>
-			</a>
-			<a href="page/Nosfilms.php?id=11" class="affiche" data-category="Populaire">
-				<img src="image/glad.jpg" alt="" class="poster">
-				<button class="seance" type="button">séances</button>
-			</a>
+			
 		</div>
 	</section>
 

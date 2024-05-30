@@ -9,7 +9,7 @@ $pdo = connectBdd();
 $filmId = isset($_GET['id']) ? intval($_GET['id']) : 0;
 
 // Requête SQL pour récupérer les informations du film
-$sql = "SELECT titre, realisateur, duree, datedesortie, affiche, description FROM film WHERE id = ?"; // Utilisation de l'ID pour obtenir les détails du film
+$sql = "SELECT titre, realisateur, duree, datedesortie, affiche, description FROM film WHERE id = ?"; 
 $stmt = $pdo->prepare($sql);
 $stmt->execute([$filmId]);
 
@@ -59,13 +59,24 @@ if ($stmt->rowCount() > 0) {
 	</a>
 </div>
 <div class="container_cinema">
-	<img src="../image/isep_vanves.jpeg" alt="Cinéma Isep Vanves">
-	<div class="text">
-		<h2>Cinéma Isep Vanves</h1>
-			<h3>10 Rue de Vanves, 92130 Issy-les-Moulineaux
-		</h2>
-		<h4>Tel : 01 49 54 52 00</h3>
-	</div>
+        <img src="../image/isep_vanves.jpeg" alt="Cinéma Isep Vanves">
+        <div class="text">
+            <h2>Cinéma Isep Vanves</h2>
+            <h3>10 Rue de Vanves, 92130 Issy-les-Moulineaux</h3>
+            <h4>Tel : 01 49 54 52 00</h4>
+        </div>
+        <div class="box_seance">
+            <button class="button_seance open-popup-btn" data-film-id="1" data-horaire="19:30">Réserver 19H30</button>
+            <button class="button_seance open-popup-btn" data-film-id="1" data-horaire="22:30">Réserver 22H30</button>
+        </div>
+    </div>
+	<div class="container_cinema">
+        <img src="../image/isep_raspail.jpg" alt="Cinéma Isep Raspail">
+        <div class="text">
+            <h2>Cinéma Isep Raspail</h2>
+            <h3>28 Rue Notre Dame des Champs, 75006 Paris</h3>
+            <h4>Tel : 01 49 54 52 00</h4>
+        </div>
 	<div class="box_seance">
             <button class="button_seance open-popup-btn" data-film-id="1" data-horaire="14:00">Réserver 14H00</button>
             <button class="button_seance open-popup-btn" data-film-id="1"data-horaire="16:00">Réserver 16H00</button>
