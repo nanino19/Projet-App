@@ -69,7 +69,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body>
-    
     <h1>Modifier le profil de <?php echo $user['prenom'] . ' ' . $user['nom']; ?></h1>
     <div class="container-profil">
     <form action="" method="post" class="oeoe">

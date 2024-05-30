@@ -1,5 +1,6 @@
 <?php include('../composant/header.php'); ?>
 <?php include('../composant/menu.php'); ?>
+<?php include('../composant/film-container.php') ?>
 	<div class="slider-container banniere">
 	</div>
 
@@ -14,6 +15,8 @@
 			<p>L'histoire de Paul Atreides, jeune homme aussi doué que brillant, voué à connaître un destin hors du commun qui le dépasse totalement. Car s'il veut préserver l'avenir de sa famille et de son peuple, il devra se rendre sur la planète la plus dangereuse de l'univers – la seule à même de fournir la ressource la plus précieuse au monde, capable de décupler la puissance de l'humanité. Tandis que des forces maléfiques se disputent le contrôle de cette planète, seuls ceux qui parviennent à dominer leur peur pourront survivre…</p>
 		</div>
 	</div>
+
+
 	<div class="slider-container banniere">
 	</div>
 	<div class="container_cinema">

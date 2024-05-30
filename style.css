@@ -1288,3 +1288,41 @@ td {
     border: 1px solid #ddd;
     padding: 8px;
 }
+
+
+
+.film-container {
+    display: flex; /* Utilisation de flexbox pour aligner les éléments */
+    margin-bottom: 30px; /* Marge en bas pour séparer les films */
+}
+
+.film-affiche {
+    flex: 1; /* Le conteneur de l'affiche prendra tout l'espace restant */
+    margin-right: 20px; /* Marge à droite pour séparer l'affiche du texte */
+}
+
+.film-affiche iframe {
+    width: 100%; /* Vidéo occupe toute la largeur du conteneur */
+    border-radius: 10px;
+}
+
+.film-detail {
+    flex: 1; /* Le conteneur de détails prendra tout l'espace restant */
+}
+
+.film-detail h3 {
+    margin-top: 0; /* Supprimer la marge supérieure du titre */
+}
+
+.film-detail p {
+    text-align: justify; /* Justifier le texte */
+}
+
+.film-salle {
+    flex: 1; /* Le conteneur de salle prendra tout l'espace restant */
+    margin-top: 10px; /* Marge en haut pour séparer les détails de la salle */
+}
+
+.film-seance {
+    font-size: 16px; /* Taille de police pour les détails de la séance */
+}

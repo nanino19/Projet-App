@@ -2,7 +2,6 @@
 <?php include('../composant/menu.php'); ?>
 
 <?php
-
 if (isset($_GET['msg']) && $_GET['msg'] == "subscribe_success") {
     echo '<div class="alert alert-success" role="alert">
       Inscription validée!

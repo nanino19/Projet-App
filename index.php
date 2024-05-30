@@ -15,7 +15,7 @@
 <?php
 session_start();
 
-include("back/pdo.php"); // Inclure le fichier pdo.php pour obtenir la connexion PDO
+include("back/fonction.php"); // Inclure le fichier pdo.php pour obtenir la connexion PDO
 
 // Rediriger les messages d'erreur vers le journal des erreurs du serveur
 ini_set('log_errors', 1);
@@ -89,21 +89,63 @@ if (isset($valider) && !empty(trim($keywords))) {
             <li><a href="page/nosfilms.php">Films</a></li>
             <li><a href="page/faq.php">Forum</a></li>
             <?php if (isset($_SESSION['user'])): ?>
-    <li><a href="page/profil.php">Bienvenue, <?php echo htmlspecialchars($_SESSION['user']['prenom']) . ' ' . htmlspecialchars($_SESSION['user']['nom']); ?></a></li>
+    <li><a href="page/profil.php"> <?php echo htmlspecialchars($_SESSION['user']['prenom']) . ' ' . htmlspecialchars($_SESSION['user']['nom']); ?></a></li>
 	<li><a href="back/logout.php">Deconnexion</a></li>
 <?php else: ?>
     <li><a href="page/connexion.php">Se connecter</a></li>
 	<li><a href="page/inscription.php">Creer un Compte</a></li>
 <?php endif; ?>
-            
-            
-            
         </ul>
     </nav>
 </div>
+<?php
+if (isset($_SESSION['user']) && $_SESSION['user']['role'] == 1) {
+	echo'<aside id="admin-sidebar">
+  <div class="admin-profile">
+    <img src="admin-avatar.png" alt="Admin Avatar" class="admin-avatar">
+    <h3>Nom de l\'Admin</h3>
+    <button id="sidebarToggle" class="sidebar-toggle">
+      <span class="sidebar-arrow"></span>
+    </button>
+  </div>
+  <nav class="admin-navigation">
+    <ul>
+      <li><a href="page/ajoutfilm.php">Ajouter un nouveau film</a></li>
+      <li><a href="page/ajoutsalle.php">Ajouter une nouvelle salle</a></li>
+      <li><a href="page/ajoutseance.php">Ajouter une seance</a></li>
+      <li><a href="page/utilisateur.php">Utilisateurs</a></li>
+      <li><a href="#">Commentaires</a></li>
+      <li><a href="page/faq.php">FAQ</a></li>
+      <li><a href="#">Capteur</a></li>
+      <li><a href="#">Parametres</a></li>
+    </ul>
+  </nav>
+</aside>';
+}
 
+?><script>
+  document.addEventListener('DOMContentLoaded', function() {
+  var sidebar = document.getElementById('admin-sidebar');
+  var toggleButton = document.getElementById('sidebarToggle');
+  var arrow = toggleButton.querySelector('.sidebar-arrow');
 
-
+  toggleButton.addEventListener('click', function() {
+    // Basculer la classe collapsed sur le sidebar
+    sidebar.classList.toggle('collapsed');
+    
+    // Changer la direction de la flèche
+    if (sidebar.classList.contains('collapsed')) {
+      arrow.classList.remove('arrow-left');
+      arrow.classList.add('arrow-right');
+      document.body.style.paddingLeft = '0'; // Rétracter le body
+    } else {
+      arrow.classList.remove('arrow-right');
+      arrow.classList.add('arrow-left');
+      document.body.style.paddingLeft = '240px'; // Étendre le body
+    }
+  });
+});
+</script>
 
 
 <!-- carousel -->
@@ -226,71 +268,23 @@ Dans "Le Seigneur des Anneaux", une épopée cinématographique dirigée par Pet
 	<!-- time running -->
 	<div class="time"></div>
 </div>
-
+<?php
+	$allfilms = getOnlyFilms();
+	?>
 <section>
-	<h1>A l'affiche</h1>
-	<div>
-       
-        <select id="categories">
-            <option value="Populaire">Populaire</option>
-            <option value="Tout public">Tout public</option>
-            <option value="Senior">Senior</option>
-        </select>
-    </div>
-	<div class="affiches">
-		<a href="#" class="affiche" data-category="Populaire",>
-			<img src="image/affiche.jpg" alt="" class="poster">
-			<button class="seance" type="button">séances</button>
-		</a>
-		<a href="#" class="affiche" data-category="Senior">
-			<img src="image/comedie.jpg" alt="" class="poster">
-			<button class="seance" type="button">séances</button>
-		</a>
-		<a href="page/Nosfilms.php" class="affiche" data-category="Populaire">
-			<img src="image/dune.jpg" alt="" class="poster">
-			<button class="seance" type="button">séances</button>
-		</a>
-		<a href="#" class="affiche" data-category="Populaire">
-			<img src="image/banniere4.jpg" alt="" class="poster">
-			<button class="seance" type="button">séances</button>
-		</a>
-		<a href="#" class="affiche" data-category="Populaire">
-			<img src="image/banniere3.jpg" alt="" class="poster">
-			<button class="seance" type="button">séances</button>
-		</a>
-		<a href="#" class="affiche" data-category="Populaire">
-			<img src="image/pana.jpg" alt="" class="poster">
-			<button class="seance" type="button">séances</button>
-		</a>
-		<a href="#" class="affiche" data-category="Populaire">
-			<img src="image/tenet.jpg" alt="" class="poster">
-			<button class="seance" type="button">séances</button>
-		</a>
-		<a href="#" class="affiche" data-category="Populaire">
-			<img src="image/hasbi.jpg" alt="" class="poster">
-			<button class="seance" type="button">séances</button>
-		</a>
-		<a href="#" class="affiche" data-category="Populaire">
-			<img src="image/avat.jpg" alt="" class="poster">
-			<button class="seance" type="button">séances</button>
-		</a>
-		<a href="#" class="affiche" data-category="Populaire">
-			<img src="image/int.jpg" alt="" class="poster">
-			<button class="seance" type="button">séances</button>
-		</a>
-		
-		
-		<a href="#" class="affiche" data-category="Populaire">
-			<img src="image/glad.jpg" alt="" class="poster">
-			<button class="seance" type="button">séances</button>
-		</a>
-		
-		
-		
-		
-
-	</div>
-</section>
+		<h1>A l'affiche</h1>
+		<div class="affiches">
+			<?php
+			for ($i = 0; $i < count($allfilms); $i++) {
+				echo '
+				<a href="page/filmdetails?id='.$allfilms[$i]['id'].'" class="affiche">
+				<img src="uploads/'.$allfilms[$i]['image'].'" alt="" class="poster">
+				<button class="seance" type="button">séances</button>
+				</a>';
+			}
+			?>
+		</div>
+	</section>
 
 
 <section>
@@ -339,22 +333,13 @@ Dans "Le Seigneur des Anneaux", une épopée cinématographique dirigée par Pet
 	<div class="Info3">Numero de telephone</div>
 	</div>
 	<div class="naviguation">
-		
 			<ul>
-				
 				<li><a href="page/contact.php">Contact</a></li>
 				<li><a href="page/cgu.php">CGU</a></li>
 				<li><a href="page/mentionslegales.php">Mentions legales</a></li>
 				<li><a href="#">Forum</a></li>
-				
 			</ul>
-			
-		
-
 	</div>
-	
-	
-
 </div>
 
 <div class="image">

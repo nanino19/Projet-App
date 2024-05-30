@@ -8,8 +8,8 @@ foreach ($films as $film) {
     echo '<div class="film-container">';
     echo '<div class="film-affiche">';
     // Si vous avez une image, ajoutez-la ici
-    echo'<iframe width="560" height="315"
-        src="'. htmlspecialchars($film['video']).'";
+    echo '<iframe width="560" height="315"
+        src="' . htmlspecialchars($film['video']) . '";
         title="YouTube video player" frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen>
@@ -21,7 +21,7 @@ foreach ($films as $film) {
     echo '</div>';
     echo '<div class="film-salle">';
     echo '<div class="film-seance">';
-    echo 'Séance à ' . htmlspecialchars($film['horraire']) . ', Salle : ' . htmlspecialchars($film['nom']);
+    echo 'Séance à ' . htmlspecialchars($film['horaire']) . ', Salle : ' . htmlspecialchars($film['nom']);
     echo '</div>';
     echo '</div>';
     echo '</div>';

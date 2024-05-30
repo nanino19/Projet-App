@@ -17,9 +17,7 @@ echo '
 	<div class="Info3">Numéro de telephone</div>
 	</div>
 	<div class="naviguation">
-		
 			<ul>
-				
 				<li><a href="../page/contact.php">Contact</a></li>
 				<li><a href="../page/cgu.php">CGU</a></li>
 				<li><a href="../page/mentionslegales.php">Mentions legales</a></li>

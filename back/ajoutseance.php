@@ -3,6 +3,8 @@ session_start(); // Assurez-vous que cette ligne est au début du fichier, avant
 
 include("fonction_admin.php");
 
+
+
 // Initialiser une réponse
 $response = [
     'status' => 'error',
@@ -11,13 +13,14 @@ $response = [
 
 // Vérifier si le formulaire a été soumis
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Récupérer les données du formulaire
-    $nom = $_POST['nom'] ?? '';
-    $description = $_POST['description'] ?? '';
-    $nbplaces = $_POST['nbplaces'] ?? '';
+    $idFilm = $_POST['film'];
+    $idSalle = $_POST['salle'];
+    $date = $_POST['date'];
+    $horaire = $_POST['horaire'];
+    $version = $_POST['version'];
 
     // Valider les données (à compléter selon les règles de validation que vous souhaitez appliquer)
-    $response = insererUneSalle($nom, $description, $nbplaces);
+    $response = insererUneSeance($idFilm, $idSalle, $date, $horaire, $version);
     print_r($response);
 }
 if ($response['status'] == 'success') {
@@ -28,4 +31,3 @@ if ($response['status'] == 'success') {
     echo($response['message']);
     exit();
 }
-?>
