@@ -39,8 +39,8 @@ if (isset($_SESSION['errors_subscribe']) && !empty($_SESSION['errors_subscribe']
             <input type="time" id="duree" name="duree" required />
         </div>
         <div class="col">
-            <label for="video" class="form-label">Lien de la vidéo</label>
-            <input type="text" name="video" class="form-control" id="video">
+            <label for="realisateur" class="form-label">Réalisateur</label>
+            <input type="text" name="realisateur" class="form-control" id="realisateur">
         </div>
         <div class="col">
             <label for="image" class="form-label">Image</label>
@@ -64,7 +64,7 @@ if (isset($_SESSION['errors_subscribe']) && !empty($_SESSION['errors_subscribe']
 
     </div>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button href="../index.php"type="submit" class="btn btn-primary">Submit</button>
 </form>
 
 <?php include('../composant/footer.php'); ?>

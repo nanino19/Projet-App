@@ -1,66 +1,126 @@
-body{
-	margin:0px;
-	padding: 0px;
-    
-	background-color: #EDE8DF;
-	text-align: center;
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #EDE8DF;
+    text-align: center;
     font-family: Arial, sans-serif;
 }
 
-.header{
-	background-color: #F4E4C6;
-	height: 120px;
-	margin: 0px;
-    max-width: auto;
-	display: flex;
-	align-items: center; 
-    justify-content: space-between;
-    background-position: center;
-    box-shadow: 0px 0 35px 0 rgba(0, 0, 0, 10);
-}
-
-
 .logo {
-    margin-left: 10px;
     width: 170px;
-    height: 170px;
+    height: auto;
 }
-nav ul li{
-	font-family: 'Koulen';font-size: 22px;
-	display: inline-block;
 
+.header-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    margin: 0 20px;
 }
-ul li a{
-	color: #C83606;
 
-	letter-spacing: 0.1rem;
-}
-ul li a:hover{
-	color:#FBD314;
-	text-decoration: underline;
-}
-.menu li{
-	float: center;
-	padding:35px;
-}
-.menu li a{
-
-	text-decoration: none;
-}
-form {
-    background: transparent;
+.header-center form {
+    width: 100%;
     max-width: 600px;
-    margin: 0 auto;
-    font-family: koulen;
+    margin-bottom: 10px;
 }
 
-input[type="search"]{
-	font-family: 'Koulen';
-    	font-size: 17px;
-	border-radius: 20px;
-    	border-color: transparent;
+input[type="search"] {
+    font-family: 'Koulen';
+    font-size: 17px;
+    border-radius: 20px;
+    border: 2px solid #C83606;
+    padding: 5px 25px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #FFFFFF;
+    color: #333333;
+    transition: border-color 0.3s ease, width 0.3s ease;
 }
 
+input[type="search"]:focus {
+    outline: none;
+    border-color: #FBD314;
+}
+
+nav.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav.menu ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav.menu ul li {
+    margin-right: 0; 
+}
+
+nav.menu ul li {
+    font-family: 'Koulen';
+    font-size: 22px;
+}
+
+nav.menu ul li a {
+    color: #C83606;
+    text-decoration: none;
+    letter-spacing: 0.1rem;
+}
+
+nav.menu ul li a:hover {
+    color: #FBD314;
+    text-decoration: underline;
+}
+
+.header-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    height: 100%;
+}
+
+.header {
+    background-color: #F4E4C6;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    box-shadow: 0px 0 35px 0 rgba(0, 0, 0, 0.1);
+    font-family: 'Koulen', sans-serif;
+    color: #C83606;
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.account-link {
+    font-family: 'Koulen';
+    font-size: 22px;
+    color: #C83606;
+    text-decoration: none;
+    margin-top: 5px;
+}
+
+.account-link:hover {
+    color: #FBD314;
+}
 
 .carousel{
     height: 100vh;
@@ -346,7 +406,10 @@ select {
     display:flex ;
 }
 
+select option[value="Populaire"]{
+    background-color: #000;
 
+}
  section{
     position: relative;
     width: 100%;
@@ -758,6 +821,116 @@ ul{
 
 
 
+.container4 {
+    width: 80%;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.container4h1, h2 {
+    color: #333;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+form input[type="text"], form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.container4 form input[type="submit"] {
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+form input[type="submit"]:hover {
+    background-color: #4cae4c;
+}
+
+.messages-wrapper {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.message-container {
+    background-color: #f9f9f9;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-left: 5px solid #5cb85c;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.message-content {
+    flex-grow: 1;
+}
+
+.message-date {
+    flex-shrink: 0;
+    color: #999;
+    font-size: 0.9em;
+    margin-right: 10px;
+}
+
+.pagination {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.pagination a {
+    margin: 0 5px;
+    text-decoration: none;
+    color: #000;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.pagination a.active {
+    font-weight: bold;
+    color: white;
+    background-color: #5cb85c;
+    border-color: #5cb85c;
+}
+
+.pagination a:hover {
+    background-color: #ddd;
+}
+
+.container4 h2 {
+    margin-top: 40px;
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+
+
+
 .intro {
     margin-top: 28px;
     margin-bottom: 50px;
@@ -776,8 +949,7 @@ ul{
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    z-index: 1;
-    position: initial;
+    position:relative;
 }
 
 .espace {
@@ -893,56 +1065,38 @@ ul{
 
 
 
+/* Style pour le formulaire */
 form {
-    background: transparent;
     max-width: 600px;
     margin: 0 auto;
-    
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
 }
 
 /* Style pour les colonnes */
 .row {
-    margin-bottom: 20px;
-    background: transparent;
-    border: 2px solid black;
-    backdrop-filter: blur(20px);
-    box-shadow: 0 0 10px rgba(0,0,0,.2);
-    border-radius: 10px;
-    padding: 20px 40px;
+    margin-bottom: 15px;
 }
 
 .col {
     padding-right: 15px;
     padding-left: 15px;
-    width: 450px;
 }
-
-.cozi {
-    height: 650px;
-    display: flex;
-    background-image: url(./image/cozi.jpeg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    align-items: center;
-    justify-content: center;
-}
-
 
 /* Style pour les labels */
 .form-label {
     font-weight: bold;
 }
 
-
 /* Style pour les inputs */
 .form-control {
-    background: transparent;
     width: 100%;
     padding: 8px;
     margin-top: 5px;
     margin-bottom: 10px;
-    border: 1px solid black;
+    border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
 }
@@ -965,15 +1119,125 @@ form {
     background-color: #C83606;
 }
 
+.cozi {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 50px;
+    overflow: hidden; /* Assure que le pseudo-élément ne déborde pas */
+}
+
+.cozi::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(./image/cozi.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(8px); /* Applique un flou à l'image de fond */
+    z-index: -1; /* Place le pseudo-élément derrière le contenu */
+}
+
+/* Style pour la case à cocher personnalisée */
+.custom-checkbox {
+    display: none; /* Cache la case à cocher par défaut */
+}
+
+/* Style pour le label de la case à cocher */
+.custom-checkbox-label {
+    position: relative;
+    padding-left: 30px; /* Espace pour le pseudo-élément de la case à cocher */
+    cursor: pointer;
+    font-weight: bold;
+    user-select: none; /* Empêche la sélection de texte */
+}
+
+/* Pseudo-élément pour la case à cocher personnalisée */
+.custom-checkbox-label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    border: 2px solid black;
+    border-radius: 4px;
+    background-color: white;
+    box-sizing: border-box;
+}
+
+/* Pseudo-élément pour l'état "checked" de la case à cocher */
+.custom-checkbox:checked + .custom-checkbox-label::before {
+    content: "✓";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: #4CAF50; /* Couleur de fond pour l'état "checked" */
+    border: 2px solid #4CAF50; /* Même couleur que le fond */
+}
+
+/* Style pour le label de la case à cocher au survol */
+.custom-checkbox-label:hover::before {
+    border-color: #4CAF50;
+}
 
 /* Style pour le texte d'aide */
 .form-text {
     color: #6c757d;
 }
+.form-label {
+    font-weight: bold;
+}
+
+
+/* Style pour les inputs */
+.form-control {
+    background: transparent;
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid black;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.container_banniere {
+    font-size: 15px;
+    background-color: #FBD314;  /* Couleur de fond pour visibilité */
+    margin: 0;  /* Enlève les marges par défaut */
+    padding-left: 50px;
+    padding-right: 500px;
+    display: flex; /* Utilise Flexbox pour la mise en page */
+    justify-content: space-around; /* Répartit l'espace uniformément autour des éléments */
+
+}
+
+.jour {
+    color: black;
+    font-family: koulen;
+    letter-spacing: 0.1rem;
+}
+
+.jour :hover {
+    transition: clip-path 0.5s ease-out;
+    color: #C83606;
+	text-decoration: underline;
+}
 
 .container_affiche {
     display: flex; /* Utilisation de flexbox pour aligner les éléments */
     align-items: center; /* Centrer verticalement les éléments */
+    text-align: justify;
 }
 
 .container_affiche img {
@@ -1033,20 +1297,22 @@ form {
 }
 
 .contact-form {
-    height: 650px;
-    background-image: url(./image/fondform.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    align-items: center;
-    justify-content: center;
-    font-family: Koulen;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: transparent;
+    font-family: 'Koulen';
 }
-
-.contact-form h2 {
-    margin-top: 0px;
+.contact-form2 {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: transparent;
+    border: 2px solid ;
+    box-shadow: 0px 0 10px 0 rgba(0, 0, 0, 5);
 }
-
 
 .contact-form .row {
     margin-bottom: 15px;
@@ -1104,7 +1370,6 @@ form {
     color: white;
     padding: 10px;
     box-sizing: border-box;
-    z-index: 1000;
   }
   
   .admin-profile {
@@ -1165,24 +1430,80 @@ form {
     color: #f5eb3b; /* Couleur des étoiles survolées ou sélectionnées */
   }
   
-  .popup-overlay {
+  section{
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 0px 50px;
+    bottom: 20px;
+    color: #C83606;
+    
+}
+ section .affiches{
+    position: relative;
+    width: 100%;
+    height: 300px;
+    border: 1px solid #fff;
+    margin-top:10 px ;
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+
+}
+
+    
+
+section .evenement::-webkit-scrollbar{
+    display: none;
+    
+
+}
+ section .evenement .affiche{
+    position: relative;
+    min-width: 200px;
+    height: 290px;
+    border: 1px solid #fff;
+    border-radius: 8px;
+    margin-top:10 px ;
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    background: #000;
+    transition: .3s linear;
+
+}
+section .evenement .affiche .poster{
+   width: 100%;
+   height: 100%;
+   border-radius: 10px;
+   position: relative;
+   
+
+}
+section .evenement .affiche{
+    width: 200px;
+
+
+}
+
+
+.popup-overlay {
+    display: none; /* Initialement caché */
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); 
-    display: none; 
+    background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
     justify-content: center;
     align-items: center;
-
 }
 
 .popup {
-
+    display: none; /* Initialement caché */
     position: fixed;
-    width: 400px; 
-    height: auto; 
+    width: 400px; /* Ajustez la largeur selon vos besoins */
+    height: auto; /* Ajustez la hauteur selon vos besoins */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -1190,7 +1511,7 @@ form {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    z-index: 999; 
+    z-index: 999; /* Assurez-vous que la popup est au-dessus des autres éléments */
 }
 
 .popup-text {
@@ -1199,92 +1520,256 @@ form {
     margin-bottom: 10px;
 }
 
-
-
-
 .show {
-    display: flex; 
+    display: flex; /* Afficher la popup */
 }
-.reserve-btn {
-    background-color: #007bff; 
-    color: #fff; 
-    padding: 10px 20px; 
-    border: none; 
-    border-radius: 5px; 
-    cursor: pointer; 
-    font-size: 16px; }
 
-.reserve-btn:hover {
-    background-color: #0056b3; 
-}
+   
   
 
-.container-profil{
-    font-family: 'Koulen';font-size: 22px;
-    height: 300px;
-    display: block;
+.reserve-btn {
+    background-color: #007bff; /* Bleu */
+    color: #fff; /* Texte blanc */
+    padding: 10px 20px; /* Rembourrage */
+    border: none; /* Pas de bordure */
+    border-radius: 5px; /* Coins arrondis */
+    cursor: pointer; /* Curseur de souris en forme de main */
+    font-size: 16px; /* Taille de la police */
+}
+
+.reserve-btn:hover {
+    background-color: #0056b3; /* Bleu foncé au survol */
+}
+
+.custom-popup-overlay {
+    display: none; /* Initialement caché */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
     justify-content: center;
     align-items: center;
-    max-width: 600px;
-    margin: 100px auto;
-    background-color:#F4E4C6 ;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Effet d'ombre */
+}
+
+.custom-popup {
+    position: relative;
+    background: #fff;
     padding: 20px;
-}
-.container-profil p {
-    margin-bottom: 10px;
-    color: #C83606;
-    letter-spacing: 0.1rem;
-}   
-.btn-modifier {
-    text-decoration: none;
-    padding: 10px;
-    font-family: arial;
-    font-size: 1em;
-    color: #FFFFFF;
-    background-color: #ff0000;
-    border-radius: 24px;
-    -webkit-border-radius: 24px;
-    -moz-border-radius: 24px;
-    border: 4px solid #FFFFFF;
-    box-shadow: 3px 3px 12px #444444;
-    -webkit-box-shadow: 3px 3px 12px #444444;
-    -moz-box-shadow: 3px 3px 12px #444444;
-    }
-    
-    
-    .btn-modifier:hover {
-    padding: 10px;
-    background-color: #d99694;
-    box-shadow: 1px 1px 4px #777777;
-    -webkit-box-shadow: 1px 1px 4px #777777;
-    -moz-box-shadow: 1px 1px 4px #777777;
-    }
-    .oeoe{
-        margin-bottom: 10px;
-    color: #C83606;
-    letter-spacing: 0.1rem;
-    }
-
-    /* Style du tableau */
-table {
-    border-collapse: collapse;
-    width: 100%;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    max-height: 80vh; /* Hauteur maximale */
+    overflow-y: auto; /* Activer le défilement vertical */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Style de l'en-tête du tableau */
-th {
-    background-color: #f2f2f2;
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
+.close-popup-btn {
+    background-color: #007bff; /* Bleu */
+    color: #fff; /* Texte blanc */
+    padding: 10px 20px; /* Rembourrage */
+    border: none; /* Pas de bordure */
+    border-radius: 5px; /* Coins arrondis */
+    cursor: pointer; /* Curseur de souris en forme de main */
+    font-size: 16px; /* Taille de la police */
+}
+
+.close-popup-btn:hover {
+    background-color: #0056b3; /* Bleu foncé au survol */
+}
+
+.activities-section {
+    background-color: #F4E4C6; /* Fond du bloc activité */
+    padding: 20px;
+    border-radius: 15px; /* Bords arrondis */
+    margin: 20px 0;
+    border: 3px solid #C83606; /* Bordure autour des activités */
+}
+
+.activities-section h1 {
     text-align: center;
-           
+    color: #7C2D13;
+    margin-bottom: 20px;
 }
 
-/* Style des cellules du tableau */
-td {
-    border: 1px solid #ddd;
+.activities-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.activity-card {
+    background-color: #fff;
+    border: 2px solid #7C2D13; /* Contour des cases des activités */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    width: 45%;
+    transition: transform 0.3s;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.activity-card:hover {
+    transform: scale(1.05);
+}
+
+.activity-image {
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 13px;
+    border-top-right-radius: 13px;
+}
+
+.activity-info {
+    padding: 10px;
+    text-align: center;
+}
+
+.activity-info h2 {
+    margin: 10px 0;
+    color: #333;
+}
+
+.activity-info p {
+    color: #666;
+}
+
+.activity-button {
+    background-color: #FBD314; /* Fond du bouton */
+    color: #7C2D13; /* Texte en rouge */
+    border: none;
+    border-radius: 25px; /* Boutons arrondis */
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-family: 'Koulen', sans-serif;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.activity-button:hover {
+    background-color: #EAC013; /* Couleur légèrement plus foncée au survol */
+}
+.contact-form {
+    height: 650px;
+    background-image: url(./image/fondform.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    align-items: center;
+    justify-content: center;
+    font-family: Koulen;
+}
+
+.contact-form h2 {
+    margin-top: 0px;
+}
+
+
+.contact-form .row {
+    margin-bottom: 15px;
+}
+
+.contact-form .col {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.contact-form .form-label {
+    background-color: transparent;
+    font-weight: bold;
+}
+
+.contact-form .form-control {
+    width: 100%;
     padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.contact-form .btn-primary {
+    background-color: #FBD314;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Koulen';
+}
+
+.contact-form .btn-primary:hover {
+    background-color: #FBD314;
+    box-shadow: 0px 0 10px 0 rgba(0, 0, 0, 5);
+}
+
+.contact-form .form-text {
+    color: #6c757d;
+}
+.contact-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+
+/*style des boxs d'infos*/
+.info-box {
+    border: 2px solid red;
+    border-radius: 8px;
+    padding: 20px; 
+    margin-bottom: 30px; 
+    width: calc(33.3% - 30px); 
+    display: inline-block;
+    text-align: center; 
+    box-sizing: border-box;
+    background-color: #F4E4C6; 
+    font-family: "Koulen", sans-serif; 
+}
+
+.info-box p {
+    margin: 10px 0; 
+}
+.opening-hours {
+    color: #C83606;
+    font-size: 18px;
+    font-weight:;
+    margin-top: 30px; 
+}
+
+
+
+
+.red-text {
+    color:#C83606;
+    font-size: 24px;
+    font-weight:;
+    font-family: "Koulen", sans-serif;
+}
+
+/* Style pour le logo dans info-box */
+.info-box .logo {
+    width: 80px; 
+    height: auto; 
+    background-color: #F4E4C6;
+}
+
+/* Effet d'animation au survol de .info-box */
+.info-box {
+    transition: transform 0.3s ease;
+}
+
+.info-box:hover {
+    transform: scale(1.05); /* Légère augmentation de la taille au survol */
+}
+
+.search-form input[type="submit"] {
+    position: absolute;
+    left: -9999px;  /* Déplace le bouton hors de l'écran */
 }

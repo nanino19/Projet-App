@@ -14,7 +14,7 @@ echo '
 	<div class="Info">
     <div class="Info1">Nom du cinema</div>
 	<div class="Info2">Adresse</div>
-	<div class="Info3">Numéro de telephone</div>
+	<div class="Info3">Numero de telephone</div>
 	</div>
 	<div class="naviguation">
 		
@@ -23,7 +23,7 @@ echo '
 				<li><a href="../page/contact.php">Contact</a></li>
 				<li><a href="../page/cgu.php">CGU</a></li>
 				<li><a href="../page/mentionslegales.php">Mentions legales</a></li>
-				<li><a href="#">FAQ</a></li>
+				<li><a href="../page/faq.php">FAQ</a></li>
 				
 			</ul>
 	</div>
