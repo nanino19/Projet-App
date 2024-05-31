@@ -9,7 +9,7 @@ foreach ($films as $film) {
     echo '<div class="film-affiche">';
     // Si vous avez une image, ajoutez-la ici
     echo'<iframe width="560" height="315"
-        src="'. htmlspecialchars($film['video']).'";
+        src="'. htmlspecialchars($film['realisateur']).'";
         title="YouTube video player" frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen>

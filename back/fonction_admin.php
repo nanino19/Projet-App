@@ -1,8 +1,6 @@
-
-
 <?php include('pdo.php');
 
-function insererUnFilm($imageTmpName, $uploadFile, $titre, $description, $dateDeSortie, $duree, $video, $imageName, $note)
+function insererUnFilm($imageTmpName, $uploadFile, $titre, $description, $dateDeSortie, $duree, $realisateur, $imageName, $note)
 {
     // Si les validations passent, procéder à l'insertion dans la base de données
     try {
@@ -10,7 +8,7 @@ function insererUnFilm($imageTmpName, $uploadFile, $titre, $description, $dateDe
         // Déplacer l'image uploadée dans le dossier souhaité
         if (move_uploaded_file($imageTmpName, $uploadFile)) {
             // Créer la requête SQL
-            $query = "INSERT INTO film (titre, description, datedesortie, duree,image, video,  note) VALUES (:titre, :description, :dateDeSortie, :duree, :imageName, :video, :note)";
+            $query = "INSERT INTO film (titre, description, datedesortie, duree,affiche, realisateur,  note) VALUES (:titre, :description, :dateDeSortie, :duree, :imageName, :realisateur, :note)";
             $stmt = $pdo->prepare($query);
 
             // Lier les paramètres
@@ -19,7 +17,7 @@ function insererUnFilm($imageTmpName, $uploadFile, $titre, $description, $dateDe
             $stmt->bindParam(':dateDeSortie', $dateDeSortie);
             $stmt->bindParam(':duree', $duree);
             $stmt->bindParam(':imageName', $imageName);
-            $stmt->bindParam(':video', $video);
+            $stmt->bindParam(':realisateur', $realisateur);
             $stmt->bindParam(':note', $note);
 
             // Exécuter la requête

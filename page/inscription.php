@@ -18,7 +18,7 @@ function validatePassword($password) {
 function validateEmail($email) {
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         return false; // Retourne false si l'email n'est pas valide
-    }
+    }   
     return true;
 }
 
@@ -40,36 +40,34 @@ if (isset($_GET['msg']) && $_GET['msg'] == "email_used") {
 ?>
 
 <div class="cozi">
-    <form method="POST" action="../back/inscription.php">
+    <form method="POST" action="../back/inscription.php" onsubmit="return validateForm()">
         <div class="row">
             <div class="col">
                 <label for="nom" class="form-label">Nom</label>
-                <input type="text" name="nom" class="form-control">
+                <input type="text" name="nom" class="form-control" required>
             </div>
             <div class="col">
-                <label for="nom" class="form-label">Prenom</label>
-                <input type="text" name="prenom" class="form-control">
+                <label for="prenom" class="form-label">Prenom</label>
+                <input type="text" name="prenom" class="form-control" required>
             </div>
             <div class="col">
-                <label for="telephone" class="form-label">Telephone</label>
-                <input type="tel" name="tel" class="form-control" id="tel">
+                <label for="tel" class="form-label">Telephone</label>
+                <input type="tel" name="tel" class="form-control" id="tel" required>
             </div>
             <div class="col">
                 <label for="exampleInputEmail1" class="form-label">Email address</label>
-                <input type="email" name="email" class="form-control" id="exampleInputEmail1"
-                    aria-describedby="emailHelp">
+                <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
             </div>
             <div class="col">
                 <label for="exampleInputPassword1" class="form-label">Password</label>
-                <input type="password" name="pwd1" class="form-control" id="exampleInputPassword1">
+                <input type="password" name="pwd1" class="form-control" id="exampleInputPassword1" required>
             </div>
             <div class="col">
-                <label for="exampleInputPassword1" class="form-label">Confirmer votre Password</label>
-                <input type="password" name="pwd2" class="form-control" id="exampleInputPassword1">
+                <label for="exampleInputPassword2" class="form-label">Confirmer votre Password</label>
+                <input type="password" name="pwd2" class="form-control" id="exampleInputPassword2" required>
             </div>
             <div class="col">
-                <label for="conditionsGenerales" class="form-label">J'ai lu et j'accepte les Conditions generales
-                    d'utilisation</label>
+                <label for="conditionsGenerales" class="form-label">J'ai lu et j'accepte les Conditions generales d'utilisation</label>
                 <input type="checkbox" name="conditionsG" id="conditionsGenerales" required>
             </div>
 
@@ -77,7 +75,6 @@ if (isset($_GET['msg']) && $_GET['msg'] == "email_used") {
         </div>
     </form>
 </div>
-
 
 <script>
     function validateForm() {
@@ -96,12 +93,18 @@ if (isset($_GET['msg']) && $_GET['msg'] == "email_used") {
         }
 
         if (!validateEmail(email)) {
+            alert('L\'adresse e-mail n\'est pas valide.');
             return false;
         }
 
         return true;
-        
+    }
+
+    function validateEmail(email) {
+        var re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+        return re.test(email);
     }
 </script>
+
 
 <?php include ('../composant/footer.php'); ?>
