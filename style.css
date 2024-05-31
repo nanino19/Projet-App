@@ -1259,11 +1259,15 @@ section .evenement .affiche{
 }
 
 .custom-popup {
-    background-color: #fff;
+    position: relative;
+    background: #fff;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    z-index: 999; /* Assurez-vous que la popup est au-dessus des autres éléments */
+    width: 90%;
+    max-width: 400px;
+    max-height: 80vh; /* Hauteur maximale */
+    overflow-y: auto; /* Activer le défilement vertical */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .close-popup-btn {

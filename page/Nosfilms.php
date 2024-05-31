@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Réservation Dune</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://www.paypal.com/sdk/js?client-id=AShGFRoubd_5oUJ-PLunGwuX0IrRhdp865-SBULmCTsfR2qdDawYdTba91MRJhmJTZey72Lmt4IjV85A"></script>
 </head>
 <body>
     <?php include('../composant/header.php'); ?>
@@ -43,9 +44,9 @@
         </div>
         <div class="box_seance">
             <button class="button_seance open-popup-btn" data-film-id="1" data-horaire="14:00">Réserver 14H00</button>
-            <button class="button_seance open-popup-btn" data-film-id="1"data-horaire="16:00">Réserver 16H00</button>
-            <button class="button_seance open-popup-btn" data-film-id="1"data-horaire="18:00">Réserver 18H00</button>
-            <button class="button_seance open-popup-btn" data-film-id="1"data-horaire="20:30">Réserver 20H30</button>
+            <button class="button_seance open-popup-btn" data-film-id="1" data-horaire="16:00">Réserver 16H00</button>
+            <button class="button_seance open-popup-btn" data-film-id="1" data-horaire="18:00">Réserver 18H00</button>
+            <button class="button_seance open-popup-btn" data-film-id="1" data-horaire="20:30">Réserver 20H30</button>
         </div>
     </div>
 
@@ -57,6 +58,10 @@
             <span id="places-disponibles" class="places-disponibles">0 places disponibles</span>
             <button class="reserve-btn" id="reserve-button">Réserver</button>
             <button class="reserve-btn" id="popup-close">Retour</button>
+            <div id="payment-info" style="display:none;">
+                <span class="payment-text">Montant à payer : 8 euros</span>
+                <div id="paypal-button-container"></div>
+            </div>
         </div>
     </div>
 
