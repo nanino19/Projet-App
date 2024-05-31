@@ -1,20 +1,16 @@
-body{
-	margin:0px;
-	padding: 0px;
-	background-color: #EDE8DF;
-	text-align: center;
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #EDE8DF;
+    text-align: center;
     font-family: Arial, sans-serif;
 }
-
-/* Styles généraux pour le header */
-
 
 .logo {
     width: 170px;
     height: auto;
 }
 
-/* Centre du header avec barre de recherche et navigation */
 .header-center {
     display: flex;
     flex-direction: column;
@@ -23,7 +19,6 @@ body{
     margin: 0 20px;
 }
 
-/* Formulaire de recherche */
 .header-center form {
     width: 100%;
     max-width: 600px;
@@ -48,38 +43,47 @@ input[type="search"]:focus {
     border-color: #FBD314;
 }
 
-/* Menu de navigation */
-nav ul.menu {
+nav.menu {
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-grow: 1;
     gap: 20px;
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-nav ul.menu li {
-    margin-right: 60px; /* Ajustez la marge selon vos préférences */
+nav.menu ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
+nav.menu ul li {
+    margin-right: 0; 
+}
 
-nav ul.menu li {
+nav.menu ul li {
     font-family: 'Koulen';
     font-size: 22px;
 }
 
-nav ul.menu li a {
+nav.menu ul li a {
     color: #C83606;
     text-decoration: none;
     letter-spacing: 0.1rem;
 }
 
-nav ul.menu li a:hover {
+nav.menu ul li a:hover {
     color: #FBD314;
     text-decoration: underline;
 }
 
-/* Section droite du header avec avatar et compte */
 .header-right {
     display: flex;
     flex-direction: column;
@@ -88,6 +92,7 @@ nav ul.menu li a:hover {
     margin-left: auto;
     height: 100%;
 }
+
 .header {
     background-color: #F4E4C6;
     display: flex;
@@ -98,6 +103,7 @@ nav ul.menu li a:hover {
     font-family: 'Koulen', sans-serif;
     color: #C83606;
 }
+
 .avatar {
     width: 100px;
     height: 100px;

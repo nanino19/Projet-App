@@ -1,13 +1,27 @@
 <?php include ('../composant/header.php'); ?>
 <?php include ('../composant/menu.php'); ?>
 <?php
+
+
+// Vérifier si l'utilisateur est connecté, sinon afficher un message et rediriger vers la page de connexion
+if (!isset($_SESSION['user'])) {
+    echo "<div class='error-message'>Veuillez vous connecter avant de pouvoir accéder au forum.</div>";
+    echo "<div class='error-message'><a class='login-button' href='../page/connexion.php'>Se connecter</a></div>";
+    exit(); // Arrêter l'exécution du script
+}
+
+
+// Récupérer le prénom de l'utilisateur depuis la session
+$prenom = isset($_SESSION['user']['prenom']) ? $_SESSION['user']['prenom'] : '';
+
 // Inclure le fichier de connexion à la base de données
-include_once '../back/pdo.php'; 
+include_once '../back/pdo.php';
 
 // Traitement du formulaire de soumission de message
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    require_once 'traitement.php'; 
+    require_once 'traitement.php'; // Assurez-vous que le script de traitement est inclus
 }
+
 
 // Pagination
 $messages_per_page = 10;
@@ -31,7 +45,7 @@ $offset = ($current_page - 1) * $messages_per_page;
         <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
             <!-- Champs pour le pseudo (pré-rempli si l'utilisateur est connecté) -->
             <label for="pseudo">Pseudo:</label>
-            <input type="text" id="pseudo" name="pseudo" value="<?php echo $_SESSION['pseudo'] ?? ''; ?>" required><br><br>
+            <input type="text" id="pseudo" name="pseudo" value="<?php echo htmlspecialchars($prenom); ?>" readonly><br><br>
             
             <!-- Champ pour le message -->
             <label for="message">Message:</label><br>
