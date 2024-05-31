@@ -6,15 +6,30 @@ body{
     font-family: Arial, sans-serif;
 }
 
-.header{
-	background-color: #F4E4C6;
-	height: 190px;
-	margin: 0px;
-	display: flex;
-	align-items: center; 
-    background-position: center;
-    box-shadow: 0px 0 35px 0 rgba(0, 0, 0, 10);
+/* Styles généraux pour le header */
+
+
+.logo {
+    width: 170px;
+    height: auto;
 }
+
+/* Centre du header avec barre de recherche et navigation */
+.header-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    margin: 0 20px;
+}
+
+/* Formulaire de recherche */
+.header-center form {
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 10px;
+}
+
 input[type="search"] {
     font-family: 'Koulen';
     font-size: 17px;
@@ -33,40 +48,72 @@ input[type="search"]:focus {
     border-color: #FBD314;
 }
 
-.logo {
-    margin-left: 10px;
-    width: 170px;
-    height: 170px;
+/* Menu de navigation */
+nav ul.menu {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
-nav ul li{
-	font-family: 'Koulen';font-size: 22px;
-	display: inline-block;
 
+nav ul.menu li {
+    margin-right: 60px; /* Ajustez la marge selon vos préférences */
 }
-ul li a{
-	color: #C83606;
 
-	letter-spacing: 0.1rem;
-}
-ul li a:hover{
-	color:#FBD314;
-	text-decoration: underline;
-}
-.menu li{
-	float: center;
-	padding:35px;
-}
-.menu li a{
 
-	text-decoration: none;
+nav ul.menu li {
+    font-family: 'Koulen';
+    font-size: 22px;
 }
-form{
-	padding-top: 0px;
-	display: inline-block;
+
+nav ul.menu li a {
+    color: #C83606;
+    text-decoration: none;
+    letter-spacing: 0.1rem;
 }
-input[type="search"]{
-	font-family: 'Koulen';font-size: 17px;
-	
+
+nav ul.menu li a:hover {
+    color: #FBD314;
+    text-decoration: underline;
+}
+
+/* Section droite du header avec avatar et compte */
+.header-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    height: 100%;
+}
+.header {
+    background-color: #F4E4C6;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    box-shadow: 0px 0 35px 0 rgba(0, 0, 0, 0.1);
+    font-family: 'Koulen', sans-serif;
+    color: #C83606;
+}
+.avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.account-link {
+    font-family: 'Koulen';
+    font-size: 22px;
+    color: #C83606;
+    text-decoration: none;
+    margin-top: 5px;
+}
+
+.account-link:hover {
+    color: #FBD314;
 }
 
 .carousel{
@@ -1050,23 +1097,114 @@ form {
 
 /* Style pour le bouton */
 .btn-primary {
-    background-color: #007bff;
+    height: 35px;
+    width: 140px;
+    background-color: #FBD314;
     color: #fff;
     border: none;
-    padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
+    font-family: Koulen;
+    font-size: 15px;
+    text-align: center;
 }
 
 .btn-primary:hover {
-    background-color: #0056b3;
+    background-color: #C83606;
+}
+
+.cozi {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 50px;
+    overflow: hidden; /* Assure que le pseudo-élément ne déborde pas */
+}
+
+.cozi::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(./image/cozi.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(8px); /* Applique un flou à l'image de fond */
+    z-index: -1; /* Place le pseudo-élément derrière le contenu */
+}
+
+/* Style pour la case à cocher personnalisée */
+.custom-checkbox {
+    display: none; /* Cache la case à cocher par défaut */
+}
+
+/* Style pour le label de la case à cocher */
+.custom-checkbox-label {
+    position: relative;
+    padding-left: 30px; /* Espace pour le pseudo-élément de la case à cocher */
+    cursor: pointer;
+    font-weight: bold;
+    user-select: none; /* Empêche la sélection de texte */
+}
+
+/* Pseudo-élément pour la case à cocher personnalisée */
+.custom-checkbox-label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    border: 2px solid black;
+    border-radius: 4px;
+    background-color: white;
+    box-sizing: border-box;
+}
+
+/* Pseudo-élément pour l'état "checked" de la case à cocher */
+.custom-checkbox:checked + .custom-checkbox-label::before {
+    content: "✓";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: #4CAF50; /* Couleur de fond pour l'état "checked" */
+    border: 2px solid #4CAF50; /* Même couleur que le fond */
+}
+
+/* Style pour le label de la case à cocher au survol */
+.custom-checkbox-label:hover::before {
+    border-color: #4CAF50;
 }
 
 /* Style pour le texte d'aide */
 .form-text {
     color: #6c757d;
 }
+.form-label {
+    font-weight: bold;
+}
 
+
+/* Style pour les inputs */
+.form-control {
+    background: transparent;
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid black;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
 .container_banniere {
     font-size: 15px;
     background-color: #FBD314;  /* Couleur de fond pour visibilité */
@@ -1509,4 +1647,123 @@ section .evenement .affiche{
 
 .activity-button:hover {
     background-color: #EAC013; /* Couleur légèrement plus foncée au survol */
+}
+.contact-form {
+    height: 650px;
+    background-image: url(./image/fondform.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    align-items: center;
+    justify-content: center;
+    font-family: Koulen;
+}
+
+.contact-form h2 {
+    margin-top: 0px;
+}
+
+
+.contact-form .row {
+    margin-bottom: 15px;
+}
+
+.contact-form .col {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.contact-form .form-label {
+    background-color: transparent;
+    font-weight: bold;
+}
+
+.contact-form .form-control {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.contact-form .btn-primary {
+    background-color: #FBD314;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Koulen';
+}
+
+.contact-form .btn-primary:hover {
+    background-color: #FBD314;
+    box-shadow: 0px 0 10px 0 rgba(0, 0, 0, 5);
+}
+
+.contact-form .form-text {
+    color: #6c757d;
+}
+.contact-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+
+/*style des boxs d'infos*/
+.info-box {
+    border: 2px solid red;
+    border-radius: 8px;
+    padding: 20px; 
+    margin-bottom: 30px; 
+    width: calc(33.3% - 30px); 
+    display: inline-block;
+    text-align: center; 
+    box-sizing: border-box;
+    background-color: #F4E4C6; 
+    font-family: "Koulen", sans-serif; 
+}
+
+.info-box p {
+    margin: 10px 0; 
+}
+.opening-hours {
+    color: #C83606;
+    font-size: 18px;
+    font-weight:;
+    margin-top: 30px; 
+}
+
+
+
+
+.red-text {
+    color:#C83606;
+    font-size: 24px;
+    font-weight:;
+    font-family: "Koulen", sans-serif;
+}
+
+/* Style pour le logo dans info-box */
+.info-box .logo {
+    width: 80px; 
+    height: auto; 
+    background-color: #F4E4C6;
+}
+
+/* Effet d'animation au survol de .info-box */
+.info-box {
+    transition: transform 0.3s ease;
+}
+
+.info-box:hover {
+    transform: scale(1.05); /* Légère augmentation de la taille au survol */
+}
+
+.search-form input[type="submit"] {
+    position: absolute;
+    left: -9999px;  /* Déplace le bouton hors de l'écran */
 }
