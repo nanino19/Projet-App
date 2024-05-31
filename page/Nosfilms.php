@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Réservation Dune</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://www.paypal.com/sdk/js?client-id=AShGFRoubd_5oUJ-PLunGwuX0IrRhdp865-SBULmCTsfR2qdDawYdTba91MRJhmJTZey72Lmt4IjV85A"></script>
+</head>
+<body>
 <?php include ('../composant/header.php'); ?>
 <?php include ('../composant/menu.php'); ?>
 
@@ -93,6 +102,10 @@ if ($stmt->rowCount() > 0) {
             <span id="places-disponibles" class="places-disponibles">0 places disponibles</span>
             <button class="reserve-btn" id="reserve-button">Réserver</button>
             <button class="reserve-btn" id="popup-close">Retour</button>
+            <div id="payment-info" style="display:none;">
+                <span class="payment-text">Montant à payer : 8 euros</span>
+                <div id="paypal-button-container"></div>
+            </div>
         </div>
     </div>
 

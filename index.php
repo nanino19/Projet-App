@@ -299,32 +299,42 @@
 	</section>
 
 
-
-	<section>
-		<h1>Evenements</h1>
-
-		<div class="evenement">
-			<a href="#" class="evenement">
-				<img src="image/affiche.jpg" alt="" class="evenement-image">
-			</a>
-			<a href="#" class="evenement">
-				<img src="image/comedie.jpg" alt="" class="evenement-image">
-			</a>
-		</div>
-
-
-		<div class="popup-overlay">
-			<div class="popup">
-				<span class="popup-text">Description de l'événement</span>
-				<span id="places-disponibles" class="places-disponibles">20 places disponibles</span>
-				<button class="reserve-btn" type="button" id="reserve-button">Réserver</button>
-				<button class="reserve-btn" type="button" id="popup-close"> Retour</button>
-
-			</div>
-		</div>
-
-
-		<script src="evenement.js"></script>
+		<section class="activities-section">
+    <h1>Activités</h1>
+    <div class="activities-container">
+        <div class="activity-card">
+            <img src="image/hasbi.jpg" alt="Activity 1" class="activity-image">
+            <div class="activity-info">
+                <h2>Activity 1</h2>
+                <p>Description de l'activité 1</p>
+                <button class="activity-button">En profiter</button>
+            </div>
+        </div>
+        <div class="activity-card">
+            <img src="image/hasbi.jpg" alt="Activity 2" class="activity-image">
+            <div class="activity-info">
+                <h2>Activity 2</h2>
+                <p>Description de l'activité 2</p>
+                <button class="activity-button">Découvrir</button>
+            </div>
+        </div>
+        <div class="activity-card">
+            <img src="image/hasbi.jpg" alt="Activity 3" class="activity-image">
+            <div class="activity-info">
+                <h2>Activity 3</h2>
+                <p>Description de l'activité 3</p>
+                <button class="activity-button">En profiter</button>
+            </div>
+        </div>
+        <div class="activity-card">
+            <img src="image/hasbi.jpg" alt="Activity 4" class="activity-image">
+            <div class="activity-info">
+                <h2>Activity 4</h2>
+                <p>Description de l'activité 4</p>
+                <button class="activity-button">Découvrir</button>
+            </div>
+        </div>
+    </div>
 
 
 
