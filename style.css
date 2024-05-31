@@ -564,17 +564,18 @@ ul{
 }
 
 .container{
-    width: 85%;
+    min-height: calc(100vh - 100px);
+    width: 90%;
     height: 100%;
     margin: 0px auto;
     padding: 10px 20px;
 }
 
-.about{
+.about {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
 }
 
 .about-image{
@@ -586,11 +587,8 @@ ul{
 }
 
 .about-image img{
-    max-width: 80%;
-    height: 50vh;
-    display: block;
-    transition: 1s ease;
-    border-radius: 20px;
+    max-width: 100%;
+    height: auto;
 }
 
 .about-image:hover img{
@@ -603,7 +601,7 @@ ul{
 
 .about-content h3{
     font-size: 23px;
-    margin-bottom: 15px;
+    margin-top: 0;
     color: #333;    
 }
 
@@ -865,6 +863,11 @@ ul {
     padding: 0;
 }
 
+.additional-text {
+    display: none;
+    margin-top: 20px;
+}
+
 
 
 
@@ -953,6 +956,7 @@ ul {
 .footer{
 	background-color: #EDE8DF;
 	height: 200px;
+    width: auto;
 	margin: 0px;
 	display: flex;
     justify-content: space-evenly;
