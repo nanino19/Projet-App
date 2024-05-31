@@ -9,7 +9,7 @@ echo'<aside id="admin-sidebar">
   </div>
   <nav class="admin-navigation">
     <ul>
-      <li><a href="#">Tableau de bord</a></li>
+      
       <li><a href="../page/ajoutfilm.php">Ajouter un nouveau film</a></li>
       <li><a href="../page/ajoutsalle.php">Ajouter une nouvelle salle</a></li>
       <li><a href="../page/ajoutseance.php">Ajouter une seance</a></li>
