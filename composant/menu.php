@@ -35,9 +35,9 @@ if (isset($_SESSION['user']) && $_SESSION['user']['role'] == 1) {
             $nom = $_SESSION['user']['nom'];
             $prenom = $_SESSION['user']['prenom'];
         ?>
-        <a href="page/profil.php" class="account-link"><?php echo htmlspecialchars($prenom . ' ' . $nom); ?></a>
+        <a href="../page/profil.php" class="account-link"><?php echo htmlspecialchars($prenom . ' ' . $nom); ?></a>
     <?php else: ?>
-        <a href="page/moncompte.php" class="account-link">Mon Compte</a>
+        <a href="../page/moncompte.php" class="account-link">Mon Compte</a>
         <img src="https://img.freepik.com/psd-gratuit/rendu-3d-du-personnage-avatar_23-2150611746.jpg?w=740&t=st=1714915486~exp=1714916086~hmac=d31e263488e13d3b206cf160c1c80dc48ad5bf8409b6a2680e87f5beeec36385" alt="Avatar" class="avatar">
     <?php endif; ?>
 </div>

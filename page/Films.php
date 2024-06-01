@@ -49,6 +49,7 @@ $films = getAllFilms();
             margin-left: 20px;
             margin-right: 20px;
             margin-top: 40px;
+            margin-bottom: 40px;
         }
         .films-container {
             display: flex;
@@ -84,4 +85,5 @@ $films = getAllFilms();
         </div>
     </div>
 </body>
+<?php include ('../composant/footer.php'); ?>
 </html>

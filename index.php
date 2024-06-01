@@ -126,10 +126,7 @@
 						suspense et d'émotion qui séduit un large public, faisant ainsi honneur au riche héritage des
 						bandes dessinées DC Comics.
 					</div>
-					<div class="buttons">
-						<button>VOIR</button>
-						<button>RESERVER</button>
-					</div>
+					
 				</div>
 			</div>
 			<div class="item">
@@ -147,10 +144,7 @@
 						la Terre du Milieu, les personnages inoubliables et la profondeur de l'histoire font de cette
 						trilogie un classique du cinéma d'aventure et de fantasy
 					</div>
-					<div class="buttons">
-						<button>VOIR</button>
-						<button>RESERVER</button>
-					</div>
+					
 				</div>
 			</div>
 			<div class="item">
@@ -166,10 +160,7 @@
 						envoûtante, ce film d'animation japonais est devenu un chef-d'œuvre acclamé par la critique et
 						aimé par les spectateurs du monde entier.
 					</div>
-					<div class="buttons">
-						<button>VOIR</button>
-						<button>RESERVER</button>
-					</div>
+					
 				</div>
 			</div>
 			<div class="item">
@@ -185,10 +176,7 @@
 						réfléchir sur notre place dans l'univers et les sacrifices nécessaires pour assurer la survie de
 						l'espèce humaine
 					</div>
-					<div class="buttons">
-						<button>VOIR</button>
-						<button>RESERVER</button>
-					</div>
+					
 				</div>
 			</div>
 		</div>
@@ -243,7 +231,7 @@
 
 		<div class="arrows">
 			<button id="prev">
-				<< /button>
+				< </button>
 					<button id="next">></button>
 		</div>
 		<!-- time running -->
