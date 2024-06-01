@@ -79,23 +79,25 @@
                     <li><a href="page/Nousdecouvrir.php">Nous decouvrir</a></li>
                     <li><a href="page/Films.php">Films</a></li>
                     <li><a href="page/forum.php">Forum</a></li>
-                    <?php if (isset($_SESSION['user'])): ?>
-                        <li><a href="page/profil.php">Bienvenue, <?php echo htmlspecialchars($_SESSION['user']['prenom']) . ' ' . htmlspecialchars($_SESSION['user']['nom']); ?></a></li>
-                        <li><a href="back/logout.php">Deconnexion</a></li>
                     
-                    <?php endif; ?>
                 </ul>
             </nav>
         </div>
         <div class="header-right">
-            <?php if (isset($_SESSION['user'])): ?>
-                <img src="https://phantom-marca.unidadeditorial.es/ddf06b72adb932ec625c2e07329527f0/crop/0x0/1059x706/resize/828/f/jpg/assets/multimedia/imagenes/2022/10/23/16665279627938.png" alt="Avatar" class="avatar">
-                <a href="page/moncompte.php" class="account-link">Voir mon profil</a>
-            <?php else: ?>
-                <a href="page/moncompte.php" class="account-link">Mon Compte</a>
-                <img src="https://img.freepik.com/psd-gratuit/rendu-3d-du-personnage-avatar_23-2150611746.jpg?w=740&t=st=1714915486~exp=1714916086~hmac=d31e263488e13d3b206cf160c1c80dc48ad5bf8409b6a2680e87f5beeec36385" alt="Avatar" class="avatar">
-            <?php endif; ?>
-        </div>
+    <?php if (isset($_SESSION['user'])): ?>
+        <img src="https://phantom-marca.unidadeditorial.es/ddf06b72adb932ec625c2e07329527f0/crop/0x0/1059x706/resize/828/f/jpg/assets/multimedia/imagenes/2022/10/23/16665279627938.png" alt="Avatar" class="avatar">
+        <?php 
+            
+            $nom = $_SESSION['user']['nom'];
+            $prenom = $_SESSION['user']['prenom'];
+        ?>
+        <a href="page/profil.php" class="account-link"><?php echo htmlspecialchars($prenom . ' ' . $nom); ?></a>
+    <?php else: ?>
+        <a href="page/moncompte.php" class="account-link">Mon Compte</a>
+        <img src="https://img.freepik.com/psd-gratuit/rendu-3d-du-personnage-avatar_23-2150611746.jpg?w=740&t=st=1714915486~exp=1714916086~hmac=d31e263488e13d3b206cf160c1c80dc48ad5bf8409b6a2680e87f5beeec36385" alt="Avatar" class="avatar">
+    <?php endif; ?>
+</div>
+
     </div>
 
 
@@ -291,47 +293,46 @@
 	</section>
 
 
-		<section class="activities-section">
+	<section class="activities-section">
     <h1>Activités</h1>
     <div class="activities-container">
         <div class="activity-card">
-            <img src="image/hasbi.jpg" alt="Activity 1" class="activity-image">
+            <img src="https://www.kana.fr/wp-content/uploads/2022/10/azdedaa-1600x900.jpg?x80745" alt="Activity 1" class="activity-image">
             <div class="activity-info">
-                <h2>Activity 1</h2>
-                <p>Description de l'activité 1</p>
-                <button class="activity-button">En profiter</button>
+                <h2>Prochainement</h2>
+                <p>Après le succès du NARUTO SYMPHONIC EXPERIENCE en France et en Europe, UN POUR TOUS PRODUCTIONS en collaboration avec MEDIATOON LICENSING présente : NARUTO SHIPPUDEN SYMPHONIC EXPERIENCE (Part I)
+
+Venez découvrir la suite des aventures de NARUTO sur un écran géant accompagné d’un Orchestre exceptionnel !</p>
+                <a class="activity-button" href="https://www.ledomedeparis.com/fr/spectacle/222/naruto-shippuden">En profiter</a>
             </div>
         </div>
         <div class="activity-card">
             <img src="image/hasbi.jpg" alt="Activity 2" class="activity-image">
             <div class="activity-info">
-                <h2>Activity 2</h2>
-                <p>Description de l'activité 2</p>
-                <button class="activity-button">Découvrir</button>
+                <h2>A voir</h2>
+                <p>hasbi le combattant de l'extreme</p>
+                <a class="activity-button" href="https://www.youtube.com/watch?v=c9G36djAH88">Decouvrir</a>
             </div>
         </div>
         <div class="activity-card">
-            <img src="image/hasbi.jpg" alt="Activity 3" class="activity-image">
+            <img src="https://cdn.sortiraparis.com/images/80/69688/1070315-fantasy-film-festival-le-festival-du-film-du-fantasme-2024-une-celebration-de-l-imaginaire.jpg" alt="Activity 3" class="activity-image">
             <div class="activity-info">
-                <h2>Activity 3</h2>
-                <p>Description de l'activité 3</p>
-                <button class="activity-button">En profiter</button>
+                <h2>A ne pas rater</h2>
+                <p>Fantasy Film Festival – Le Festival du Film du Fantasme 2024 : une célébration de l'imaginaire</p>
+                <a class="activity-button" href="https://fantasyfilmfestivalofficial.com/fr/">En profiter</a>
             </div>
         </div>
         <div class="activity-card">
             <img src="image/gab.jpg" alt="Activity 4" class="activity-image">
             <div class="activity-info">
-                <h2>Activity 4</h2>
-                <p>Description de l'activité 4</p>
-                <button class="activity-button">Découvrir</button>
+                <h2>Bientôt</h2>
+                <p>Venez découvrir gabriel pour un cours passionant de php</p>
+                <a class="activity-button" href="https://www.php.net/manual/fr/intro-whatis.php">Decouvrir</a>
             </div>
         </div>
     </div>
+</section>
 
-
-
-
-	</section>
 
 
 	<div class="footer">
@@ -343,9 +344,9 @@
 			<a href=""><i class="fa-brands fa-telegram"></i></a>
 		</div>
 		<div class="Info">
-			<div class="Info1">Nom du cinema</div>
-			<div class="Info2">Adresse</div>
-			<div class="Info3">Numero de telephone</div>
+			<div class="Info1">Hasbimovie</div>
+			<div class="Info2">85 rue Jean metid</div>
+			<div class="Info3">07 58 96 84 75</div>
 		</div>
 		<div class="naviguation">
 

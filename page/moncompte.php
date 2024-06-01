@@ -1,6 +1,30 @@
 <?php include ('../composant/header.php'); ?>
 <?php include ('../composant/menu.php'); ?>
+<?php
+if (isset($_SESSION['errors_subscribe']) && !empty($_SESSION['errors_subscribe'])) {
+    echo '<script>
+        window.onload = function() {
+            var errors = "' . $_SESSION['errors_subscribe'] . '";
+            var errorArray = errors.split("<br>");
+            errorArray.forEach(function(error) {
+                if (error.trim() != "") {
+                    alert(error);
+                }
+            });
+        }
+    </script>';
+    unset($_SESSION['errors_subscribe']); // Nettoyer les erreurs de la session après les avoir affichées
+}
 
+// Afficher le message de succès si l'inscription a réussi
+if (isset($_GET['msg']) && $_GET['msg'] == "subscribe_success") {
+    echo '<script>
+        window.onload = function() {
+            alert("Inscription validée!");
+        }
+    </script>';
+}
+?>
 <div class="cozi">
   <h1>Mon compte</h1>
   <!-- Boutons pour basculer entre les formulaires -->

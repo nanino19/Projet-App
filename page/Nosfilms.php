@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Réservation Dune</title>
+    <title>Réservation </title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://www.paypal.com/sdk/js?client-id=AShGFRoubd_5oUJ-PLunGwuX0IrRhdp865-SBULmCTsfR2qdDawYdTba91MRJhmJTZey72Lmt4IjV85A"></script>
 </head>

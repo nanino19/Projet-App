@@ -1,7 +1,6 @@
+<?php include ('../composant/header.php'); ?>
+<?php include ('../composant/menu.php'); ?>
 <?php
-
-
-
 include ('../back/fonction_admin.php');
 
 function getAllUsers() {
@@ -13,7 +12,6 @@ function getAllUsers() {
         $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $users;
     } catch (Exception $e) {
-        
         return [];
     }
 }
@@ -26,56 +24,53 @@ $users = getAllUsers();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css"> 
-    <title>Liste des Utilisateurs</title>
-    
+    <title>Liste des Utilisateurs inscrits sur le site</title>
 </head>
 <body>
 <style>
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
 
-h1 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
+    table {
+        width: 80%;
+        border-collapse: collapse;
+        margin: auto;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        margin-bottom:20px;
+    }
 
-        
+    th, td {
+        padding: 12px;
+        text-align: center;
+    }
+
+    th {
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    tbody tr:nth-child(odd) {
+        background-color: #ffffff;
+    }
+
+    tbody tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    tbody tr:hover {
+        background-color: #ddd;
+    }
+
+    @media (max-width: 600px) {
         table {
-            width: 80%;
-            border-collapse: collapse;
-            margin: auto;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
         }
+    }
 
-        th, td {
-            padding: 12px;
-            text-align: center;
-        }
-
-        th {
-            background-color: #4CAF50;
-            color: white;
-        }
-
-        tbody tr:nth-child(odd) {
-            background-color: #ffffff;
-        }
-
-        tbody tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-
-        tbody tr:hover {
-            background-color: #ddd;
-        }
-
-        /* Responsive styling */
-        @media (max-width: 600px) {
-            table {
-                width: 100%;
-            }
-        }
-    </style>
-</head>
-<body>
+    
+</style>
 
 <h1>Liste des Utilisateurs</h1>
 
@@ -99,8 +94,10 @@ h1 {
         <?php endforeach; ?>
     </tbody>
 </table>
-<div class="button">
-    <a href="../index.php" class="button">Retour à l'accueil</a>
-</div>
+
+
+
+
+<?php include ('../composant/footer.php'); ?>
 </body>
-</html> 
+</html>

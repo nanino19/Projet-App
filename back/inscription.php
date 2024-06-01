@@ -8,9 +8,9 @@ $msgErrors = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Vérification de l'email
     if (!isset($_POST["email"]) || empty($_POST["email"])) {
-        $msgErrors += "L'email est requis.<br>";
+        $msgErrors .= "L'email est requis.<br>";
     } elseif (!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
-        $msgErrors += "L'email n'est pas valide.<br>";
+        $msgErrors .= "L'email n'est pas valide.<br>";
     }
 
     // Vérification du mot de passe
@@ -33,18 +33,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     if (strlen($msgErrors) == 0) {
-        if (insererUtilisateur($_POST["email"], $_POST["pwd1"], $_POST["nom"], $_POST["prenom"], $_POST["tel"]) == true) {
-            header('Location: ../page/inscription.php?msg=subscribe_success'); // REDIRECTION
+        if (insererUtilisateur($_POST["email"], $_POST["pwd1"], $_POST["nom"], $_POST["prenom"], $_POST["tel"])) {
+            header('Location: ../page/moncompte.php?msg=subscribe_success'); // REDIRECTION
             exit();
         }
-        echo "feoefok";
-        $_SESSION['errors_subscribe'] = "email already exist";
-        header('Location: ../page/inscription.php?msg=subscribe_error');
+        $_SESSION['errors_subscribe'] = "L'adresse e-mail est déjà utilisée.";
+        header('Location: ../page/moncompte.php?msg=subscribe_error');
         exit();
     } else {
         // Stocker les erreurs dans la session
         $_SESSION['errors_subscribe'] = $msgErrors;
-        header('Location: ../page/inscription.php?msg=subscribe_error');
+        header('Location: ../page/moncompte.php?msg=subscribe_error');
         exit();
     }
 }

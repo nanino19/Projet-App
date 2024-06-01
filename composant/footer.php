@@ -12,9 +12,9 @@ echo '
 		<a href=""><i class="fa-brands fa-telegram"></i></a>
 	</div>
 	<div class="Info">
-    <div class="Info1">Nom du cinema</div>
-	<div class="Info2">Adresse</div>
-	<div class="Info3">Numero de telephone</div>
+    <div class="Info1">Hasbimovie</div>
+	<div class="Info2">85 rue Jean metid</div>
+	<div class="Info3">07 58 96 84 75</div>
 	</div>
 	<div class="naviguation">
 		

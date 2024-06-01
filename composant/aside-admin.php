@@ -16,14 +16,14 @@ echo '<aside id="admin-sidebar">
   </div>
   <nav class="admin-navigation">
     <ul>
-      <li><a href="#">Tableau de bord</a></li>
+      <li><a href="../page/tableau.php">Capacité salle</a></li>
       <li><a href="../page/ajoutfilm.php">Ajouter un nouveau film</a></li>
       <li><a href="../page/ajoutsalle.php">Ajouter une nouvelle salle</a></li>
       <li><a href="../page/ajoutseance.php">Ajouter une seance</a></li>
       <li><a href="../page/utilisateur.php">Utilisateurs</a></li>
-      <li><a href="#">Commentaires</a></li>
+      <li><a href="../page/forum.php">Forum</a></li>
       <li><a href="../page/faq.php">FAQ</a></li>
-      <li><a href="#">Capteur</a></li>
+      <li><a href="../page/capteurs.php">Capteurs</a></li>
       <li><a href="#">Parametres</a></li>
     </ul>
   </nav>

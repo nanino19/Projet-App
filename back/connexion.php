@@ -31,13 +31,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } else {
             // Redirection vers la page de connexion avec un message d'erreur
             $_SESSION['login_error'] = "Email ou mot de passe incorrect.";
-            header('Location: ../page/connexion.php?msg=login_error');
+            header('Location: ../page/moncompte.php?msg=login_error');
             exit();
         }
     } else {
         // Stocker les erreurs dans la session
         $_SESSION['login_error'] = $msgErrors;
-        header('Location: ../page/connexion.php?msg=login_error');
+        header('Location: ../page/moncompte.php?msg=login_error');
         exit();
     }
 }
