@@ -17,12 +17,12 @@ if ($conn->connect_error) {
 }
 
 
-$sql = "SELECT `nombre de  places` FROM seance";
+$sql = "SELECT `nombre de places` FROM seance";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     
-    $totalSeats = $result->fetch_assoc()["nombre de  places"];
+    $totalSeats = $result->fetch_assoc()["nombre de places"];
 
     
     $reservedSeats = 30 - $totalSeats;

@@ -1,16 +1,26 @@
-<?php include('../composant/header.php'); ?>
-<?php include('../composant/menu.php'); ?>
+<?php include ('../composant/header.php'); ?>
+<?php include ('../composant/menu.php'); ?>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css"> 
+    <title>Conditions Générales d'Utilisation</title>
+</head>
+<body>
 
+    
 <div class="container2">
     <h4> Conditions Générales d'Utilisation</h4>
 
-    <h5> Bienvenue sur le site web du cinéma Cinemanager. Les présentes Conditions Générales d'Utilisation (CGU) régissent votre utilisation
+    <h5> SALUT. Les présentes Conditions Générales d'Utilisation (CGU) régissent votre utilisation
     de ce site. En accédant à ce site et en l'utilisant, vous acceptez d'être lié par ces CGU. Si vous n'acceptez pas ces conditions, 
     veuillez ne pas utiliser ce site. </h5>
 
     <h6> Utilisation du Site </h6>
 
-    <h5> Vous acceptez d'utiliser ce site uniquement à des fins légales et conformément à ces CGU. Vous acceptez de ne pas utiliser ce site de
+    <h5> Mais ouiite uniquement à des fins légales et conformément à ces CGU. Vous acceptez de ne pas utiliser ce site de
     manière frauduleuse, abusive ou contraire à la loi. </h5>
 
     <h6> Propriété Intellectuelle </h6>
@@ -41,5 +51,5 @@
 </div>
 
 
-
-<?php include('../composant/footer.php'); ?>
+</body>
+<?php include ('../composant/footer.php'); ?>

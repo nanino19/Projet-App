@@ -2,23 +2,23 @@
 <?php include ('../composant/menu.php'); ?>
 
 <?php
-// Inclure le fichier de connexion à la base de données
+
 include('../back/pdo.php');
- 
-// Fonction pour récupérer tous les films de la base de données
+
+
 function getAllFilms() {
     try {
-        $pdo = connectBdd(); // Connexion à la base de données
-        $query = "SELECT titre, affiche FROM film"; // Requête SQL pour récupérer les titres et les affiches des films
+        $pdo = connectBdd(); 
+        $query = "SELECT titre, affiche FROM film"; 
         $stmt = $pdo->query($query);
-        $films = $stmt->fetchAll(PDO::FETCH_ASSOC); // Récupérer les résultats sous forme de tableau associatif
+        $films = $stmt->fetchAll(PDO::FETCH_ASSOC); 
         return $films;
     } catch (Exception $e) {
-        return []; // Retourner un tableau vide en cas d'erreur
+        return []; 
     }
 }
 
-// Appel de la fonction pour récupérer tous les films
+
 $films = getAllFilms();
 ?>
 
@@ -42,14 +42,11 @@ $films = getAllFilms();
             align-items: center;
             flex-direction: column;
             background-color: #fff;
-            border: 2px solid #7C2D13; /* Contour des cases des activités */
+            border: 2px solid #7C2D13;
             border-radius: 15px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             width: auto;
-            margin-left: 20px;
-            margin-right: 20px;
-            margin-top: 40px;
-            margin-bottom: 40px;
+            margin: 40px 20px;
         }
         .films-container {
             display: flex;
@@ -61,6 +58,13 @@ $films = getAllFilms();
         .film {
             display: inline-block;
             text-align: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            margin: 10px;
+            position: relative;
         }
         .film img {
             max-width: 200px;
@@ -69,6 +73,26 @@ $films = getAllFilms();
         }
         .film img:hover {
             transform: scale(1.1);
+        }
+        .gauge {
+            position: relative;
+            height: 20px;
+            width: 100%;
+            background-color: #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+        .gauge span {
+            display: block;
+            height: 100%;
+            border-radius: 10px;
+            animation: gauge-animation 3s ease-in-out infinite;
+        }
+        @keyframes gauge-animation {
+            0% { width: 0%; background-color: green; }
+            50% { width: 100%; background-color: yellow; }
+            100% { width: 0%; background-color: red; }
         }
     </style>
 </head>
@@ -80,6 +104,14 @@ $films = getAllFilms();
                 <div class="film">
                     <img src="data:image/jpeg;base64,<?php echo base64_encode($film['affiche']); ?>" alt="<?php echo htmlspecialchars($film['titre'], ENT_QUOTES, 'UTF-8'); ?>">
                     <p><?php echo htmlspecialchars($film['titre'], ENT_QUOTES, 'UTF-8'); ?></p>
+                    <div class="gauge">
+                        <h2>Film: <?php echo htmlspecialchars($film['titre'], ENT_QUOTES, 'UTF-8'); ?></h2>
+                        <p>Puissance en DB: X</p>
+                        <p>Seuil d’audibilité: Pénible</p>
+                        <div class="gauge">
+                            <span style="width: X%;"></span>
+                        </div>
+                    </div>
                 </div>
             <?php endforeach; ?>
         </div>

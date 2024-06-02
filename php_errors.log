@@ -4,3 +4,8 @@
 [01-May-2024 22:25:58 Europe/Berlin] PHP Warning:  Undefined array key "user" in C:\xampp\htdocs\APP\Projet-App\index.php on line 25
 [31-May-2024 12:25:06 Europe/Berlin] PHP Warning:  include(aside-admin.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\APP\Projet-App\index.php on line 84
 [31-May-2024 12:25:06 Europe/Berlin] PHP Warning:  include(): Failed opening 'aside-admin.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\APP\Projet-App\index.php on line 84
+[02-Jun-2024 15:31:07 Europe/Berlin] PHP Warning:  Undefined variable $pdo in C:\xampp\htdocs\APP\Projet-App\back\pdo.php on line 13
+[02-Jun-2024 15:31:07 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in C:\xampp\htdocs\APP\Projet-App\index.php:257
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\APP\Projet-App\index.php on line 257

@@ -3,7 +3,6 @@ session_start(); // Assurez-vous que cette ligne est au début du fichier, avant
 
 include("fonction_admin.php");
 
-
 // Initialiser une réponse
 $response = [
     'status' => 'error',
@@ -21,20 +20,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $note = $_POST['note'] ?? '';
 
     // Gérer l'upload de l'image
-    print_r($_FILES['image']);
-    $imageName = $_FILES['image']['name'];
     $imageTmpName = $_FILES['image']['tmp_name'];
-    $uploadDir = '../uploads/';
-    $uploadFile = $uploadDir . basename($imageName);
+    $imageName = $_FILES['image']['name'];
 
     // Valider les données (à compléter selon les règles de validation que vous souhaitez appliquer)
-    $response = insererUnFilm($imageTmpName, $uploadFile, $titre, $description, $dateDeSortie, $duree, $realisateur, $imageName, $note);
+    $response = insererUnFilm($imageTmpName, $titre, $description, $dateDeSortie, $duree, $realisateur, $imageName, $note);
 }
+
+// Rediriger en fonction de la réponse
 if ($response['status'] == 'success') {
-    header('Location: ../page/Nosfilms.php?msg=add_film_success'); // REDIRECTION
+    header('Location: ../page/Films.php?msg=add_film_success'); // REDIRECTION
     exit();
 } else {
     $_SESSION['add_film_error'] = $response['message'];
     header('Location: ../page/ajoutfilm.php?msg=add_film_error'); // REDIRECTION
     exit();
 }
+?>

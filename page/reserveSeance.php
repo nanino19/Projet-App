@@ -13,11 +13,12 @@ if ($conn->connect_error) {
 $id_film = intval($_GET['id_film']);
 $horaire = $conn->real_escape_string($_GET['horaire']);
 
-$sql = "SELECT `nombre de  places` FROM seance WHERE id_film = ? AND horaire = ?";
+// Utiliser le nom correct de la colonne entouré de backticks
+$sql = "SELECT `nombre de places` FROM seance WHERE id_film = ? AND horaire = ?";
 $stmt = $conn->prepare($sql);
 
 if ($stmt === false) {
-    echo json_encode(['error' => 'Erreur lors de la préparation de la requête']);
+    echo json_encode(['error' => 'Erreur lors de la préparation de la requête: ' . $conn->error]);
     exit;
 }
 
@@ -29,11 +30,11 @@ $stmt->close();
 
 if ($nombre_de_places !== null && $nombre_de_places > 0) {
     $nouveau_nombre_de_places = $nombre_de_places - 1;
-    $update_sql = "UPDATE seance SET `nombre de  places` = ? WHERE id_film = ? AND horaire = ?";
+    $update_sql = "UPDATE seance SET `nombre de places` = ? WHERE id_film = ? AND horaire = ?";
     $update_stmt = $conn->prepare($update_sql);
     
     if ($update_stmt === false) {
-        echo json_encode(['error' => 'Erreur lors de la préparation de la requête de mise à jour']);
+        echo json_encode(['error' => 'Erreur lors de la préparation de la requête de mise à jour: ' . $conn->error]);
         exit;
     }
     
@@ -41,7 +42,7 @@ if ($nombre_de_places !== null && $nombre_de_places > 0) {
     if ($update_stmt->execute()) {
         echo json_encode(['success' => 'Réservation effectuée avec succès']);
     } else {
-        echo json_encode(['error' => 'Erreur lors de l\'exécution de la mise à jour']);
+        echo json_encode(['error' => 'Erreur lors de l\'exécution de la mise à jour: ' . $update_stmt->error]);
     }
     $update_stmt->close();
 } else {

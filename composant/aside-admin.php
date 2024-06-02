@@ -22,9 +22,11 @@ echo '<aside id="admin-sidebar">
       <li><a href="../page/ajoutseance.php">Ajouter une seance</a></li>
       <li><a href="../page/utilisateur.php">Utilisateurs</a></li>
       <li><a href="../page/forum.php">Forum</a></li>
-      <li><a href="../page/faq.php">FAQ</a></li>
+      <li><a href="../page/modifier_faq.php">FAQ</a></li>
+      <li><a href="../page/modifier_cgu.php">CGU</a></li>
+      <li><a href="../page/modifier_ml.php">Mentions légales</a></li>
       <li><a href="../page/capteurs.php">Capteurs</a></li>
-      <li><a href="#">Parametres</a></li>
+      
     </ul>
   </nav>
 </aside>';

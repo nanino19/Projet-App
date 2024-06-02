@@ -19,6 +19,7 @@ if (isset($_SESSION['user']) && $_SESSION['user']['role'] == 1) {
 				<li><a href="../page/Nousdecouvrir.php">Nous decouvrir</a></li>
 				<li><a href="../page/Films.php">Films</a></li>
 				<li><a href="../page/forum.php">Forum</a></li>
+                <li><a href="../page/faq.php">FAQ</a></li>
 				
 
 

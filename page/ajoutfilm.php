@@ -64,7 +64,7 @@ if (isset($_SESSION['errors_subscribe']) && !empty($_SESSION['errors_subscribe']
 
     </div>
     </div>
-    <button href="../index.php"type="submit" class="btn btn-primary">Submit</button>
+    <button href="../index.php"type="submit" class="btn btn-primary">Ajouter</button>
 </form>
 
 <?php include('../composant/footer.php'); ?>

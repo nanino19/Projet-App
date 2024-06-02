@@ -79,6 +79,7 @@
                     <li><a href="page/Nousdecouvrir.php">Nous decouvrir</a></li>
                     <li><a href="page/Films.php">Films</a></li>
                     <li><a href="page/forum.php">Forum</a></li>
+					<li><a href="page/fa.php">FAQ</a></li>
                     
                 </ul>
             </nav>
@@ -343,7 +344,7 @@ Venez découvrir la suite des aventures de NARUTO sur un écran géant accompagn
 				<li><a href="page/contact.php">Contact</a></li>
 				<li><a href="page/cgu.php">CGU</a></li>
 				<li><a href="page/mentionslegales.php">Mentions legales</a></li>
-				<li><a href="#">Forum</a></li>
+				<li><a href="page/faq.php">FAQ</a></li>
 
 			</ul>
 

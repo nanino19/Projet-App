@@ -1,5 +1,6 @@
-<?php include ('../composant/header.php'); ?>
-<?php include ('../composant/menu.php'); ?>
+<?php include('../composant/header.php'); ?>
+<?php include('../composant/menu.php'); ?>
+
 <?php
 
 
@@ -10,18 +11,26 @@ if (!isset($_SESSION['user'])) {
     exit(); // Arrêter l'exécution du script
 }
 
-
 // Récupérer le prénom de l'utilisateur depuis la session
 $prenom = isset($_SESSION['user']['prenom']) ? $_SESSION['user']['prenom'] : '';
+$role = isset($_SESSION['user']['role']) ? $_SESSION['user']['role'] : '';
 
 // Inclure le fichier de connexion à la base de données
 include_once '../back/pdo.php';
 
 // Traitement du formulaire de soumission de message
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit_message'])) {
     require_once 'traitement.php'; // Assurez-vous que le script de traitement est inclus
 }
 
+// Traitement du formulaire de suppression de message
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete_message'])) {
+    $message_id = $_POST['message_id'];
+    $pdo = connectBdd();
+    $stmt = $pdo->prepare("DELETE FROM messages WHERE id = :id");
+    $stmt->bindParam(':id', $message_id, PDO::PARAM_INT);
+    $stmt->execute();
+}
 
 // Pagination
 $messages_per_page = 10;
@@ -52,7 +61,7 @@ $offset = ($current_page - 1) * $messages_per_page;
             <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
             
             <!-- Bouton pour soumettre le formulaire -->
-            <input type="submit" value="Envoyer">
+            <input type="submit" name="submit_message" value="Envoyer">
         </form>
 
         <!-- Liste des messages du forum -->
@@ -64,7 +73,7 @@ $offset = ($current_page - 1) * $messages_per_page;
                 $pdo = connectBdd();
 
                 // Récupérer les messages du forum depuis la base de données avec pagination
-                $stmt = $pdo->prepare("SELECT pseudo, message, created_at FROM messages ORDER BY created_at DESC LIMIT :offset, :messages_per_page");
+                $stmt = $pdo->prepare("SELECT id, pseudo, message, created_at FROM messages ORDER BY created_at DESC LIMIT :offset, :messages_per_page");
                 $stmt->bindParam(':offset', $offset, PDO::PARAM_INT);
                 $stmt->bindParam(':messages_per_page', $messages_per_page, PDO::PARAM_INT);
                 $stmt->execute();
@@ -77,6 +86,12 @@ $offset = ($current_page - 1) * $messages_per_page;
                             <strong><?php echo htmlspecialchars($message['pseudo']); ?>:</strong>
                             <?php echo htmlspecialchars($message['message']); ?>
                         </div>
+                        <?php if ($role == 1) : ?>
+                            <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+                                <input type="hidden" name="message_id" value="<?php echo $message['id']; ?>">
+                                <input type="submit" name="delete_message" value="Supprimer">
+                            </form>
+                        <?php endif; ?>
                     </li>
                 <?php endforeach; ?>
             </ul>
@@ -97,4 +112,4 @@ $offset = ($current_page - 1) * $messages_per_page;
 </body>
 </html>
 
-<?php include ('../composant/footer.php'); ?>
+<?php include('../composant/footer.php'); ?>
