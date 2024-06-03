@@ -128,6 +128,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <body>
     <h1>Modifier le profil de <?php echo $user['prenom'] . ' ' . $user['nom']; ?></h1>
+    <p>Reconnectez vous pour voir les modifications<p>
     <div class="container-profil">
         <form action="" method="post" class="oeoe">
             <label for="nom">Nom :</label>

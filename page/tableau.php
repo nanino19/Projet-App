@@ -8,29 +8,21 @@ $username = "root";
 $password = "";
 $dbname = "cinemanager";
 
-
+// Créer une connexion
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-
+// Vérifier la connexion
 if ($conn->connect_error) {
     die("La connexion a échoué : " . $conn->connect_error);
 }
 
-
-$sql = "SELECT `nombre de places` FROM seance";
+// Requête pour obtenir les séances et les informations sur les films
+$sql = "SELECT seance.id, seance.`nombre de places`, film.titre 
+        FROM seance 
+        JOIN film ON seance.id_film = film.id";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-    
-    $totalSeats = $result->fetch_assoc()["nombre de places"];
-
-    
-    $reservedSeats = 30 - $totalSeats;
-
-    
-    $availableSeats = $totalSeats - $reservedSeats;
-
-    
     echo '<!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -89,23 +81,35 @@ if ($result->num_rows > 0) {
     </style>
 </head>
 <body>
-    <h1>Nombre de sièges disponibles</h1>';
+    <h1>Nombre de sièges disponibles par séance</h1>';
 
-    // Affichage des sièges en fonction du nombre de réservations
-    for ($row = 1; $row <= 3; $row++) {
-        echo '<div class="row">';
-        for ($seat = 1; $seat <= 10; $seat++) {
-            // Vérifier si le siège est réservé
-            if (($row - 1) * 10 + $seat <= $reservedSeats) {
-                echo '<div class="seat reserved"></div>';
-            } else {
-                echo '<div class="seat"></div>';
+    // Parcourir les résultats et afficher les informations
+    while($row = $result->fetch_assoc()) {
+        $totalSeats = 30;
+        $availableSeats = $row["nombre de places"];
+        $reservedSeats = $totalSeats - $availableSeats;
+
+        echo '<h2>Film: ' . $row["titre"] . ' - Séance ID: ' . $row["id"] . '</h2>';
+        echo '<p>Nombre de sièges disponibles: ' . $availableSeats . '</p>';
+
+        // Affichage des sièges en fonction du nombre de réservations
+        for ($rowNum = 1; $rowNum <= ceil($totalSeats / 10); $rowNum++) {
+            echo '<div class="row">';
+            for ($seat = 1; $seat <= 10; $seat++) {
+                $seatNumber = ($rowNum - 1) * 10 + $seat;
+                if ($seatNumber > $totalSeats) break; // Arrêter si on dépasse le nombre total de sièges
+
+                // Vérifier si le siège est réservé
+                if ($seatNumber <= $reservedSeats) {
+                    echo '<div class="seat reserved"></div>';
+                } else {
+                    echo '<div class="seat"></div>';
+                }
             }
+            echo '</div>';
         }
-        echo '</div>';
     }
 
-    
     echo '<div class="legend">
             <div class="legend-item">
                 <div class="reserved"></div>

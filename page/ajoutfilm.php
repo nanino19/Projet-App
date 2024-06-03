@@ -25,17 +25,17 @@ if (isset($_SESSION['errors_subscribe']) && !empty($_SESSION['errors_subscribe']
             <input type="text" name="titre" class="form-control">
         </div>
         <div class="col">
-            <label for="nom" class="form-label">description</label>
+            <label for="nom" class="form-label">Description</label>
             <input type="text" name="description" class="form-control">
         </div>
         <div class="col">
-            <label for="telephone" class="form-label">date de sortie</label>
+            <label for="telephone" class="form-label">Date de sortie</label>
             <input type="date" id="start" name="datedesortie" />
         </div>
     </div>
     <div class="row">
         <div class="col">
-            <label for="duree" class="form-label">duree</label>
+            <label for="duree" class="form-label">Durée</label>
             <input type="time" id="duree" name="duree" required />
         </div>
         <div class="col">
@@ -61,10 +61,16 @@ if (isset($_SESSION['errors_subscribe']) && !empty($_SESSION['errors_subscribe']
                 <label for="star1" class="rating-star">&#9733;</label>
             </div>
         </div>
-
+        <div class="col">
+            <label for="categorie" class="form-label">Catégorie</label>
+            <select name="categorie" class="form-control" id="categorie">
+                <option value="Junior">Junior</option>
+                <option value="Tout public">Tout public</option>
+                <option value="Senior">Senior</option>
+            </select>
+        </div>
     </div>
-    </div>
-    <button href="../index.php"type="submit" class="btn btn-primary">Ajouter</button>
+    <button type="submit" class="btn btn-primary">Ajouter</button>
 </form>
 
 <?php include('../composant/footer.php'); ?>

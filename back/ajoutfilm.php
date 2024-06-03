@@ -18,13 +18,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $duree = $_POST['duree'] ?? '';
     $realisateur = $_POST['realisateur'] ?? '';
     $note = $_POST['note'] ?? '';
+    $categorie = $_POST['categorie'] ?? '';
 
     // Gérer l'upload de l'image
     $imageTmpName = $_FILES['image']['tmp_name'];
     $imageName = $_FILES['image']['name'];
 
+    $imageContent = file_get_contents($imageTmpName);
+    $imageContentBase64 = base64_encode($imageContent);
+
     // Valider les données (à compléter selon les règles de validation que vous souhaitez appliquer)
-    $response = insererUnFilm($imageTmpName, $titre, $description, $dateDeSortie, $duree, $realisateur, $imageName, $note);
+    $response = insererUnFilm($imageContentBase64, $titre, $description, $dateDeSortie, $duree, $realisateur, $imageName, $note, $categorie);
 }
 
 // Rediriger en fonction de la réponse

@@ -79,7 +79,7 @@
                     <li><a href="page/Nousdecouvrir.php">Nous decouvrir</a></li>
                     <li><a href="page/Films.php">Films</a></li>
                     <li><a href="page/forum.php">Forum</a></li>
-					<li><a href="page/fa.php">FAQ</a></li>
+					<li><a href="page/faq.php">FAQ</a></li>
                     
                 </ul>
             </nav>
@@ -240,46 +240,40 @@
 	</div>
 
 	<section>
-		<h1>A l'affiche</h1>
-		<div>
-			<select id="categories">
-				<option value="Populaire">Populaire</option>
-				<option value="Tout public">Tout public</option>
-				<option value="Senior">Senior</option>
-			</select>
-		</div>
-		<div class="affiches">
-<?php
+    <h1>A l'affiche</h1>
+<div>
+    <select id="categories">
+        <option value="Junior">Junior</option>
+        <option value="Tout public">Tout public</option>
+        <option value="Senior">Senior</option>
+    </select>
+</div>
+<div id="affiche" class="affiches"> 
     
-    $pdo = connectBdd(); 
-    
-    $requete = "SELECT * FROM film WHERE affiche IS NOT NULL"; 
-	$donnee="SELECT * FROM film WHERE affiche = ?";// 1
-    $resultat = $pdo->query($requete);
-	
+</div>
 
-   
-    if ($resultat->rowCount() > 0) {
-		while ($row = $resultat->fetch(PDO::FETCH_ASSOC)) {
-			echo '<a href="page/Nosfilms.php?id=' . $row['id'] . '" class="affiche">';
-			
-			$imageData = base64_encode($row["affiche"]);
-			
-			echo '<img src="data:image/jpeg;base64,' . $imageData . '" alt="" class="poster">';
-			echo '<button class="seance" type="button">séances</button>';
-			echo '</a>';
-		}
-	} else {
-		echo "Aucune affiche trouvée.";
-	}
-	
 
-    
-    $pdo = null;
-?>
-			
-		</div>
-	</section>
+    </div>
+</section>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#categories').change(function () {
+            var selectedCategory = $(this).val();
+            $.ajax({
+                url: 'back/get_film.php', 
+                type: 'GET',
+                data: {categorie: selectedCategory},
+                success: function (data) {
+                    $('#affiche').html(data);
+                }
+            });
+        });
+
+        $('#categories').trigger('change');
+    });
+</script>
+
 
 
 	<section class="activities-section">

@@ -9,3 +9,15 @@
 Stack trace:
 #0 {main}
   thrown in C:\xampp\htdocs\APP\Projet-App\index.php on line 257
+[03-Jun-2024 12:31:29 Europe/Berlin] PHP Warning:  include(fonction_admin.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\APP\Projet-App\index.php on line 252
+[03-Jun-2024 12:31:29 Europe/Berlin] PHP Warning:  include(): Failed opening 'fonction_admin.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\APP\Projet-App\index.php on line 252
+[03-Jun-2024 12:31:50 Europe/Berlin] PHP Fatal error:  Cannot redeclare connectBdd() (previously declared in C:\xampp\htdocs\APP\Projet-App\back\pdo.php:4) in C:\xampp\htdocs\APP\Projet-App\back\pdo.php on line 13
+[03-Jun-2024 12:32:10 Europe/Berlin] PHP Fatal error:  Cannot redeclare connectBdd() (previously declared in C:\xampp\htdocs\APP\Projet-App\back\pdo.php:4) in C:\xampp\htdocs\APP\Projet-App\back\pdo.php on line 13
+[03-Jun-2024 12:32:15 Europe/Berlin] PHP Fatal error:  Cannot redeclare connectBdd() (previously declared in C:\xampp\htdocs\APP\Projet-App\back\pdo.php:4) in C:\xampp\htdocs\APP\Projet-App\back\pdo.php on line 13
+[03-Jun-2024 12:33:27 Europe/Berlin] PHP Warning:  include(fonction_admin.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\APP\Projet-App\index.php on line 253
+[03-Jun-2024 12:33:27 Europe/Berlin] PHP Warning:  include(): Failed opening 'fonction_admin.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\APP\Projet-App\index.php on line 253
+[03-Jun-2024 12:39:54 Europe/Berlin] PHP Fatal error:  Cannot redeclare connectBdd() (previously declared in C:\xampp\htdocs\APP\Projet-App\back\pdo.php:4) in C:\xampp\htdocs\APP\Projet-App\back\pdo.php on line 13
+[03-Jun-2024 12:40:08 Europe/Berlin] PHP Fatal error:  Cannot redeclare connectBdd() (previously declared in C:\xampp\htdocs\APP\Projet-App\back\pdo.php:4) in C:\xampp\htdocs\APP\Projet-App\back\pdo.php on line 13
+[03-Jun-2024 12:40:09 Europe/Berlin] PHP Fatal error:  Cannot redeclare connectBdd() (previously declared in C:\xampp\htdocs\APP\Projet-App\back\pdo.php:4) in C:\xampp\htdocs\APP\Projet-App\back\pdo.php on line 13
+[03-Jun-2024 12:40:29 Europe/Berlin] PHP Fatal error:  Cannot redeclare connectBdd() (previously declared in C:\xampp\htdocs\APP\Projet-App\back\pdo.php:4) in C:\xampp\htdocs\APP\Projet-App\back\pdo.php on line 13
+[03-Jun-2024 12:40:30 Europe/Berlin] PHP Fatal error:  Cannot redeclare connectBdd() (previously declared in C:\xampp\htdocs\APP\Projet-App\back\pdo.php:4) in C:\xampp\htdocs\APP\Projet-App\back\pdo.php on line 13

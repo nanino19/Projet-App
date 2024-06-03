@@ -1,12 +1,13 @@
 <?php include('pdo.php');
 
-function insererUnFilm($imageContent, $titre, $description, $dateDeSortie, $duree, $realisateur, $imageName, $note)
+function insererUnFilm($imageContent, $titre, $description, $dateDeSortie, $duree, $realisateur, $imageName, $note, $categorie)
 {
-    // Si les validations passent, procéder à l'insertion dans la base de données
+    
     try {
         $pdo = connectBdd();
-        // Créer la requête SQL
-        $query = "INSERT INTO film (titre, description, datedesortie, duree, affiche, realisateur, note) VALUES (:titre, :description, :dateDeSortie, :duree, :affiche, :realisateur, :note)";
+        
+        $query = "INSERT INTO film (titre, description, datedesortie, duree, affiche, realisateur, note, categorie) 
+                  VALUES (:titre, :description, :dateDeSortie, :duree, :affiche, :realisateur, :note, :categorie)";
         $stmt = $pdo->prepare($query);
 
         // Lier les paramètres
@@ -17,6 +18,7 @@ function insererUnFilm($imageContent, $titre, $description, $dateDeSortie, $dure
         $stmt->bindParam(':affiche', $imageContent, PDO::PARAM_LOB); // Utilisation du contenu de l'image
         $stmt->bindParam(':realisateur', $realisateur);
         $stmt->bindParam(':note', $note);
+        $stmt->bindParam(':categorie', $categorie); 
 
         // Exécuter la requête
         if ($stmt->execute()) {
@@ -31,6 +33,8 @@ function insererUnFilm($imageContent, $titre, $description, $dateDeSortie, $dure
     }
     return $response;
 }
+
+
 
 
 
