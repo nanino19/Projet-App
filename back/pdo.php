@@ -1,10 +1,10 @@
 <?php
 function connectBdd()
 {
-    $host = "localhost";
-    $dbname = "cinemanager";
-    $login = "root"; // root
-    $password = "";  // root
+    $host = "herogu.garageisep.com";
+    $dbname = "ZdBjCh2KHG_cinemanage";
+    $login = "qrscXGXvdi_cinemanage"; // root
+    $password = "30s310qKDR2WnzuA";  // root
     try {
         $pdo = new PDO("mysql:host=$host;dbname=$dbname", $login, $password);
     } catch (PDOException $e) {

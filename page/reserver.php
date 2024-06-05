@@ -1,11 +1,11 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "cinemanager";
+$host = "herogu.garageisep.com";
+$dbname = "ZdBjCh2KHG_cinemanage";
+$login = "qrscXGXvdi_cinemanage"; // root
+$password = "30s310qKDR2WnzuA";
 
 // Créez une connexion
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($host, $username, $password, $dbname);
 
 // Vérifiez la connexion
 if ($conn->connect_error) {

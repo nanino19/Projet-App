@@ -1,10 +1,10 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "cinemanager";
+$host = "herogu.garageisep.com";
+$dbname = "ZdBjCh2KHG_cinemanage";
+$login = "qrscXGXvdi_cinemanage"; // root
+$password = "30s310qKDR2WnzuA";
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($host, $login, $password, $dbname);
 
 if ($conn->connect_error) {
     die(json_encode(['error' => "La connexion a échoué: " . $conn->connect_error]));
