@@ -18,7 +18,7 @@ $pdo = connectBdd();
 $filmId = isset($_GET['id']) ? intval($_GET['id']) : 0;
 
 // Requête SQL pour récupérer les informations du film
-$sql = "SELECT titre, realisateur, duree, datedesortie, affiche, description FROM film WHERE id = ?"; 
+$sql = "SELECT titre, realisateur, duree, datedesortie, affiche, description, note FROM film WHERE id = ?"; 
 $stmt = $pdo->prepare($sql);
 $stmt->execute([$filmId]);
 
@@ -30,6 +30,7 @@ if ($stmt->rowCount() > 0) {
     $realisateur = $row["realisateur"];
     $duree = $row["duree"];
     $date = $row["datedesortie"];
+    $note = $row["note"];
     $description = $row["description"];
 } else {
     echo "Aucun résultat trouvé";
@@ -46,6 +47,7 @@ if ($stmt->rowCount() > 0) {
         <h2>Réalisateur : <strong><?php echo isset($realisateur) ? $realisateur : ''; ?></strong></h2><!--réalisateur-->
         <h3>Durée : <?php echo isset($duree) ? $duree : ''; ?></h3><!--duree-->
         <h3>Date : <?php echo isset($date) ? $date : ''; ?></h3>
+        <h3>Note : <?php echo isset($note) ? $note : ''; ?></h3>
         <h4>Synopsis</h4>
         <!--description-->
         <p><?php echo isset($description) ? $description : ''; ?></p>

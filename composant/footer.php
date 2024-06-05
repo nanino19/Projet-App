@@ -11,6 +11,12 @@ echo '
 		<a href=""><i class="fa-brands fa-twitter"></i></a>
 		<a href=""><i class="fa-brands fa-telegram"></i></a>
 	</div>
+	<style>
+	.naviguation ul li a {
+		text-decoration: none;
+		color: black;
+	}
+	</style>
 	<div class="Info">
     <div class="Info1">Hasbimovie</div>
 	<div class="Info2">85 rue Jean metid</div>

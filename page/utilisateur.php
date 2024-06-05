@@ -44,47 +44,61 @@ $users = getAllUsers();
 </head>
 <body>
 <style>
-    h1 {
-        text-align: center;
-        margin-bottom: 20px;
-    }
-
-    table {
-        width: 80%;
-        border-collapse: collapse;
-        margin: auto;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        margin-bottom: 20px;
-    }
-
-    th, td {
-        padding: 12px;
-        text-align: center;
-    }
-
-    th {
-        background-color: #4CAF50;
-        color: white;
-    }
-
-    tbody tr:nth-child(odd) {
-        background-color: #ffffff;
-    }
-
-    tbody tr:nth-child(even) {
-        background-color: #f2f2f2;
-    }
-
-    tbody tr:hover {
-        background-color: #ddd;
-    }
-
-    @media (max-width: 600px) {
-        table {
-            width: 100%;
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
         }
-    }
-</style>
+
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin: auto;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color:#FBD314;
+            color: white;
+        }
+
+        tbody tr:nth-child(odd) {
+            background-color: #ffffff;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tbody tr:hover {
+            background-color: #ddd;
+        }
+
+        .delete-button {
+            padding: 8px 16px;
+            background-color: #FF0000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .delete-button:hover {
+            background-color: #CC0000;
+        }
+
+        @media (max-width: 600px) {
+            table {
+                width: 100%;
+            }
+        }
+    </style>
 
 <h1>Liste des Utilisateurs</h1>
 
@@ -108,7 +122,7 @@ $users = getAllUsers();
                 <td>
                     <form method="post" action="utilisateur.php">
                         <input type="hidden" name="user_id" value="<?= htmlspecialchars($user['id']) ?>">
-                        <button type="submit">Supprimer</button>
+                        <button type="submit" class="delete-button">Supprimer</button>
                     </form>
                 </td>
             </tr>

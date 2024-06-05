@@ -21,3 +21,16 @@ Stack trace:
 [03-Jun-2024 12:40:09 Europe/Berlin] PHP Fatal error:  Cannot redeclare connectBdd() (previously declared in C:\xampp\htdocs\APP\Projet-App\back\pdo.php:4) in C:\xampp\htdocs\APP\Projet-App\back\pdo.php on line 13
 [03-Jun-2024 12:40:29 Europe/Berlin] PHP Fatal error:  Cannot redeclare connectBdd() (previously declared in C:\xampp\htdocs\APP\Projet-App\back\pdo.php:4) in C:\xampp\htdocs\APP\Projet-App\back\pdo.php on line 13
 [03-Jun-2024 12:40:30 Europe/Berlin] PHP Fatal error:  Cannot redeclare connectBdd() (previously declared in C:\xampp\htdocs\APP\Projet-App\back\pdo.php:4) in C:\xampp\htdocs\APP\Projet-App\back\pdo.php on line 13
+[05-Jun-2024 22:49:27 Europe/Berlin] PHP Fatal error:  Cannot redeclare connectBdd() (previously declared in C:\xampp\htdocs\ProjetApp\Projet-App\back\pdo.php:4) in C:\xampp\htdocs\ProjetApp\Projet-App\back\pdo.php on line 2
+[05-Jun-2024 22:49:38 Europe/Berlin] PHP Warning:  Undefined variable $conn in C:\xampp\htdocs\ProjetApp\Projet-App\index.php on line 37
+[05-Jun-2024 22:49:38 Europe/Berlin] PHP Warning:  Attempt to read property "connect_error" on null in C:\xampp\htdocs\ProjetApp\Projet-App\index.php on line 37
+[05-Jun-2024 22:49:38 Europe/Berlin] PHP Warning:  Undefined array key "search" in C:\xampp\htdocs\ProjetApp\Projet-App\index.php on line 42
+[05-Jun-2024 22:49:38 Europe/Berlin] PHP Warning:  Undefined variable $conn in C:\xampp\htdocs\ProjetApp\Projet-App\index.php on line 48
+[05-Jun-2024 22:49:38 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in C:\xampp\htdocs\ProjetApp\Projet-App\index.php:48
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\ProjetApp\Projet-App\index.php on line 48
+[05-Jun-2024 22:50:24 Europe/Berlin] PHP Warning:  Undefined array key "search" in C:\xampp\htdocs\ProjetApp\Projet-App\index.php on line 48
+[05-Jun-2024 22:50:24 Europe/Berlin] PHP Warning:  Attempt to read property "num_rows" on bool in C:\xampp\htdocs\ProjetApp\Projet-App\index.php on line 60
+[05-Jun-2024 22:50:26 Europe/Berlin] PHP Warning:  Undefined array key "search" in C:\xampp\htdocs\ProjetApp\Projet-App\index.php on line 48
+[05-Jun-2024 22:50:26 Europe/Berlin] PHP Warning:  Attempt to read property "num_rows" on bool in C:\xampp\htdocs\ProjetApp\Projet-App\index.php on line 60

@@ -25,6 +25,7 @@ if (isset($_GET['msg']) && $_GET['msg'] == "subscribe_success") {
     </script>';
 }
 ?>
+
 <div class="cozi">
   <h1>Mon compte</h1>
   <!-- Boutons pour basculer entre les formulaires -->

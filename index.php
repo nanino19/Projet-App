@@ -60,20 +60,16 @@
         }
     ?>
 
-    <script>
-        function clearSearch() {
-            document.getElementById('searchInput').value = '';
-        }
-    </script>
 
-    <div class="header">
-        <a href="index.php">
-            <img src="image/logo.png" alt="Logo" class="logo">
-        </a>
-        <div class="header-center">
-            <form action="#" method="get">
-                <input type="search" name="search" placeholder="Rechercher...">
-            </form>
+
+<div class="header">
+    <a href="index.php">
+        <img src="image/logo.png" alt="Logo" class="logo">
+    </a>
+    <div class="header-center">
+        <form id="searchForm">
+            <input type="search" id="searchInput" placeholder="Rechercher...">
+        </form>
             <nav class="menu">
                 <ul>
                     <li><a href="page/Nousdecouvrir.php">Nous decouvrir</a></li>
@@ -293,7 +289,7 @@ Venez découvrir la suite des aventures de NARUTO sur un écran géant accompagn
             <img src="image/hasbi.jpg" alt="Activity 2" class="activity-image">
             <div class="activity-info">
                 <h2>A voir</h2>
-                <p>hasbi le combattant de l'extreme</p>
+                <p>hasbi le combattant de l'extrême</p>
                 <a class="activity-button" href="https://www.youtube.com/watch?v=c9G36djAH88">Decouvrir</a>
             </div>
         </div>
@@ -306,10 +302,10 @@ Venez découvrir la suite des aventures de NARUTO sur un écran géant accompagn
             </div>
         </div>
         <div class="activity-card">
-            <img src="image/gab.jpg" alt="Activity 4" class="activity-image">
+            <img src="https://aymeric-auberton.fr/img/cours/cours-php-max.jpg" alt="Activity 4" class="activity-image">
             <div class="activity-info">
                 <h2>Bientôt</h2>
-                <p>Venez découvrir gabriel pour un cours passionant de php</p>
+                <p>Venez découvrirle php</p>
                 <a class="activity-button" href="https://www.php.net/manual/fr/intro-whatis.php">Decouvrir</a>
             </div>
         </div>
@@ -331,6 +327,12 @@ Venez découvrir la suite des aventures de NARUTO sur un écran géant accompagn
 			<div class="Info2">85 rue Jean metid</div>
 			<div class="Info3">07 58 96 84 75</div>
 		</div>
+		<style>
+	.naviguation ul li a {
+		text-decoration: none;
+		color: black;
+	}
+	</style>
 		<div class="naviguation">
 
 			<ul>

@@ -8,7 +8,7 @@ if (isset($_SESSION['user'])) {
 
 echo '<aside id="admin-sidebar">
   <div class="admin-profile">
-    <img src="../image/hasbi.jpg" alt="Admin Avatar" class="admin-avatar">
+    <img src="https://cours-informatique-gratuit.fr/wp-content/uploads/2014/05/administrateur.png" alt="Admin Avatar" class="admin-avatar">
     <h3>' . htmlspecialchars($userName) . '</h3>
     <button id="sidebarToggle" class="sidebar-toggle">
       <span class="sidebar-arrow"></span>

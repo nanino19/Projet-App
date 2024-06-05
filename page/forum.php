@@ -44,13 +44,14 @@ $offset = ($current_page - 1) * $messages_per_page;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forum de discussion</title>
-    <link rel="stylesheet" href="../css/styles.css"> <!-- Assurez-vous que le chemin est correct -->
+    <link rel="stylesheet" href="../css/styles.css"> 
 </head>
+
 <body>
     <div class="container4">
         <h1>Forum de discussion</h1>
 
-        <!-- Afficher le formulaire de soumission de message -->
+        
         <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
             <!-- Champs pour le pseudo (pré-rempli si l'utilisateur est connecté) -->
             <label for="pseudo">Pseudo:</label>

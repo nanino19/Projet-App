@@ -1,5 +1,5 @@
 <?php
-session_start(); // Assurez-vous que cette ligne est au début du fichier, avant tout envoi de contenu
+session_start(); 
 
 include("fonction_admin.php");
 

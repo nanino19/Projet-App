@@ -42,24 +42,30 @@ try {
         }
 
         .container-profil {
-            width: 50%;
+            width: 20%;
             margin: 0 auto;
             background-color: #fff;
             padding: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
             margin-top: 20px;
-            margin-bottom:20px;
+            margin-bottom: 20px;
+            font-family: 'Koulen';
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .container-profil p {
             font-size: 1.1em;
             color: #555;
             line-height: 1.6;
+            width: 100%; /* Ensure the paragraphs take the full width of the container */
+            text-align: left; /* Align text to the left for readability */
         }
 
         .container-profil a {
-            display: inline-block;
+            display: block; /* Change en bloc pour empiler verticalement */
             margin-top: 15px;
             padding: 10px 15px;
             background-color: #007BFF;
@@ -67,21 +73,12 @@ try {
             text-decoration: none;
             border-radius: 5px;
             transition: background-color 0.3s ease;
+            text-align: center; /* Centrer le texte dans les boutons */
+            width: 80%; /* Largeur des boutons */
         }
 
         .container-profil a:hover {
             background-color: #0056b3;
-        }
-
-        .btn-modifier {
-            display: block;
-            width: fit-content;
-            margin: 10px auto;
-            text-align: center;
-        }
-
-        .btn-modifier:last-of-type {
-            margin-top: 30px;
         }
 
         @media (max-width: 768px) {
@@ -94,7 +91,7 @@ try {
             .container-profil {
                 width: 90%;
             }
-            
+
             .container-profil p {
                 font-size: 1em;
             }
@@ -106,12 +103,12 @@ try {
     <h1>Profil de <?php echo $user['prenom'] . ' ' . $user['nom']; ?></h1>
     <div class="container-profil">
         <p>Nom : <?php echo $userData['nom']; ?></p>
-        <p>Prénom : <?php echo $userData['prenom']; ?></p>
+        <p>Prenom : <?php echo $userData['prenom']; ?></p>
         <p>Email : <?php echo $userData['email']; ?></p>
-        <p>Téléphone : <?php echo $userData['telephone']; ?></p>
-        <a href="modifier.php" class="btn-modifier">Modifier les informations</a> 
-        <a href="../back/logout.php" class="btn-modifier">Se deconnecter</a>
-        <a href="../index.php" class="btn-modifier">Retour à l'accueil</a>
+        <p>Telephone : <?php echo $userData['telephone']; ?></p>
+        <a href="modifier.php" class="btn-primary">Modifier </a> 
+        <a href="../back/logout.php" class="btn-primary">Se deconnecter</a>
+        <a href="../index.php" class="btn-primary">Retour a l'accueil</a>
     </div>
 </body>
 <?php include ('../composant/footer.php'); ?>

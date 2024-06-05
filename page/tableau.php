@@ -30,7 +30,7 @@ if ($result->num_rows > 0) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Salle de cinéma</title>
     <style>
-        .row {
+        .rowo {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -94,7 +94,7 @@ if ($result->num_rows > 0) {
 
         // Affichage des sièges en fonction du nombre de réservations
         for ($rowNum = 1; $rowNum <= ceil($totalSeats / 10); $rowNum++) {
-            echo '<div class="row">';
+            echo '<div class="rowo">';
             for ($seat = 1; $seat <= 10; $seat++) {
                 $seatNumber = ($rowNum - 1) * 10 + $seat;
                 if ($seatNumber > $totalSeats) break; // Arrêter si on dépasse le nombre total de sièges

@@ -22,8 +22,8 @@
     <div class="info-box">
         <img src="https://cdn-icons-png.flaticon.com/512/6244/6244710.png" alt="Logo Email" class="logo">
         <h3>Adresse Email</h3>
-        <p>Nous vous répondrons dans les plus brefs delais</p>
-        <p>Random@email.fr</p>
+        <p>Nous vous repondrons dans les plus brefs delais</p>
+        <p>cinem@email.fr</p>
     </div>
     <div class="info-box">
         <img src="https://fbi.cults3d.com/uploaders/20952150/illustration-file/3ff506ac-83d8-40ab-b474-3ebc2c727b7a/pngwing.com-2022-02-20T081900.534.png" alt="Logo Cinéma" class="logo">
