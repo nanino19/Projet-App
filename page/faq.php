@@ -1,4 +1,3 @@
-
 <?php include('../composant/header.php'); ?>
 <?php include('../composant/menu.php'); ?>
 
@@ -18,9 +17,9 @@
     <div class="sidebar">
         <!-- Nouvelles questions -->
         <div class="question">
-            <h2>À quelle heure ouvrent les portes du cinéma ?</h2>
+            <h2>cinéma ?</h2>
             <div class="answer">
-                <p>Les portes du cinéma ouvrent généralement 30 minutes avant la première séance du jour. Veuillez consulter notre programme pour connaître les horaires spécifiques.</p>
+                <p>Les portes du cinéma ouvrent généralement 30 minutes avant la première séance du jour.Mais oui c'es clair. Veuillez consulter notre programme pour connaître les horaires spécifiques.</p>
             </div>
         </div>
         <div class="question">

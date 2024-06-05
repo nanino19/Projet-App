@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     print_r($response);
 }
 if ($response['status'] == 'success') {
-    header('Location: ../page/Nosfilms.php?msg=add_film_success'); // REDIRECTION
+    header('Location: ../page/Films.php?msg=add_film_success'); // REDIRECTION
     exit();
 } else {
     $_SESSION['add_film_error'] = $response['message'];

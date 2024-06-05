@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "root";
+$password = "";
 $dbname = "cinemanager";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -13,11 +13,12 @@ if ($conn->connect_error) {
 $id_film = intval($_GET['id_film']);
 $horaire = $conn->real_escape_string($_GET['horaire']);
 
+// Utiliser le nom correct de la colonne entouré de backticks
 $sql = "SELECT `nombre de places`, horaire, film FROM seance WHERE id_film = ? AND horaire = ?";
 $stmt = $conn->prepare($sql);
 
 if ($stmt === false) {
-    echo json_encode(['error' => 'Erreur lors de la préparation de la requête']);
+    echo json_encode(['error' => 'Erreur lors de la préparation de la requête: ' . $conn->error]);
     exit;
 }
 

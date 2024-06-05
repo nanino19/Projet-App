@@ -41,8 +41,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Envoi de l'email
         $mail->send();
-        echo 'Le message a été envoyé';
+        
+        // Ouvrir une popup
+        echo "<script>alert('Le message a été envoyé.');</script>";
+        
+        echo "<script>setTimeout(function(){window.location.href = '../page/contact.php';}, 2000);</script>";
+        exit();
     } catch (Exception $e) {
+        // Gestion des erreurs
         echo "Le message n'a pas pu être envoyé. Erreur : {$mail->ErrorInfo}";
     }
 }

@@ -11,10 +11,16 @@ echo '
 		<a href=""><i class="fa-brands fa-twitter"></i></a>
 		<a href=""><i class="fa-brands fa-telegram"></i></a>
 	</div>
+	<style>
+	.naviguation ul li a {
+		text-decoration: none;
+		color: black;
+	}
+	</style>
 	<div class="Info">
-    <div class="Info1">Nom du cinema</div>
-	<div class="Info2">Adresse</div>
-	<div class="Info3">Numéro de telephone</div>
+    <div class="Info1">Hasbimovie</div>
+	<div class="Info2">85 rue Jean metid</div>
+	<div class="Info3">07 58 96 84 75</div>
 	</div>
 	<div class="naviguation">
 		
@@ -23,7 +29,7 @@ echo '
 				<li><a href="../page/contact.php">Contact</a></li>
 				<li><a href="../page/cgu.php">CGU</a></li>
 				<li><a href="../page/mentionslegales.php">Mentions legales</a></li>
-				<li><a href="#">FAQ</a></li>
+				<li><a href="../page/faq.php">FAQ</a></li>
 				
 			</ul>
 	</div>

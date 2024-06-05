@@ -1,34 +1,46 @@
 <?php
 session_start();
 
-echo '
-<div class= "header">
-	<a href="index.php">
-	<img src="../image/logo.png" alt="Logo" class="logo" >
-</a>
-	<nav>
-		<ul class="menu">
-			<li><a href="../page/Nousdecouvrir.php">Nous decouvrir</a></li>
-			<li><a href="../page/Nosfilms.php">Films</a></li>
-			<li><a href="../page/faq.php">Forum</a></li>
-			<form>
-				<input type="search" name="q" placeholder="Rechercher un film">
-			</form>';
-			if(isset($_SESSION['user'])) {
-				echo'<li><a href="#">Mon Compte</a></li>';
-				echo'<form action="../back/deconnexion.php"method="post">
-					<li><button type="submit" name="logout">Se déconnecter</button></li>
-					</form>';
-			} else {
-				echo '
-				<li><a href="../page/inscription.php">Creer un Compte</a></li>
-				<li><a href="../page/connexion.php">Se connecter</a></li>';
-			}
-			echo'
-		</ul>
-	</nav>
-</div>';
 if (isset($_SESSION['user']) && $_SESSION['user']['role'] == 1) {
-	include("aside-admin.php");
+    include("aside-admin.php");
 }
 ?>
+<div class="header">
+    <a href="../index.php">
+        <img src="../image/logo.png" alt="Logo" class="logo">
+    </a>
+    <div class="header-center">
+        <form action="#" method="get">
+            <input type="search" name="search" placeholder="Rechercher...">
+        </form>
+        <nav>
+		<nav class="menu">
+			<ul>
+				<li><a href="../page/Nousdecouvrir.php">Nous decouvrir</a></li>
+				<li><a href="../page/Films.php">Films</a></li>
+				<li><a href="../page/forum.php">Forum</a></li>
+                <li><a href="../page/faq.php">FAQ</a></li>
+				
+
+
+
+			</ul>
+		</nav>
+        </nav>
+    </div>
+    <div class="header-right">
+    <?php if (isset($_SESSION['user'])): ?>
+        <img src="https://phantom-marca.unidadeditorial.es/ddf06b72adb932ec625c2e07329527f0/crop/0x0/1059x706/resize/828/f/jpg/assets/multimedia/imagenes/2022/10/23/16665279627938.png" alt="Avatar" class="avatar">
+        <?php 
+            
+            $nom = $_SESSION['user']['nom'];
+            $prenom = $_SESSION['user']['prenom'];
+        ?>
+        <a href="../page/profil.php" class="account-link"><?php echo htmlspecialchars($prenom . ' ' . $nom); ?></a>
+    <?php else: ?>
+        <a href="../page/moncompte.php" class="account-link">Mon Compte</a>
+        <img src="https://img.freepik.com/psd-gratuit/rendu-3d-du-personnage-avatar_23-2150611746.jpg?w=740&t=st=1714915486~exp=1714916086~hmac=d31e263488e13d3b206cf160c1c80dc48ad5bf8409b6a2680e87f5beeec36385" alt="Avatar" class="avatar">
+    <?php endif; ?>
+</div>
+
+</div>

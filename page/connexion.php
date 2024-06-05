@@ -12,6 +12,7 @@ if (isset($_SESSION['login_error']) && !empty($_SESSION['login_error'])) {
     '</div>';
     unset($_SESSION['login_error']); // Nettoyer les erreurs de la session après les avoir affichées
 }
+
 ?>
 <div class="cozi">
     <form method="POST" action="../back/connexion.php">

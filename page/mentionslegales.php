@@ -6,7 +6,7 @@
 
     <h10> Propriété Intellectuelle </h10>
 
-    <h9> Tous les contenus présents sur ce site, y compris mais sans s'y limiter, les textes, images, logos, 
+    <h9>tout a fait
     marques et vidéos, sont la propriété exclusive du cinéma [Nom du Cinéma] ou de ses concédants de licence, 
     et sont protégés par les lois sur la propriété intellectuelle.</h9> 
 
