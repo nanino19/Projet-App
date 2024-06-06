@@ -24,6 +24,20 @@ if (isset($_GET['msg']) && $_GET['msg'] == "subscribe_success") {
         }
     </script>';
 }
+function validatePassword($password) {
+  if (strlen($password) < 8 || !preg_match("#[0-9]+#", $password) || !preg_match("#[^a-zA-Z0-9]#", $password)) {
+      return false; // Retourne false si le mot de passe ne respecte pas les critères
+  }
+  return true;
+}
+
+// Vérification si l'email est valide
+function validateEmail($email) {
+  if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+      return false; // Retourne false si l'email n'est pas valide
+  }   
+  return true;
+}
 ?>
 
 <div class="cozi">
@@ -38,7 +52,7 @@ if (isset($_GET['msg']) && $_GET['msg'] == "subscribe_success") {
     </button>
   </div>
   <!-- Formulaire d'inscription par défaut -->
-  <form method="POST" action="../back/inscription.php" id="form-inscription">
+  <form method="POST" action="../back/inscription.php" id="form-inscription" onsubmit="return validateForm()">
     <div class="row">
       <div class="col">
         <label for="nom" class="form-label">Nom</label>
@@ -87,7 +101,35 @@ if (isset($_GET['msg']) && $_GET['msg'] == "subscribe_success") {
   </form>
 </div>
 
+<script>
+    function validateForm() {
+        var password = document.getElementsByName('pwd1')[0].value;
+        var confirmPassword = document.getElementsByName('pwd2')[0].value;
+        var email = document.getElementsByName('email')[0].value;
 
+        if (password !== confirmPassword) {
+            alert('Les mots de passe ne correspondent pas.');
+            return false;
+        }
+
+        if (password.length < 8 || !password.match(/[0-9]/) || !password.match(/[^a-zA-Z0-9]/)) {
+            alert('Le mot de passe doit contenir au moins 8 caractères avec au moins un chiffre et un caractère spécial.');
+            return false;
+        }
+
+        if (!validateEmail(email)) {
+            alert('L\'adresse e-mail n\'est pas valide.');
+            return false;
+        }
+
+        return true;
+    }
+
+    function validateEmail(email) {
+        var re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+        return re.test(email);
+    }
+</script>
 
 <script>
   document.getElementById('btn-inscription').addEventListener('click', function() {
