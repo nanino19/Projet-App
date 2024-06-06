@@ -28,22 +28,23 @@
         }
 
         // Code correspondant à la requête BDD pour la barre de recherche
-        @$keywords = $_GET["keywords"];
-        @$valider = $_GET["valider"];
-        if (isset($valider) && !empty(trim($keywords))) {
-            $words = explode(" ", trim($keywords));
-            for ($i = 0; $i < count($words); $i++)
-                $kw[$i] = "titre like '%" . $words[$i] . "%' ";
-            $pdo = connectBdd(); // Appeler la fonction connectBdd() pour obtenir la connexion PDO
-            if ($pdo) { // Vérification de la connexion à la base de données
-                $res = $pdo->prepare("select titre from film where " . implode(" OR ", $kw)); // Lorsqu'on met plusieurs mots dans la barre de recherche, c'est pris en compte
-                $res->setFetchMode(PDO::FETCH_ASSOC);
-                $res->execute();
-                $tab = $res->fetchAll();
-                $afficher = "oui";
-            } else {
-                error_log("Erreur de connexion à la base de données."); // Envoyer le message d'erreur au journal des erreurs du serveur
-            }
+		@$keywords = $_GET["keywords"];
+		@$valider = $_GET["valider"];
+		if (isset($valider) && !empty(trim($keywords))) {
+			$words = explode(" ", trim($keywords));
+			for ($i = 0; $i < count($words); $i++) {
+				$kw[$i] = "titre like '%" . $words[$i] . "%' ";
+			}
+			$pdo = connectBdd(); // Appeler la fonction connectBdd() pour obtenir la connexion PDO
+			if ($pdo) { // Vérification de la connexion à la base de données
+				$res = $pdo->prepare("select titre from film where " . implode(" OR ", $kw)); // Lorsqu'on met plusieurs mots dans la barre de recherche, c'est pris en compte
+				$res->setFetchMode(PDO::FETCH_ASSOC);
+				$res->execute();
+				$tab = $res->fetchAll();
+				$afficher = "oui";
+			} else {
+				error_log("Erreur de connexion à la base de données."); // Envoyer le message d'erreur au journal des erreurs du serveur
+			}
 
             // Afficher la réponse sous forme d'alerte
             if (@$afficher == "oui" && count($tab) > 0) {
@@ -60,15 +61,22 @@
         }
     ?>
 
-
+<style>
+    .hidden {
+        display:none;
+        
+    }
+</style>
 
 <div class="header">
     <a href="index.php">
         <img src="image/logo.png" alt="Logo" class="logo">
     </a>
     <div class="header-center">
-        <form id="searchForm">
-            <input type="search" id="searchInput" placeholder="Rechercher...">
+	
+	<form action="" method="get">
+              <input type="search" name="keywords" placeholder="Rechercher..." />
+              <input type="submit" name="valider" value="Rechercher" class="hidden" />
         </form>
             <nav class="menu">
                 <ul>
