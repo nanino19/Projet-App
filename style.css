@@ -798,7 +798,9 @@ ul {
     font-weight: 600;
     margin-bottom: 0px;
 }
-
+.hidden {
+    display: none;
+  }
 
 .container2 h6 {
     font-size: 1.2rem;
