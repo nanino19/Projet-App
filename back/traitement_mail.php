@@ -1,8 +1,8 @@
 <?php
 // Inclusion des classes PHPMailer
-require '..\back\PHPMailer\PHPMailer-master\src\Exception.php';
-require '..\back\PHPMailer\PHPMailer-master\src\PHPMailer.php';
-require '..\back\PHPMailer\PHPMailer-master\src\SMTP.php';
+require 'PHPMailer\PHPMailer-master\src\Exception.php';
+require 'PHPMailer\PHPMailer-master\src\PHPMailer.php';
+require 'PHPMailer\PHPMailer-master\src\SMTP.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
