@@ -5,7 +5,7 @@ $login = "qrscXGXvdi_cinemanage"; // root
 $password = "30s310qKDR2WnzuA";
 
 // Créez une connexion
-$conn = new mysqli($host, $username, $password, $dbname);
+$conn = new mysqli($host, $login, $password, $dbname);
 
 // Vérifiez la connexion
 if ($conn->connect_error) {

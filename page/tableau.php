@@ -3,13 +3,13 @@
 
 <?php
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "cinemanager";
+$host = "herogu.garageisep.com";
+$dbname = "ZdBjCh2KHG_cinemanage";
+$login = "qrscXGXvdi_cinemanage"; // root
+$password = "30s310qKDR2WnzuA";
 
-// Créer une connexion
-$conn = new mysqli($servername, $username, $password, $dbname);
+// Créez une connexion
+$conn = new mysqli($host, $login, $password, $dbname);
 
 // Vérifier la connexion
 if ($conn->connect_error) {
