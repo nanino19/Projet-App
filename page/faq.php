@@ -17,7 +17,7 @@
     <div class="sidebar">
         <!-- Nouvelles questions -->
         <div class="question">
-            <h2>cinéma ?</h2>
+            <h2>Quel heure estt il?</h2>
             <div class="answer">
                 <p>Les portes du cinéma ouvrent généralement 30 minutes avant la première séance du jour.Mais oui c'es clair. Veuillez consulter notre programme pour connaître les horaires spécifiques.</p>
             </div>
