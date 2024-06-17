@@ -20,7 +20,9 @@ if ($conn->connect_error) {
 $sql = "SELECT seance.id, seance.`nombre de places`, film.titre 
         FROM seance 
         JOIN film ON seance.id_film = film.id";
-$result = $conn->query($sql);
+$stmt = $conn->prepare($sql);
+$stmt->execute();
+$result = $stmt->get_result();
 
 if ($result->num_rows > 0) {
     echo '<!DOCTYPE html>
@@ -128,6 +130,7 @@ if ($result->num_rows > 0) {
     echo "Aucun résultat trouvé.";
 }
 
+$stmt->close();
 $conn->close();
 ?>
 <?php include ('../composant/footer.php'); ?>

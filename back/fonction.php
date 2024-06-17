@@ -1,4 +1,5 @@
-<?php include('pdo.php');
+<?php
+include('pdo.php');
 
 /**
  *      PAGE INSCRIPTION
@@ -56,7 +57,8 @@ function checkIfUserExist($email)
 
         // Requête SQL préparée pour vérifier l'existence d'un utilisateur avec l'email spécifié
         $requete = $pdo->prepare("SELECT * FROM utilisateur WHERE email = :email");
-        $requete->execute([':email' => $email]); // Utilisation de la liaison de paramètres pour éviter les injections SQL
+        $requete->bindParam(':email', $email);
+        $requete->execute(); // Utilisation de la liaison de paramètres pour éviter les injections SQL
         $user = $requete->fetch();
         // Vérification si au moins un utilisateur existe avec cet email
         if ($requete->rowCount() > 0) {
@@ -67,7 +69,7 @@ function checkIfUserExist($email)
     } catch (PDOException $e) {
         // En cas d'erreur, afficher l'erreur
         echo "Erreur dans la base de données : " . $e->getMessage();
-        return null; // Retourne false en cas d'erreur
+        return null; // Retourne null en cas d'erreur
     }
 }
 
@@ -79,21 +81,23 @@ function getAllFilms()
 {
     try {
         $pdo = connectBdd();
-        // La requête SQL
-        $sql = "SELECT * FROM film f join seance s on f.id = s.idfilm join salle sa on sa.id = s.idsalle";
+
+        // La requête SQL avec prepared statement
+        $sql = "SELECT * FROM film f 
+                JOIN seance s ON f.id = s.idfilm 
+                JOIN salle sa ON sa.id = s.idsalle";
+        $stmt = $pdo->prepare($sql);
 
         // Exécution de la requête
-        $stmt = $pdo->query($sql);
+        $stmt->execute();
         $results = [];
-        if ($stmt) {
-            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                $results[] = $row;
-            }
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            $results[] = $row;
         }
         return $results;
     } catch (PDOException $e) {
         // En cas d'erreur, afficher l'erreur
         echo "Erreur dans la base de données : " . $e->getMessage();
-        return null; // Retourne false en cas d'erreur
+        return null; // Retourne null en cas d'erreur
     }
 }
